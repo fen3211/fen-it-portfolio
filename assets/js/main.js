@@ -7,7 +7,7 @@ document.querySelectorAll('[data-count]').forEach(n=>co.observe(n));
 // курсор-звезда со шлейфом
 const cur=document.createElement('div');cur.className='cur';cur.textContent='✦';document.body.append(cur);
 let lx=0,ly=0,last=0;
-addEventListener('mousemove',e=>{cur.classList.add('on');cur.style.transform=`translate(${e.clientX}px,${e.clientY}px)`;
+addEventListener('mousemove',e=>{cur.classList.add('on');cur.style.transform=`translate(${e.clientX}px,${e.clientY}px) translate(-50%,-50%)`;
 const now=performance.now(),d=Math.hypot(e.clientX-lx,e.clientY-ly);
 if(d>28&&now-last>60){last=now;lx=e.clientX;ly=e.clientY;const t=document.createElement('span');t.className='trail';t.textContent='✦';t.style.left=e.clientX+'px';t.style.top=e.clientY+'px';document.body.append(t);setTimeout(()=>t.remove(),700)}},{passive:true});
 document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('big'));el.addEventListener('mouseleave',()=>cur.classList.remove('big'))});
