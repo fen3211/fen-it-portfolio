@@ -20,6 +20,18 @@ document.querySelectorAll('a[href*="t.me"],a[href^="mailto:"]').forEach(a=>a.add
 try{if(typeof ym!=='undefined'&&window.YM_ID)ym(window.YM_ID,'reachGoal','lead_click')}catch(e){}
 try{if(typeof gtag!=='undefined')gtag('event','lead_click')}catch(e){}
 }));
+// терминал печатается сам
+const tb=document.getElementById('termBody');
+if(tb){const lines=[['$ ','fen --status'],['● ','открыт к заказам · ближайший слот — октябрь 2026','ok'],['$ ','fen --stack'],['◆ ','ux/ui · вёрстка · next.js · cms · seo · metrica','dim']];
+const tio=new IntersectionObserver(es=>{if(!es[0].isIntersecting)return;tio.disconnect();let li=0;
+const nl=()=>{if(li>=lines.length){const c=document.createElement('div');c.className='caret';tb.append(c);return}
+const pr=lines[li][0],tx=lines[li][1],cls=lines[li][2];const row=document.createElement('div');const p=document.createElement('span');p.className='pr';p.textContent=pr;const s=document.createElement('span');if(cls)s.className=cls;row.append(p,s);tb.append(row);let ci=0;
+const iv=setInterval(()=>{s.textContent=tx.slice(0,++ci);if(ci>=tx.length){clearInterval(iv);li++;setTimeout(nl,380)}} ,34)};nl()},{threshold:.35});tio.observe(tb)}
+// konami: дождь из звёзд
+const SEQ=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];let qi=0;
+addEventListener('keydown',e=>{qi=(e.key===SEQ[qi])?qi+1:(e.key===SEQ[0]?1:0);if(qi<SEQ.length)return;qi=0;
+for(let i=0;i<70;i++){const s=document.createElement('span');s.className='kstar';s.textContent=['★','✦','●'][i%3];s.style.left=Math.random()*100+'vw';s.style.color=['#BCD36A','#C05C5C','#F4EEDA'][i%3];s.style.fontSize=(12+Math.random()*22)+'px';s.style.animationDuration=(1.6+Math.random()*1.8)+'s';document.body.append(s);setTimeout(()=>s.remove(),3600)}
+const t=document.createElement('div');t.className='toast';t.textContent='Чит-код принят ★ скидка 5% (шутка)';document.body.append(t);setTimeout(()=>t.remove(),2600)});
 // прелоадер
 addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('done'),900));
 setTimeout(()=>{const l=document.getElementById('loader');if(l)l.classList.add('done')},3500);
