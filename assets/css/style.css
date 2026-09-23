@@ -163,13 +163,13 @@ a{color:inherit;text-decoration:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 /* ---- fun layer ---- */
 @media(hover:hover){body,a,button{cursor:none}}
-.cur{position:fixed;top:0;left:0;z-index:200;pointer-events:none;width:26px;height:26px;margin:-13px 0 0 -13px}
-.cur:before,.cur:after{content:'';position:absolute;background:var(--brick)}
-.cur:before{left:12px;top:2px;width:2px;height:22px}
-.cur:after{top:12px;left:2px;height:2px;width:22px}
-.cur.big{rotate:45deg;scale:1.3}
-@media(hover:none){.cur{display:none}}
-@media(prefers-reduced-motion:reduce){.cur{display:none}}
+.cur{position:fixed;top:0;left:0;z-index:200;pointer-events:none;margin:-14px 0 0 -14px;font-family:'Baloo 2',cursive;font-size:28px;line-height:1;color:var(--brick);transition:scale .18s,color .18s;animation:cspin 6s linear infinite}
+.cur.big{scale:1.5;color:var(--bordeaux)}
+@keyframes cspin{to{rotate:360deg}}
+.trail{position:fixed;z-index:199;pointer-events:none;font-size:12px;color:var(--gold);animation:trailfade .7s ease-out forwards}
+@keyframes trailfade{from{opacity:.9;transform:translate(-50%,-50%) scale(1) rotate(0)}to{opacity:0;transform:translate(-50%,-50%) scale(.3) rotate(40deg)}}
+@media(hover:none){.cur,.trail{display:none}}
+@media(prefers-reduced-motion:reduce){.cur,.trail{display:none}}
 @keyframes wiggle{0%,100%{transform:rotate(0)}25%{transform:rotate(-1.6deg) scale(1.02)}75%{transform:rotate(1.6deg) scale(1.02)}}
 .poster:hover{animation:wiggle .4s ease}
 .playground{margin-top:26px;background:var(--bordeaux-3);color:var(--cream);border:2px solid var(--ink);border-radius:22px;padding:clamp(26px,4vw,50px);text-align:center;position:relative;overflow:hidden}

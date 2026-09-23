@@ -4,9 +4,12 @@ const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&(e.target.
 document.querySelectorAll('.reveal').forEach(n=>io.observe(n));
 const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const n=e.target,t=+n.dataset.count;let v=0;const iv=setInterval(()=>{v+=Math.ceil(t/30);if(v>=t){v=t;clearInterval(iv)}n.textContent=v},50);co.unobserve(n)}),{threshold:.5});
 document.querySelectorAll('[data-count]').forEach(n=>co.observe(n));
-// курсор-прицел
-const cur=document.createElement('div');cur.className='cur';document.body.append(cur);
-addEventListener('mousemove',e=>{cur.style.transform=`translate(${e.clientX}px,${e.clientY}px)`},{passive:true});
+// курсор-звезда со шлейфом
+const cur=document.createElement('div');cur.className='cur';cur.textContent='★';document.body.append(cur);
+let lx=0,ly=0,last=0;
+addEventListener('mousemove',e=>{cur.style.transform=`translate(${e.clientX}px,${e.clientY}px)`;
+const now=performance.now(),d=Math.hypot(e.clientX-lx,e.clientY-ly);
+if(d>28&&now-last>60){last=now;lx=e.clientX;ly=e.clientY;const t=document.createElement('span');t.className='trail';t.textContent='✦';t.style.left=e.clientX+'px';t.style.top=e.clientY+'px';document.body.append(t);setTimeout(()=>t.remove(),700)}},{passive:true});
 document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('big'));el.addEventListener('mouseleave',()=>cur.classList.remove('big'))});
 // звёзды по клику в арт-блоке
 document.querySelectorAll('.playground').forEach(z=>z.addEventListener('click',e=>{const r=z.getBoundingClientRect();const s=document.createElement('span');s.className='burst';s.textContent=['★','✦','●'][Math.floor(Math.random()*3)];s.style.left=(e.clientX-r.left)+'px';s.style.top=(e.clientY-r.top)+'px';s.style.fontSize=(18+Math.random()*26)+'px';z.appendChild(s);setTimeout(()=>s.remove(),1000)}));
