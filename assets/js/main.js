@@ -5,7 +5,7 @@ document.querySelectorAll('.reveal').forEach(n=>io.observe(n));
 const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const n=e.target,t=+n.dataset.count;let v=0;const iv=setInterval(()=>{v+=Math.ceil(t/30);if(v>=t){v=t;clearInterval(iv)}n.textContent=v},50);co.unobserve(n)}),{threshold:.5});
 document.querySelectorAll('[data-count]').forEach(n=>co.observe(n));
 // курсор-звезда со шлейфом
-const cur=document.createElement('div');cur.className='cur';cur.textContent='★';document.body.append(cur);
+const cur=document.createElement('div');cur.className='cur';cur.textContent='✦';document.body.append(cur);
 let lx=0,ly=0,last=0;
 addEventListener('mousemove',e=>{cur.classList.add('on');cur.style.transform=`translate(${e.clientX}px,${e.clientY}px)`;
 const now=performance.now(),d=Math.hypot(e.clientX-lx,e.clientY-ly);
