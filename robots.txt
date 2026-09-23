@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fen3211.github.io/fen-it-portfolio/sitemap.xml
