@@ -94,9 +94,9 @@ a{color:inherit;text-decoration:none}
 .mood{margin-top:26px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
 @media(max-width:800px){.mood{grid-template-columns:1fr}}
 .mtile{border:2px solid var(--ink);border-radius:14px;overflow:hidden;min-height:220px;position:relative;background:var(--bordeaux);display:flex;align-items:flex-end;padding:20px;color:var(--cream)}
-.mtile.c1{background:var(--bordeaux) url('https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1000&auto=format&fit=crop') center/cover}
+.mtile.c1{background:var(--bordeaux) url('../img/mood-desk.jpg') center/cover}
 .mtile.c2{background:var(--bordeaux-2)}
-.mtile.c3{background:var(--ink) url('https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=1000&auto=format&fit=crop') center/cover}
+.mtile.c3{background:var(--ink) url('../img/mood-ui.jpg') center/cover}
 .mtile:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(15,26,20,.84))}
 .mtile.c2:before{content:'★';position:absolute;right:8px;bottom:-30px;font-size:150px;line-height:1;color:rgba(244,238,218,.12)}
 .mtile div{position:relative;z-index:2}
