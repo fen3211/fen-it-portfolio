@@ -163,20 +163,15 @@ a{color:inherit;text-decoration:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 /* ---- fun layer ---- */
 @media(hover:hover){body,a,button{cursor:none}}
-.cur-dot,.cur-ring{position:fixed;top:0;left:0;z-index:200;pointer-events:none;border-radius:50%}
-.cur-dot{width:8px;height:8px;background:var(--brick)}
-.cur-ring{width:34px;height:34px;border:2px solid var(--bordeaux);transition:width .2s,height .2s,border-color .2s}
-.cur-ring.big{width:58px;height:58px;border-color:var(--brick)}
-@media(hover:none){.cur-dot,.cur-ring{display:none}}
-@media(prefers-reduced-motion:reduce){.cur-dot,.cur-ring{display:none}}
+.cur{position:fixed;top:0;left:0;z-index:200;pointer-events:none;width:26px;height:26px;margin:-13px 0 0 -13px}
+.cur:before,.cur:after{content:'';position:absolute;background:var(--brick)}
+.cur:before{left:12px;top:2px;width:2px;height:22px}
+.cur:after{top:12px;left:2px;height:2px;width:22px}
+.cur.big{rotate:45deg;scale:1.3}
+@media(hover:none){.cur{display:none}}
+@media(prefers-reduced-motion:reduce){.cur{display:none}}
 @keyframes wiggle{0%,100%{transform:rotate(0)}25%{transform:rotate(-1.6deg) scale(1.02)}75%{transform:rotate(1.6deg) scale(1.02)}}
 .poster:hover{animation:wiggle .4s ease}
-.hero-fen{position:absolute;right:26px;bottom:150px;z-index:3;width:88px;filter:drop-shadow(4px 4px 0 rgba(0,0,0,.35))}
-@media(max-width:640px){.hero-fen{width:58px;right:14px;bottom:auto;top:150px}}
-.fenya .m-eye{transform-box:fill-box;transform-origin:center;animation:blink 4.5s infinite}
-@keyframes blink{0%,93%,100%{transform:scaleY(1)}96%{transform:scaleY(.08)}}
-.fenya:hover .m-body{transform:scale(1.06,.94)}
-.m-body{transition:transform .2s;transform-box:fill-box;transform-origin:center}
 .playground{margin-top:26px;background:var(--bordeaux-3);color:var(--cream);border:2px solid var(--ink);border-radius:22px;padding:clamp(26px,4vw,50px);text-align:center;position:relative;overflow:hidden}
 .play-word{font-family:'Baloo 2',cursive;font-weight:800;font-size:clamp(64px,13vw,170px);line-height:1;display:flex;justify-content:center;flex-wrap:wrap;margin:6px 0 10px}
 .play-word span{display:inline-block;transition:transform .15s,color .15s}
