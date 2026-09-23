@@ -28,7 +28,7 @@ const t=line.textContent;line.textContent='';
 // 3d-tilt мокапов
 document.querySelectorAll('[data-tilt]').forEach(card=>{card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`perspective(1000px) rotateY(${x*9}deg) rotateX(${-y*9}deg) translateY(-4px)`});card.addEventListener('mouseleave',()=>card.style.transform='')});
 const bws=document.querySelectorAll('.bgword');
-const pbar=document.getElementById('progress'),totop=document.getElementById('totop');
+const totop=document.getElementById('totop');
 const noMotion=matchMedia('(prefers-reduced-motion: no-preference)').matches;
-addEventListener('scroll',()=>{const h=document.documentElement,p=h.scrollTop/(h.scrollHeight-h.clientHeight);if(pbar)pbar.style.width=(p*100)+'%';if(totop)totop.classList.toggle('show',h.scrollTop>600);if(noMotion&&bws.length){bws.forEach(w=>{const r=w.getBoundingClientRect();w.style.translate=`0 ${r.top/innerHeight*-34}px`})}},{passive:true});
+addEventListener('scroll',()=>{const h=document.documentElement;if(totop)totop.classList.toggle('show',h.scrollTop>600);if(noMotion&&bws.length){bws.forEach(w=>{const r=w.getBoundingClientRect();w.style.translate=`0 ${r.top/innerHeight*-34}px`})}},{passive:true});
 if(totop)totop.onclick=()=>scrollTo({top:0,behavior:noMotion?'smooth':'auto'});
