@@ -22,7 +22,7 @@ try{if(typeof gtag!=='undefined')gtag('event','lead_click')}catch(e){}
 }));
 // терминал печатается сам
 const tb=document.getElementById('termBody');
-if(tb){const lines=[['$ ','fen --status'],['● ','открыт к заказам · ближайший слот — октябрь 2026','ok'],['$ ','fen --stack'],['◆ ','ux/ui · вёрстка · next.js · cms · seo · metrica','dim']];
+if(tb){const lines=[['$ ','fen --status'],['● ','открыт к заказам','ok'],['$ ','fen --stack'],['◆ ','ux/ui · вёрстка · next.js · cms · seo · metrica','dim']];
 const tio=new IntersectionObserver(es=>{if(!es[0].isIntersecting)return;tio.disconnect();let li=0;
 const nl=()=>{if(li>=lines.length){const c=document.createElement('div');c.className='caret';tb.append(c);return}
 const pr=lines[li][0],tx=lines[li][1],cls=lines[li][2];const row=document.createElement('div');const p=document.createElement('span');p.className='pr';p.textContent=pr;const s=document.createElement('span');if(cls)s.className=cls;row.append(p,s);tb.append(row);let ci=0;
