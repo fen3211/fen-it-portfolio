@@ -105,9 +105,9 @@ a{color:inherit;text-decoration:none}
 /* posters — услуги как гиг-афиши */
 .posters{margin-top:26px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 @media(max-width:900px){.posters{grid-template-columns:1fr}}
-.poster{border:2px solid var(--ink);border-radius:16px;overflow:hidden;background:var(--paper);transition:.25s;display:flex;flex-direction:column}
+.poster{border:2px solid var(--ink);border-radius:16px;overflow:visible;background:var(--paper);transition:.25s;display:flex;flex-direction:column;position:relative}
 .poster:hover{transform:translateY(-5px) rotate(-.4deg);box-shadow:8px 8px 0 var(--ink)}
-.poster-top{background:var(--bordeaux);color:var(--cream);padding:22px;min-height:230px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+.poster-top{background:var(--bordeaux);color:var(--cream);padding:22px;min-height:230px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;border-radius:14px 14px 0 0}
 .poster-top:after{content:'★';position:absolute;right:12px;top:6px;font-size:64px;color:rgba(244,238,218,.16)}
 .poster-top .mono{font-size:10px;letter-spacing:.24em;color:var(--gold)}
 .poster-top h3{font-family:'Unbounded',sans-serif;font-weight:800;font-size:29px;line-height:1;margin-top:8px}
@@ -120,12 +120,12 @@ a{color:inherit;text-decoration:none}
 /* mockups */
 .shots{margin-top:26px;display:grid;grid-template-columns:1.5fr 1fr;gap:14px}
 @media(max-width:900px){.shots{grid-template-columns:1fr}}
-.browser{border:2px solid var(--ink);border-radius:16px;overflow:hidden;background:var(--paper)}
-.browser .bar{display:flex;gap:7px;align-items:center;background:var(--ink);padding:11px 14px}
+.browser{border:2px solid var(--ink);border-radius:16px;overflow:visible;background:var(--paper);position:relative}
+.browser .bar{display:flex;gap:7px;align-items:center;background:var(--ink);padding:11px 14px;border-radius:14px 14px 0 0}
 .browser .bar i{width:10px;height:10px;border-radius:50%;background:var(--cream);opacity:.4}
 .browser .bar i:first-child{background:var(--gold);opacity:1}
 .browser .bar span{font-family:'JetBrains Mono';font-size:10px;color:var(--cream);opacity:.6;margin-left:8px;letter-spacing:.1em}
-.shot-desk{background:linear-gradient(135deg,var(--bordeaux-3),#122A1E);color:var(--cream);padding:34px;min-height:300px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.shot-desk{background:linear-gradient(135deg,var(--bordeaux-3),#122A1E);color:var(--cream);padding:34px;min-height:300px;display:flex;flex-direction:column;justify-content:center;gap:12px;border-radius:0 0 14px 14px}
 .shot-desk h4{font-family:'Unbounded',sans-serif;font-weight:800;font-size:clamp(21px,2.6vw,32px);line-height:1.05}
 .shot-desk p{font-size:13.5px;color:rgba(244,238,218,.7);max-width:44ch}
 .shot-tags{display:flex;gap:8px;flex-wrap:wrap}
@@ -161,6 +161,24 @@ a{color:inherit;text-decoration:none}
 .reveal{opacity:0;transform:translateY(26px);transition:.7s cubic-bezier(.2,.7,.2,1)}
 .reveal.vis{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+/* ---- deco layer ---- */
+.tape{position:absolute;top:-14px;left:50%;translate:-50% 0;rotate:-4deg;width:110px;height:30px;background:linear-gradient(180deg,rgba(244,238,218,.88),rgba(233,225,201,.88));border-left:2px dashed rgba(26,36,32,.18);border-right:2px dashed rgba(26,36,32,.18);box-shadow:0 2px 5px rgba(0,0,0,.18);z-index:5}
+.posters .poster:nth-child(2) .tape{rotate:5deg}
+.phone .tape{top:12px}
+.coupon{display:flex;align-items:center;gap:14px;max-width:1240px;margin:30px auto 0;padding:0 22px}
+.coupon i{flex:1;border-top:2px dashed rgba(26,36,32,.3)}
+.coupon b{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.24em;color:var(--brick)}
+#progress{position:fixed;top:0;left:0;height:4px;width:0;background:var(--brick);z-index:250}
+#totop{position:fixed;right:20px;bottom:20px;z-index:150;width:52px;height:52px;border-radius:50%;background:var(--bordeaux);color:var(--cream);border:2px solid var(--ink);box-shadow:3px 3px 0 rgba(0,0,0,.8);font-size:20px;cursor:pointer;opacity:0;pointer-events:none;transition:.25s}
+#totop.show{opacity:1;pointer-events:auto}
+#totop:hover{background:var(--gold);color:var(--ink);transform:rotate(-12deg)}
+.links a{position:relative}
+.links a:after{content:'';position:absolute;left:0;bottom:-5px;height:2px;width:0;background:var(--gold);transition:width .25s}
+.links a:hover:after{width:100%}
+::-webkit-scrollbar{width:12px}
+::-webkit-scrollbar-track{background:var(--cream-2)}
+::-webkit-scrollbar-thumb{background:var(--bordeaux);border-radius:99px;border:3px solid var(--cream-2)}
+*{scrollbar-width:thin;scrollbar-color:var(--bordeaux) var(--cream-2)}
 /* ---- fun layer ---- */
 @media(hover:hover){body,a,button{cursor:none}*{cursor:none!important}}
 .cur{position:fixed;left:0;top:0;translate:-50% -50%;z-index:200;pointer-events:none;font-family:'Baloo 2',cursive;font-size:22px;line-height:1;color:var(--cream);-webkit-text-stroke:1.5px var(--ink);paint-order:stroke fill;filter:drop-shadow(2px 2px 0 rgba(26,36,32,.55));opacity:0;transition:opacity .2s,scale .18s,color .18s}

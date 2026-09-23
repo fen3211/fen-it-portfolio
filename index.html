@@ -17,6 +17,7 @@
 </head>
 <body>
 <div class="grain"></div>
+<div id="progress"></div>
 <div id="loader"><img src="assets/logo.svg" alt="FEN"><div class="load-bar"><i></i></div><span class="mono">ЗАГРУЖАЮ КРАСОТУ…</span></div>
 
 <nav class="nav"><div class="wrap nav-in">
@@ -77,21 +78,22 @@
 <div class="mtile c3 reveal"><div><span class="mono">MOOD 03</span><h3>Живой<br>интерфейс</h3></div></div>
 </div>
 
+<div class="coupon" aria-hidden="true"><i></i><b>★ FEN ★</b><i></i></div>
 <div class="bgword" aria-hidden="true">дизайн</div>
 <!-- ПОСТЕРЫ = УСЛУГИ -->
 <div style="margin-top:44px"><span class="kick">★ УСЛУГИ / POSTERS</span>
 <h2 style="font-size:clamp(30px,4.6vw,56px)">Три афиши —<br>три формата</h2></div>
 <div class="posters">
 <article class="poster reveal">
-<div class="poster-top"><span class="mono">GIG 01 · LANDING</span><h3>ТЫ<br>НУЖЕН<br>ЛЕНДИНГ</h3><span class="serif">с характером</span></div>
+<span class="tape" aria-hidden="true"></span><div class="poster-top"><span class="mono">GIG 01 · LANDING</span><h3>ТЫ<br>НУЖЕН<br>ЛЕНДИНГ</h3><span class="serif">с характером</span></div>
 <div class="poster-in"><ul><li>Концепт первого экрана за 24ч</li><li>5–8 блоков, квиз, формы</li><li>Адаптив + скорость 90+</li></ul><div class="pr">от 35 000 ₽ <small>/ 5–7 дней</small></div><div style="margin-top:14px"><a class="btn btn-dark btn-sm" href="#contact">Хочу →</a></div></div>
 </article>
 <article class="poster reveal">
-<div class="poster-top" style="background:var(--ink)"><span class="mono">GIG 02 · CORPORATE</span><h3>DISCO<br>CORP<br>DIVER</h3><span class="serif">ныряем в B2B</span></div>
+<span class="tape" aria-hidden="true"></span><div class="poster-top" style="background:var(--ink)"><span class="mono">GIG 02 · CORPORATE</span><h3>DISCO<br>CORP<br>DIVER</h3><span class="serif">ныряем в B2B</span></div>
 <div class="poster-in"><ul><li>Главная + шаблоны разделов</li><li>CMS: правки без кодера</li><li>SEO-база, sitemap, метрика</li></ul><div class="pr">от 90 000 ₽ <small>/ 3–5 недель</small></div><div style="margin-top:14px"><a class="btn btn-dark btn-sm" href="#contact">Хочу →</a></div></div>
 </article>
 <article class="poster reveal">
-<div class="poster-top" style="background:var(--bordeaux-2)"><span class="mono">GIG 03 · REDESIGN</span><h3>CHERRY<br>РЕДИ<br>ЗАЙН</h3><span class="serif">на вишенке</span></div>
+<span class="tape" aria-hidden="true"></span><div class="poster-top" style="background:var(--bordeaux-2)"><span class="mono">GIG 03 · REDESIGN</span><h3>CHERRY<br>РЕДИ<br>ЗАЙН</h3><span class="serif">на вишенке</span></div>
 <div class="poster-in"><ul><li>Аудит с чек-листом граблей</li><li>Пересборка по частям</li><li>Без остановки бизнеса</li></ul><div class="pr">от 20 000 ₽ <small>/ итерация</small></div><div style="margin-top:14px"><a class="btn btn-dark btn-sm" href="#contact">Хочу →</a></div></div>
 </article>
 </div>
@@ -102,11 +104,11 @@
 <h2 style="font-size:clamp(30px,4.6vw,56px)">Десктоп + мобайл,<br>а не скрины</h2></div>
 <div class="shots">
 <div class="browser reveal" data-tilt>
-<div class="bar"><i></i><i></i><i></i><span>eco-expert-site / index.html — LIVE</span></div>
+<span class="tape" aria-hidden="true"></span><div class="bar"><i></i><i></i><i></i><span>eco-expert-site / index.html — LIVE</span></div>
 <div class="shot-desk"><h4>ЭКО-ЭКСПЕРТ — сайт на 18 страниц</h4><p>B2B-корпорат: 9 посадочных услуг, кейсы, эксперты, CMS Decap, формы с файлами, SEO. 26 файлов, готов к деплою.</p><div class="shot-tags"><span>CORPORATE</span><span>18 PAGES</span><span>CMS</span><span>SEO</span></div><div><a class="btn btn-cream btn-sm" href="demo/eco-expert/index.html" target="_blank" rel="noopener">Открыть живой сайт →</a></div></div>
 </div>
 <div class="phone reveal" data-tilt>
-<div class="notch">FEN · 9:41</div>
+<span class="tape" aria-hidden="true"></span><div class="notch">FEN · 9:41</div>
 <div class="scr"><span class="mono" style="font-size:10px;letter-spacing:.2em;color:var(--gold)">MOBILE · ATLAXIS</span><h4>AI-лендинг за 1 день</h4><p style="font-size:13px;color:rgba(244,238,218,.75)">Cinematic hero, строка AI-запроса, тарифы-слайдер.</p><div style="margin-top:auto"><a class="btn btn-cream btn-sm" href="demo/atlaxis/index.html" target="_blank" rel="noopener">Открыть →</a></div></div>
 </div>
 </div>
@@ -124,6 +126,7 @@
 </div>
 
 <!-- РАБОТАТЬ СО МНОЙ -->
+<div class="coupon" aria-hidden="true"><i></i><b>✦ СВЯЗЬ ✦</b><i></i></div>
 <div class="workme reveal" id="contact">
 <div>
 <div class="mono" style="font-size:10px;letter-spacing:.24em;color:var(--gold)">— РАБОТАТЬ СО МНОЙ</div>
@@ -153,6 +156,7 @@
 </div>
 </footer>
 
+<button id="totop" aria-label="Наверх">★</button>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
