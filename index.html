@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FEN — портфолио · сайты и UX/UI дизайн</title>
+<meta name="description" content="FEN: портфолио — лендинги, корпоративные сайты, UX/UI. Концепт за 24 часа, разработка под ключ.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Unbounded:wght@500;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500;1,700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bordeaux:#2E5B3E; --bordeaux-2:#3E7349; --bordeaux-3:#1D3226;
+  --cream:#F4EEDA; --cream-2:#E9E1C9; --paper:#F7F2E3;
+  --ink:#1A2420; --mut:rgba(26,36,32,.62);
+  --gold:#BCD36A; --brick:#C05C5C;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.disp{font-family:'Unbounded',sans-serif;font-weight:800;line-height:1;text-transform:uppercase}
+.serif{font-family:'Cormorant Garamond',serif;font-style:italic}
+.mono{font-family:'JetBrains Mono',monospace}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--bordeaux);color:var(--cream)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 22px}
+.grain{position:fixed;inset:0;z-index:120;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.055) 1px,transparent 1.4px),radial-gradient(rgba(0,0,0,.055) 1px,transparent 1.4px);background-size:16px 16px;background-position:0 0,8px 8px}
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--bordeaux-3);color:var(--cream);border-bottom:2px solid var(--ink)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .mark{width:46px;height:46px;border-radius:15px;background:var(--bordeaux-3);border:1.5px solid var(--cream);display:grid;place-items:center;padding:6px;flex:none}
+.brand .mark img{width:100%;height:100%;object-fit:contain;display:block}
+.brand b{font-family:'Unbounded',sans-serif;font-weight:700;letter-spacing:.1em;font-size:14px}
+.brand small{display:block;font-family:'JetBrains Mono';font-size:9px;letter-spacing:.24em;opacity:.7}
+.links{display:flex;gap:20px;font-size:12.5px;font-weight:700;letter-spacing:.04em}
+.links a{opacity:.75}.links a:hover{opacity:1;color:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:12px 24px;font-weight:800;font-size:12.5px;letter-spacing:.05em;border:2px solid var(--ink);cursor:pointer;transition:.22s;text-transform:uppercase}
+.btn-cream{background:var(--cream);color:var(--bordeaux)}
+.btn-cream:hover{background:var(--gold);border-color:var(--gold);color:var(--ink);transform:translateY(-2px)}
+.btn-line{background:transparent;color:var(--cream);border-color:var(--cream)}
+.btn-line:hover{background:var(--cream);color:var(--bordeaux)}
+.btn-dark{background:var(--bordeaux);color:var(--cream)}
+.btn-dark:hover{background:var(--ink);transform:translateY(-2px)}
+.btn-sm{padding:9px 18px;font-size:11px}
+.btn-cream,.btn-dark{box-shadow:4px 4px 0 rgba(0,0,0,.85)}
+.btn-cream:hover,.btn-dark:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+.btn-cream:active,.btn-dark:active{transform:translate(3px,3px);box-shadow:1px 1px 0 rgba(0,0,0,.85)}
+@media(max-width:920px){.links{display:none}}
+/* HERO — как в референсе */
+.hero{background:var(--bordeaux-3);color:var(--cream);position:relative;overflow:hidden;padding:86px 0 0}
+.hero-photo{position:relative;margin:0 auto;max-width:1240px;padding:0 22px}
+.hero-frame{position:relative;border-radius:6px;overflow:hidden;background:radial-gradient(700px 380px at 82% 8%,rgba(188,211,106,.17),transparent 60%),radial-gradient(560px 340px at 8% 100%,rgba(192,92,92,.15),transparent 60%),var(--bordeaux-3);min-height:clamp(480px,62vw,660px);display:flex;flex-direction:column;justify-content:flex-end;align-items:stretch;padding:clamp(24px,4vw,54px);border:2px solid var(--ink)}
+.hero-topline{position:relative;z-index:2;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.2em;color:rgba(241,234,217,.85);border-bottom:1px solid rgba(241,234,217,.35);padding-bottom:14px}
+.hero-word{position:relative;z-index:2;font-family:'Baloo 2',cursive;font-weight:800;font-size:clamp(42px,8.4vw,116px);line-height:.96;text-transform:uppercase;margin-top:20px;transform:rotate(-1.5deg);letter-spacing:-.01em}
+.hero-word .solid{color:var(--cream);display:block;text-shadow:5px 5px 0 rgba(20,32,25,.9)}
+.hero-word .line{display:block;color:transparent;-webkit-text-stroke:2.5px var(--cream)}
+.hero-sub{position:relative;z-index:2;display:flex;align-items:baseline;gap:16px;margin-top:14px;flex-wrap:wrap}
+.hero-sub .serif{font-size:clamp(20px,2.6vw,30px);color:var(--gold)}
+.hero-cta{position:relative;z-index:2;display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.orbit{position:absolute;z-index:3;top:24px;right:28px;width:118px;height:118px;display:grid;place-items:center}
+.orbit svg{position:absolute;inset:0;animation:spin 14s linear infinite}
+.orbit svg text{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:2px;fill:var(--cream)}
+.orbit span{font-size:30px;color:var(--brick)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sticker{position:absolute;z-index:3;left:30px;top:30px;transform:rotate(-7deg);background:var(--gold);color:var(--ink);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:11px;letter-spacing:.06em;padding:9px 15px;border-radius:4px;box-shadow:4px 4px 0 rgba(0,0,0,.4)}
+@media(max-width:640px){.orbit{display:none}.sticker{left:18px;top:16px}}
+.hero-frame:after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(244,238,218,.09) 1.2px,transparent 1.7px);background-size:18px 18px}
+.hero-badges{position:relative;z-index:2;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.hero-badges span{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.22em;border:1px solid rgba(241,234,217,.5);border-radius:999px;padding:8px 16px;background:rgba(0,0,0,.3)}
+.hero-meta{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:16px 2px 20px;font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.18em;color:rgba(241,234,217,.75)}
+/* torn edge */
+.torn{display:block;width:100%;height:26px;margin-bottom:-1px}
+/* about */
+.sec{padding:64px 0}
+.kick{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono';font-size:11px;letter-spacing:.26em;color:var(--bordeaux);border:1.5px solid var(--bordeaux);border-radius:999px;padding:8px 16px;background:var(--paper)}
+.sec h2{font-family:'Unbounded',sans-serif;font-weight:800;font-size:clamp(27px,4vw,50px);text-transform:uppercase;margin:18px 0 8px;line-height:1.02}
+.sec h2 .it{font-family:'Cormorant Garamond',serif;font-style:italic;text-transform:none;letter-spacing:0}
+.sec h2 .w-baloo{font-family:'Baloo 2',cursive;font-weight:800;letter-spacing:0}
+.sec h2 .w-mono{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:.6em;letter-spacing:.04em}
+.sec h2 .c-brick{color:var(--brick)}
+.sec h2 .c-pine{color:var(--bordeaux)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:26px;align-items:start}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr}}
+.about-grid p{line-height:1.7;font-size:15px;color:#33262a}
+.about-grid p+p{margin-top:12px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fact{border:2px solid var(--ink);border-radius:14px;padding:18px;background:var(--paper)}
+.fact b{font-family:'Unbounded',sans-serif;font-weight:800;font-size:29px;color:var(--bordeaux);display:block}
+.fact span{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.14em;color:var(--mut);text-transform:uppercase}
+/* process timeline */
+.timeline{margin-top:30px;border:2px solid var(--ink);border-radius:16px;background:var(--paper);padding:26px;overflow-x:auto}
+.tl-row{display:flex;gap:0;min-width:760px}
+.tl{flex:1;text-align:center;position:relative;padding-top:26px}
+.tl:before{content:'';position:absolute;top:8px;left:-50%;width:100%;height:2px;background:var(--brick)}
+.tl:first-child:before{display:none}
+.tl:after{content:'';position:absolute;top:2px;left:50%;transform:translateX(-50%);width:14px;height:14px;border-radius:50%;background:var(--cream);border:3px solid var(--brick)}
+.tl b{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;letter-spacing:.02em;color:var(--brick);display:block;margin-bottom:6px;white-space:nowrap}
+.tl span{font-size:12px;color:var(--mut)}
+/* moodboard */
+.mood{margin-top:26px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+@media(max-width:800px){.mood{grid-template-columns:1fr}}
+.mtile{border:2px solid var(--ink);border-radius:14px;overflow:hidden;min-height:220px;position:relative;background:var(--bordeaux);display:flex;align-items:flex-end;padding:20px;color:var(--cream)}
+.mtile.c1{background:var(--bordeaux) url('https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1000&auto=format&fit=crop') center/cover}
+.mtile.c2{background:var(--bordeaux-2)}
+.mtile.c3{background:var(--ink) url('https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=1000&auto=format&fit=crop') center/cover}
+.mtile:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(20,5,10,.8))}
+.mtile div{position:relative;z-index:2}
+.mtile .mono{font-size:10px;letter-spacing:.2em;color:var(--gold)}
+.mtile h3{font-family:'Unbounded',sans-serif;font-weight:700;font-size:21px;line-height:1.15;margin-top:6px}
+/* color section */
+.colorband{margin-top:26px;background:var(--bordeaux);color:var(--cream);border:2px solid var(--ink);border-radius:16px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+@media(max-width:800px){.colorband{grid-template-columns:1fr}}
+.colorband h3{font-family:'Unbounded',sans-serif;font-weight:800;font-size:clamp(24px,3.2vw,38px);line-height:1.02}
+.stars{color:var(--gold);letter-spacing:4px;font-size:20px}
+.swatches{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.sw{flex:1;min-width:110px;border-radius:12px;padding:14px;border:1.5px solid rgba(241,234,217,.4)}
+.sw b{display:block;font-family:'JetBrains Mono';font-size:11px}
+.sw span{font-family:'JetBrains Mono';font-size:10px;opacity:.7}
+/* posters — услуги как гиг-афиши */
+.posters{margin-top:26px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:900px){.posters{grid-template-columns:1fr}}
+.poster{border:2px solid var(--ink);border-radius:16px;overflow:hidden;background:var(--paper);transition:.25s;display:flex;flex-direction:column}
+.poster:hover{transform:translateY(-5px) rotate(-.4deg);box-shadow:8px 8px 0 var(--ink)}
+.poster-top{background:var(--bordeaux);color:var(--cream);padding:22px;min-height:230px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+.poster-top:after{content:'★';position:absolute;right:12px;top:6px;font-size:64px;color:rgba(241,234,217,.16)}
+.poster-top .mono{font-size:10px;letter-spacing:.24em;color:var(--gold)}
+.poster-top h3{font-family:'Unbounded',sans-serif;font-weight:800;font-size:29px;line-height:1;margin-top:8px}
+.poster-top .serif{font-size:22px;color:var(--cream)}
+.poster-in{padding:20px 22px 24px}
+.poster-in ul{list-style:none;display:grid;gap:8px;font-size:13.5px;color:#3a2b2f;margin-top:6px}
+.poster-in li:before{content:'✦ ';color:var(--bordeaux);font-weight:800}
+.poster-in .pr{font-family:'Unbounded',sans-serif;font-weight:700;font-size:19px;margin-top:16px;color:var(--bordeaux)}
+.poster-in .pr small{font-family:'Manrope';font-size:12px;color:var(--mut)}
+/* mockups */
+.shots{margin-top:26px;display:grid;grid-template-columns:1.5fr 1fr;gap:14px}
+@media(max-width:900px){.shots{grid-template-columns:1fr}}
+.browser{border:2px solid var(--ink);border-radius:16px;overflow:hidden;background:var(--paper)}
+.browser .bar{display:flex;gap:7px;align-items:center;background:var(--ink);padding:11px 14px}
+.browser .bar i{width:10px;height:10px;border-radius:50%;background:var(--cream);opacity:.4}
+.browser .bar i:first-child{background:var(--gold);opacity:1}
+.browser .bar span{font-family:'JetBrains Mono';font-size:10px;color:var(--cream);opacity:.6;margin-left:8px;letter-spacing:.1em}
+.shot-desk{background:linear-gradient(135deg,var(--bordeaux-3),#101b33);color:var(--cream);padding:34px;min-height:300px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.shot-desk h4{font-family:'Unbounded',sans-serif;font-weight:800;font-size:clamp(21px,2.6vw,32px);line-height:1.05}
+.shot-desk p{font-size:13.5px;color:rgba(241,234,217,.7);max-width:44ch}
+.shot-tags{display:flex;gap:8px;flex-wrap:wrap}
+.shot-tags span{font-family:'JetBrains Mono';font-size:10px;border:1px solid rgba(241,234,217,.4);border-radius:999px;padding:6px 12px}
+.phone{border:2px solid var(--ink);border-radius:26px;overflow:hidden;background:var(--bordeaux);color:var(--cream);display:flex;flex-direction:column}
+.phone .notch{background:var(--ink);color:var(--cream);text-align:center;font-family:'JetBrains Mono';font-size:10px;padding:8px;letter-spacing:.2em}
+.phone .scr{padding:24px 20px;flex:1;display:flex;flex-direction:column;gap:12px}
+.phone h4{font-family:'Unbounded',sans-serif;font-weight:800;font-size:23px;line-height:1.05}
+.case-links{display:grid;gap:10px;margin-top:26px}
+.caserow{display:grid;grid-template-columns:90px 1fr auto;gap:16px;align-items:center;border:2px solid var(--ink);border-radius:14px;padding:16px 20px;background:var(--paper);transition:.2s}
+.caserow:hover{background:var(--bordeaux);color:var(--cream);transform:translateX(6px)}
+.caserow .mono{font-size:10px;letter-spacing:.16em;color:var(--bordeaux)}
+.caserow:hover .mono{color:var(--gold)}
+.caserow strong{font-size:15px;display:block}
+.caserow small{color:var(--mut);font-size:12.5px}
+.caserow:hover small{color:rgba(241,234,217,.7)}
+.caserow .go{font-family:'Unbounded',sans-serif;font-weight:700;font-size:13px;white-space:nowrap}
+@media(max-width:640px){.caserow{grid-template-columns:1fr}.caserow .go{justify-self:start}}
+/* work with me */
+.workme{margin-top:26px;background:var(--ink);color:var(--cream);border-radius:16px;padding:34px;display:grid;grid-template-columns:1fr 1fr;gap:26px}
+@media(max-width:900px){.workme{grid-template-columns:1fr}}
+.workme h3{font-family:'Unbounded',sans-serif;font-weight:800;font-size:clamp(22px,2.8vw,34px);line-height:1.02}
+.workme h3 span{color:var(--gold)}
+.wm-list{list-style:none;display:grid;gap:0;margin-top:6px}
+.wm-list li{display:flex;gap:14px;padding:14px 0;border-bottom:1px dashed rgba(241,234,217,.25);font-size:14px}
+.wm-list b{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--gold);font-size:14px;flex:none}
+/* thanks */
+.thanks{background:var(--bordeaux-3);color:var(--cream);border-top:2px solid var(--ink);padding:70px 0 34px;text-align:center;position:relative;overflow:hidden}
+.thanks h2{font-family:'Baloo 2',cursive;font-weight:800;font-size:clamp(30px,5.2vw,72px);line-height:.98}
+.thanks h2 .line{color:transparent;-webkit-text-stroke:1.5px var(--cream)}
+.thanks .row{display:flex;gap:12px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:44px;padding-top:20px;border-top:1px solid rgba(241,234,217,.2);font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.12em;color:rgba(241,234,217,.6)}
+.reveal{opacity:0;transform:translateY(26px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.vis{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<nav class="nav"><div class="wrap nav-in">
+<a class="brand" href="#"><span class="mark"><img src="assets/logo.svg" alt="FEN"></span><span><b>FEN</b><small>САЙТЫ · UX/UI</small></span></a>
+<div class="links"><a href="#about">О проекте</a><a href="#process">Процесс</a><a href="#works">Работы</a><a href="#contact">Контакты</a></div>
+<a class="btn btn-cream btn-sm" href="#contact">Обсудить проект</a>
+</div></nav>
+
+<!-- HERO как в референсе -->
+<header class="hero">
+<div class="hero-photo">
+<div class="hero-frame">
+<div class="orbit"><svg viewBox="0 0 120 120"><defs><path id="circ" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"/></defs><text><textPath href="#circ">ОТКРЫТ К ЗАКАЗАМ • FEN • FEN • </textPath></text></svg><span>★</span></div>
+<div class="hero-topline"><span>ИЗДАНИЕ №01 — ПОРТФОЛИО</span><span>САЙТЫ · UX/UI · FRONTEND</span></div>
+<h1 class="hero-word"><span class="solid">Портфолио</span><span class="line">дизайн · код</span></h1>
+<div class="hero-sub"><span class="mono" style="font-size:11px;letter-spacing:.18em;color:rgba(244,238,218,.85)">ЛЕНДИНГИ / КОРПОРАТЫ / РЕДИЗАЙН</span></div>
+<div class="hero-cta"><a class="btn btn-cream btn-sm" href="#works">Смотреть работы ↓</a><a class="btn btn-line btn-sm" href="https://t.me/TT_Fen" target="_blank" rel="noopener">Написать →</a></div>
+</div>
+<div class="hero-meta"><span>КЕЙС 01 — ПОРТФОЛИО ПОД КЛЮЧ</span><span>МОСКВА · УДАЛЁННО ПО ВСЕМУ МИРУ</span><span>SCROLL ↓</span></div>
+</div>
+</header>
+<svg class="torn" viewBox="0 0 1440 26" preserveAspectRatio="none" style="background:var(--bordeaux-3)"><path d="M0,26 L0,14 L40,18 L90,8 L150,16 L220,6 L300,15 L380,9 L460,17 L540,7 L620,15 L700,10 L790,18 L870,8 L950,16 L1030,6 L1110,15 L1190,9 L1270,17 L1350,8 L1440,14 L1440,26 Z" fill="#F1EAD9"/></svg>
+
+<!-- О ПРОЕКТЕ -->
+<section class="sec" id="about"><div class="wrap">
+<span class="kick">★ О ПРОЕКТЕ</span>
+<h2>Сайты, которые <span class="it">выглядят</span> <span class="w-mono">как</span> <span class="w-baloo">афиша,</span> а работают <span class="it">как</span> <span class="w-baloo">магазин</span></h2>
+<div class="about-grid">
+<div>
+<p>Я — <strong>FEN</strong>. Проектирую и собираю сайты: лендинги, корпоративные, портфолио. Беру aesthetic из editorial и gig-постеров — кремовая бумага, бордо, крупная типографика, — а под капотом держу инженерную дисциплину: сетка, состояния, адаптив, скорость, SEO-база.</p>
+<p>Первый концепт показываю <strong>за 24 часа после брифа</strong> — живьём в браузере, а не картинкой в Figma. Дальше итерациями довожу до сдачи по чек-листу.</p>
+</div>
+<div class="facts">
+<div class="fact"><b><span data-count="15">0</span>+</b><span>проектов: веб + дизайн</span></div>
+<div class="fact"><b><span data-count="24">0</span>ч</b><span>до первого концепта</span></div>
+<div class="fact"><b><span data-count="18">0</span></b><span>страниц — крупнейший проект</span></div>
+<div class="fact"><b>50%</b><span>предоплата · 2 итерации включены</span></div>
+</div>
+</div>
+
+<!-- ПРОЦЕСС как таймлайн в референсе -->
+<div class="timeline reveal" id="process">
+<div class="mono" style="font-size:10px;letter-spacing:.24em;color:var(--bordeaux)">— ПРОЦЕСС / TIMELINE</div>
+<div class="tl-row" style="margin-top:14px">
+<div class="tl"><b>01 · Бриф</b><span>15 мин созвона,<br>скоуп и сроки</span></div>
+<div class="tl"><b>02 · Концепт</b><span>первый экран<br>за 24 часа</span></div>
+<div class="tl"><b>03 · Дизайн</b><span>все блоки, UI-кит,<br>адаптив</span></div>
+<div class="tl"><b>04 · Код</b><span>вёрстка, формы,<br>SEO, метрика</span></div>
+<div class="tl"><b>05 · Сдача</b><span>чек-лист, файлы,<br>инструкция</span></div>
+</div>
+</div>
+
+<!-- МУДБОРД -->
+<div class="mood">
+<div class="mtile c1 reveal"><div><span class="mono">MOOD 01</span><h3>Editorial<br>сетка</h3></div></div>
+<div class="mtile c2 reveal"><div><span class="mono">MOOD 02</span><h3>FEN ★<br>плакат решает</h3><p style="font-size:13px;color:rgba(241,234,217,.75);margin-top:8px">Крупный кегль, рваный край, честная фактура. Никаких стоковых касок.</p></div></div>
+<div class="mtile c3 reveal"><div><span class="mono">MOOD 03</span><h3>Живой<br>интерфейс</h3></div></div>
+</div>
+
+<!-- ПОСТЕРЫ = УСЛУГИ -->
+<div style="margin-top:44px"><span class="kick">★ УСЛУГИ / POSTERS</span>
+<h2 style="font-size:clamp(30px,4.6vw,56px)">Три афиши —<br>три формата</h2></div>
+<div class="posters">
+<article class="poster reveal">
+<div class="poster-top"><span class="mono">GIG 01 · LANDING</span><h3>ТЫ<br>НУЖЕН<br>ЛЕНДИНГ</h3><span class="serif">с характером</span></div>
+<div class="poster-in"><ul><li>Концепт первого экрана за 24ч</li><li>5–8 блоков, квиз, формы</li><li>Адаптив + скорость 90+</li></ul><div class="pr">от 35 000 ₽ <small>/ 5–7 дней</small></div><div style="margin-top:14px"><a class="btn btn-dark btn-sm" href="#contact">Хочу →</a></div></div>
+</article>
+<article class="poster reveal">
+<div class="poster-top" style="background:var(--ink)"><span class="mono">GIG 02 · CORPORATE</span><h3>DISCO<br>CORP<br>DIVER</h3><span class="serif">ныряем в B2B</span></div>
+<div class="poster-in"><ul><li>Главная + шаблоны разделов</li><li>CMS: правки без кодера</li><li>SEO-база, sitemap, метрика</li></ul><div class="pr">от 90 000 ₽ <small>/ 3–5 недель</small></div><div style="margin-top:14px"><a class="btn btn-dark btn-sm" href="#contact">Хочу →</a></div></div>
+</article>
+<article class="poster reveal">
+<div class="poster-top" style="background:var(--bordeaux-2)"><span class="mono">GIG 03 · REDESIGN</span><h3>CHERRY<br>РЕДИ<br>ЗАЙН</h3><span class="serif">на вишенке</span></div>
+<div class="poster-in"><ul><li>Аудит с чек-листом граблей</li><li>Пересборка по частям</li><li>Без остановки бизнеса</li></ul><div class="pr">от 20 000 ₽ <small>/ итерация</small></div><div style="margin-top:14px"><a class="btn btn-dark btn-sm" href="#contact">Хочу →</a></div></div>
+</article>
+</div>
+
+<!-- МОКАПЫ как в референсе -->
+<div style="margin-top:44px" id="works"><span class="kick">★ РАБОТЫ / SHOWCASE</span>
+<h2 style="font-size:clamp(30px,4.6vw,56px)">Десктоп + мобайл,<br>а не скрины</h2></div>
+<div class="shots">
+<div class="browser reveal">
+<div class="bar"><i></i><i></i><i></i><span>eco-expert-site / index.html — LIVE</span></div>
+<div class="shot-desk"><h4>ЭКО-ЭКСПЕРТ — сайт на 18 страниц</h4><p>B2B-корпорат: 9 посадочных услуг, кейсы, эксперты, CMS Decap, формы с файлами, SEO. 26 файлов, готов к деплою.</p><div class="shot-tags"><span>CORPORATE</span><span>18 PAGES</span><span>CMS</span><span>SEO</span></div><div><a class="btn btn-cream btn-sm" href="demo/eco-expert/index.html" target="_blank" rel="noopener">Открыть живой сайт →</a></div></div>
+</div>
+<div class="phone reveal">
+<div class="notch">FEN · 9:41</div>
+<div class="scr"><span class="mono" style="font-size:10px;letter-spacing:.2em;color:var(--gold)">MOBILE · ATLAXIS</span><h4>AI-лендинг за 1 день</h4><p style="font-size:13px;color:rgba(241,234,217,.75)">Cinematic hero, строка AI-запроса, тарифы-слайдер.</p><div style="margin-top:auto"><a class="btn btn-cream btn-sm" href="demo/atlaxis/index.html" target="_blank" rel="noopener">Открыть →</a></div></div>
+</div>
+</div>
+<div class="case-links">
+<a class="caserow reveal" href="demo/eco-expert/index.html" target="_blank" rel="noopener"><span class="mono">КЕЙС 01</span><span><strong>Эко-эксперт — корпоративный сайт</strong><small>Главная, услуги ×9, кейсы, CMS, SEO · сдан как продакшн</small></span><span class="go">ОТКРЫТЬ →</span></a>
+<a class="caserow reveal" href="demo/atlaxis/index.html" target="_blank" rel="noopener"><span class="mono">КЕЙС 02</span><span><strong>Atlaxis — AI-лендинг медицины</strong><small>Видео-стилистика, HUD, консилиум врачей, тарифы · концепт v1</small></span><span class="go">ОТКРЫТЬ →</span></a>
+<a class="caserow reveal" href="https://fen3211.github.io/fen-portfolio/" target="_blank" rel="noopener"><span class="mono">КЕЙС 03</span><span><strong>FEN — графическое портфолио</strong><small>Айдентика, 3D, моушн · Next.js, live на GitHub Pages</small></span><span class="go">ОТКРЫТЬ →</span></a>
+</div>
+
+<!-- РАБОТАТЬ СО МНОЙ -->
+<div class="workme reveal" id="contact">
+<div>
+<div class="mono" style="font-size:10px;letter-spacing:.24em;color:var(--gold)">— РАБОТАТЬ СО МНОЙ</div>
+<h3>ПОГНАЛИ<br><span>ДЕЛАТЬ ТВОЙ САЙТ</span></h3>
+<p style="color:rgba(241,234,217,.7);font-size:14px;margin-top:12px;max-width:42ch">Кинь ссылку на текущий сайт (или «с нуля»), пару слов о задаче и срок. Отвечу в течение дня с вопросами и вилкой цены.</p>
+<div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap"><a class="btn btn-cream" href="https://t.me/TT_Fen" target="_blank" rel="noopener">Telegram →</a><a class="btn btn-line" href="mailto:vlad2.0top@mail.ru">Почта</a></div>
+</div>
+<div>
+<ul class="wm-list">
+<li><b>01</b><span><strong>Предоплата 50%.</strong> Остаток — после приёмки по чек-листу, без сюрпризов.</span></li>
+<li><b>02</b><span><strong>2 итерации правок включены.</strong> Дальше — платно, предупреждаю заранее.</span></li>
+<li><b>03</b><span><strong>На связи каждый день.</strong> Показываю прогресс живьём, а не «ждите неделю».</span></li>
+<li><b>04</b><span><strong>Файлы твои.</strong> Исходники, инструкция, доступы — всё передаю при сдаче.</span></li>
+</ul>
+</div>
+</div>
+
+</div></section>
+
+<!-- THANKS как в референсе -->
+<footer class="thanks">
+<div class="wrap">
+<img src="assets/logo.svg" alt="FEN" style="width:120px;height:auto;margin-bottom:18px;opacity:.95">
+<h2>THANKS FOR<br><span class="line">WATCHING</span></h2>
+<div class="row"><a class="btn btn-cream" href="https://t.me/TT_Fen" target="_blank" rel="noopener">Написать в Telegram →</a><a class="btn btn-line" href="mailto:vlad2.0top@mail.ru">vlad2.0top@mail.ru</a></div>
+<div class="foot"><span>© FEN · САЙТЫ · UX/UI · 2026</span><span>ATLAXIS → ECO-EXPERT → ТВОЙ ПРОЕКТ</span></div>
+</div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&(e.target.classList.add('vis'),io.unobserve(e.target))),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(n=>io.observe(n));
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const n=e.target,t=+n.dataset.count;let v=0;const iv=setInterval(()=>{v+=Math.ceil(t/30);if(v>=t){v=t;clearInterval(iv)}n.textContent=v},50);co.unobserve(n)}),{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(n=>co.observe(n));
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+collections:
+  - {name: "services", label: "Услуги", folder: "content/services", create: true, slug: "{{slug}}", fields: [{label: "Заголовок", name: "title", widget: "string"}, {label: "Текст", name: "body", widget: "markdown"}]}
+  - {name: "cases", label: "Кейсы", folder: "content/cases", create: true, slug: "{{slug}}", fields: [{label: "Заголовок", name: "title", widget: "string"}, {label: "Текст", name: "body", widget: "markdown"}]}
+  - {name: "team", label: "Сотрудники", folder: "content/team", create: true, slug: "{{slug}}", fields: [{label: "Имя", name: "title", widget: "string"}, {label: "Текст", name: "body", widget: "markdown"}]}
+  - {name: "posts", label: "Статьи", folder: "content/posts", create: true, slug: "{{slug}}", fields: [{label: "Заголовок", name: "title", widget: "string"}, {label: "Текст", name: "body", widget: "markdown"}]}
+  - {name: "docs", label: "Документы", folder: "content/docs", create: true, slug: "{{slug}}", fields: [{label: "Название", name: "title", widget: "string"}, {label: "Файл", name: "file", widget: "file"}]}
