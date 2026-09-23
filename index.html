@@ -17,6 +17,7 @@
 </head>
 <body>
 <div class="grain"></div>
+<div id="loader"><img src="assets/logo.svg" alt="FEN"><div class="load-bar"><i></i></div><span class="mono">ЗАГРУЖАЮ КРАСОТУ…</span></div>
 
 <nav class="nav"><div class="wrap nav-in">
 <a class="brand" href="#"><span class="mark"><img src="assets/logo.svg" alt="FEN"></span><span><b>FEN</b><small>САЙТЫ · UX/UI</small></span></a>
@@ -29,6 +30,7 @@
 <div class="hero-photo">
 <div class="hero-frame">
 <div class="orbit"><svg viewBox="0 0 120 120"><defs><path id="circ" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"/></defs><text><textPath href="#circ">ОТКРЫТ К ЗАКАЗАМ • FEN • FEN • </textPath></text></svg><span>★</span></div>
+<span class="float-s" style="left:6%;top:18%;font-size:30px">✦</span><span class="float-s" style="right:12%;top:56%;font-size:22px;animation-delay:-2s">★</span>
 <div class="hero-topline"><span>ИЗДАНИЕ №01 — ПОРТФОЛИО</span><span>САЙТЫ · UX/UI · FRONTEND</span></div>
 <h1 class="hero-word"><span class="solid">Портфолио</span><span class="line">дизайн · код</span></h1>
 <div class="hero-sub"><span class="mono" style="font-size:11px;letter-spacing:.18em;color:rgba(244,238,218,.85)">ЛЕНДИНГИ / КОРПОРАТЫ / РЕДИЗАЙН</span></div>
@@ -75,6 +77,7 @@
 <div class="mtile c3 reveal"><div><span class="mono">MOOD 03</span><h3>Живой<br>интерфейс</h3></div></div>
 </div>
 
+<div class="bgword" aria-hidden="true">дизайн</div>
 <!-- ПОСТЕРЫ = УСЛУГИ -->
 <div style="margin-top:44px"><span class="kick">★ УСЛУГИ / POSTERS</span>
 <h2 style="font-size:clamp(30px,4.6vw,56px)">Три афиши —<br>три формата</h2></div>
@@ -93,15 +96,16 @@
 </article>
 </div>
 
+<div class="bgword" aria-hidden="true">сайты</div>
 <!-- МОКАПЫ как в референсе -->
 <div style="margin-top:44px" id="works"><span class="kick">★ РАБОТЫ / SHOWCASE</span>
 <h2 style="font-size:clamp(30px,4.6vw,56px)">Десктоп + мобайл,<br>а не скрины</h2></div>
 <div class="shots">
-<div class="browser reveal">
+<div class="browser reveal" data-tilt>
 <div class="bar"><i></i><i></i><i></i><span>eco-expert-site / index.html — LIVE</span></div>
 <div class="shot-desk"><h4>ЭКО-ЭКСПЕРТ — сайт на 18 страниц</h4><p>B2B-корпорат: 9 посадочных услуг, кейсы, эксперты, CMS Decap, формы с файлами, SEO. 26 файлов, готов к деплою.</p><div class="shot-tags"><span>CORPORATE</span><span>18 PAGES</span><span>CMS</span><span>SEO</span></div><div><a class="btn btn-cream btn-sm" href="demo/eco-expert/index.html" target="_blank" rel="noopener">Открыть живой сайт →</a></div></div>
 </div>
-<div class="phone reveal">
+<div class="phone reveal" data-tilt>
 <div class="notch">FEN · 9:41</div>
 <div class="scr"><span class="mono" style="font-size:10px;letter-spacing:.2em;color:var(--gold)">MOBILE · ATLAXIS</span><h4>AI-лендинг за 1 день</h4><p style="font-size:13px;color:rgba(244,238,218,.75)">Cinematic hero, строка AI-запроса, тарифы-слайдер.</p><div style="margin-top:auto"><a class="btn btn-cream btn-sm" href="demo/atlaxis/index.html" target="_blank" rel="noopener">Открыть →</a></div></div>
 </div>
@@ -149,6 +153,7 @@
 </div>
 </footer>
 
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>

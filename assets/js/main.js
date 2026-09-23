@@ -18,3 +18,21 @@ document.querySelectorAll('a[href*="t.me"],a[href^="mailto:"]').forEach(a=>a.add
 try{if(typeof ym!=='undefined'&&window.YM_ID)ym(window.YM_ID,'reachGoal','lead_click')}catch(e){}
 try{if(typeof gtag!=='undefined')gtag('event','lead_click')}catch(e){}
 }));
+// прелоадер
+addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('done'),900));
+setTimeout(()=>{const l=document.getElementById('loader');if(l)l.classList.add('done')},3500);
+// печать букв hero
+document.querySelectorAll('.hero-word .solid,.hero-word .line').forEach(line=>{
+const t=line.textContent;line.textContent='';
+[...t].forEach((ch,i)=>{const s=document.createElement('span');s.className='ltr';s.style.animationDelay=(1000+i*38)+'ms';s.textContent=ch===' '?'\u00A0':ch;line.append(s)})});
+// параллакс hero за мышью
+const hw=document.querySelector('.hero-word'),orb=document.querySelector('.orbit');
+if(hw&&matchMedia('(hover:hover)').matches){document.querySelector('.hero').addEventListener('mousemove',e=>{const x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;hw.style.translate=`${x*14}px ${y*10}px`;if(orb)orb.style.translate=`${x*-22}px ${y*-16}px`},{passive:true})}
+// 3d-tilt мокапов
+document.querySelectorAll('[data-tilt]').forEach(card=>{card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`perspective(1000px) rotateY(${x*9}deg) rotateX(${-y*9}deg) translateY(-4px)`});card.addEventListener('mouseleave',()=>card.style.transform='')});
+// плавный скролл + фоновые слова
+let lenis=null;
+if(window.Lenis){lenis=new Lenis({duration:1.15,smoothWheel:true});const raf=t=>{lenis.raf(t);requestAnimationFrame(raf)};requestAnimationFrame(raf);
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();if(mn)mn.classList.remove('open');lenis.scrollTo(t,{offset:-84})}}))}
+const bws=document.querySelectorAll('.bgword');
+if(bws.length&&matchMedia('(prefers-reduced-motion: no-preference)').matches){addEventListener('scroll',()=>{bws.forEach(w=>{const r=w.getBoundingClientRect();w.style.translate=`0 ${r.top/innerHeight*-34}px`})},{passive:true})}
