@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Каталог цифровых товаров — EscrowHub</title>
+  <meta name="description" content="Аккаунты, подписки, ключи, игровая валюта и цифровые услуги. Поиск, фильтры и безопасная сделка с оплатой на удержании.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230B6E4F'/%3E%3Cpath d='M9.5 9.5v13M9.5 9.5H21M9.5 16h8M9.5 22.5H21' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='20.5' cy='16' r='2' fill='%23DDF56F'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="assets/css/shell.css">
+  <link rel="stylesheet" href="assets/css/catalog.css">
+</head>
+<body data-page="catalog">
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="catalog-head">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+          <a href="index.html">Главная</a><span class="sep">/</span><span aria-current="page">Каталог</span>
+        </nav>
+        <div class="catalog-head__row">
+          <div>
+            <span class="eyebrow">Маркетплейс</span>
+            <h1>Каталог</h1>
+            <p>Аккаунты, подписки, ключи и цифровые услуги. Все сделки — с оплатой на удержании.</p>
+          </div>
+          <div class="catalog-head__guarantee">
+            <span class="catalog-head__icon"><svg class="icon"><use href="#i-route"></use></svg></span>
+            <div><b>Оплата уходит продавцу после подтверждения</b><span>0% комиссии сервиса · спор до 72 часов</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container catalog-layout">
+      <aside class="catalog-sidebar" id="filter-panel" aria-label="Фильтры каталога">
+        <div class="filter-head">
+          <h2>Фильтры</h2>
+          <button class="filter-reset" type="button" data-reset-filters>Сбросить</button>
+          <button class="icon-btn icon-btn--plain filter-close" type="button" aria-label="Закрыть фильтры" data-close-filters>
+            <svg class="icon"><use href="#i-x"></use></svg>
+          </button>
+        </div>
+
+        <form class="filter-form" data-filter-form>
+          <div class="filter-search input-group">
+            <svg class="icon"><use href="#i-search"></use></svg>
+            <label class="sr-only" for="filter-search">Поиск по каталогу</label>
+            <input class="input" id="filter-search" type="search" placeholder="Поиск по названию" autocomplete="off" data-filter-query>
+          </div>
+
+          <fieldset class="filter-group">
+            <legend>Категория</legend>
+            <div class="filter-list" data-filter-categories></div>
+          </fieldset>
+
+          <fieldset class="filter-group">
+            <legend>Цена, ₽</legend>
+            <div class="price-range">
+              <label><span class="sr-only">Цена от</span><input class="input" type="number" min="0" inputmode="numeric" placeholder="от" data-price-min></label>
+              <span class="price-range__dash">—</span>
+              <label><span class="sr-only">Цена до</span><input class="input" type="number" min="0" inputmode="numeric" placeholder="до" data-price-max></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="filter-group">
+            <legend>Регион</legend>
+            <div class="filter-list filter-list--regions" data-filter-regions></div>
+          </fieldset>
+
+          <div class="filter-availability">
+            <label class="check"><input type="checkbox" data-filter-available><span>Только в наличии</span></label>
+          </div>
+
+          <div class="filter-trust">
+            <svg class="icon"><use href="#i-route"></use></svg>
+            <p>Все предложения доступны только через безопасную сделку. Оплата удерживается сервисом.</p>
+          </div>
+
+          <div class="filter-mobile-foot">
+            <button class="btn btn--primary btn--block" type="button" data-apply-filters>Показать <span data-filter-apply-count>8</span> предложений</button>
+          </div>
+        </form>
+      </aside>
+
+      <section class="catalog-results" aria-labelledby="results-title">
+        <h2 class="sr-only" id="results-title">Найденные предложения</h2>
+        <div class="results-bar">
+          <div class="results-bar__left">
+            <span class="results-count" data-result-count aria-live="polite">Найдено: 8</span>
+            <span class="results-hint">Все сделки — через эскроу</span>
+          </div>
+          <div class="results-bar__right">
+            <button class="btn btn--ghost btn--sm filter-trigger" type="button" data-open-filters>
+              <svg class="icon"><use href="#i-filter"></use></svg>
+              Фильтры
+              <span class="filter-badge" data-filter-count hidden>0</span>
+            </button>
+            <span class="sort-label">Сортировка</span>
+            <div class="sort-tabs" role="group" aria-label="Сортировка">
+              <button class="is-active" type="button" data-sort="new" aria-pressed="true">Новые</button>
+              <button type="button" data-sort="price_asc" aria-pressed="false">Дешевле</button>
+              <button type="button" data-sort="price_desc" aria-pressed="false">Дороже</button>
+              <button type="button" data-sort="popular" aria-pressed="false">Популярные</button>
+            </div>
+            <label class="sort-select-wrap">
+              <span class="sr-only">Сортировка</span>
+              <select class="select sort-select" data-sort-select>
+                <option value="new">Сначала новые</option>
+                <option value="price_asc">Сначала дешевле</option>
+                <option value="price_desc">Сначала дороже</option>
+                <option value="popular">Популярные</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="active-filters" data-active-filters hidden></div>
+
+        <div class="lot-grid catalog-grid" data-catalog-grid aria-live="polite"></div>
+
+        <div class="empty catalog-empty" data-empty hidden>
+          <span class="empty__icon"><svg class="icon"><use href="#i-search"></use></svg></span>
+          <h3>Ничего не нашлось</h3>
+          <p data-empty-text>Попробуйте изменить запрос или убрать часть фильтров. В каталоге пока немного предложений.</p>
+          <div class="catalog-empty__actions">
+            <button class="btn btn--primary" type="button" data-reset-filters>Сбросить фильтры</button>
+            <a class="btn btn--ghost" href="catalog.html">Все товары</a>
+          </div>
+        </div>
+
+        <div class="results-footer" data-results-footer>
+          <p data-results-footer-text>Показаны все предложения каталога.</p>
+          <a class="link-arrow" href="index.html#how">Как проходит безопасная сделка <svg class="icon"><use href="#i-arrow-up-right"></use></svg></a>
+        </div>
+      </section>
+    </div>
+
+    <div class="filter-overlay" data-filter-overlay hidden></div>
+  </main>
+
+  <div id="site-footer"></div>
+  <noscript><div style="padding:24px;text-align:center;font-family:sans-serif">Для работы прототипа нужен JavaScript.</div></noscript>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/shell.js"></script>
+  <script src="assets/js/catalog.js"></script>
+</body>
+</html>

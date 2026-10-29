@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F5EFE5">
+<title>UTKA — Премиальное приложение лояльности кофеен | Тестовое задание</title>
+<link rel="stylesheet" href="assets/fonts.css">
+<style>
+  :root{
+    --bg:#F5EFE5; --surface:#FBF7F0; --lilac:#D8CFD5; --lilac-deep:#B9ACB2;
+    --ink:#231D18; --ink-soft:#6D6358; --espresso:#221C17;
+    --cream:#F6EDDF; --honey:#E3A843; --honey-deep:#9D6314;
+    --card-cream:#F3E4C9; --line:rgba(35,29,24,.10);
+    --serif:"Cormorant Garamond",Georgia,serif;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:"Manrope",system-ui,sans-serif; background:var(--bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 24px; }
+  a{ color:inherit; }
+
+  /* header */
+  .masthead{ position:sticky; top:0; z-index:50; background:rgba(245,239,229,.92); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+  .masthead__in{ display:flex; align-items:center; justify-content:space-between; height:64px; }
+  .brand{ display:flex; align-items:center; gap:8px; font-weight:800; font-size:22px; letter-spacing:-.02em; }
+  .brand__dot{ width:9px; height:9px; border-radius:50%; background:var(--honey); }
+  .nav{ display:flex; gap:26px; font-size:14px; font-weight:600; color:var(--ink-soft); }
+  .nav a{ text-decoration:none; }
+  .nav a:hover{ color:var(--ink); }
+  .nav .cta{ color:var(--cream); background:var(--espresso); padding:9px 18px; border-radius:999px; }
+  .nav .cta:hover{ color:var(--cream); }
+
+  /* hero */
+  .hero{ padding:88px 0 72px; text-align:center; }
+  .hero__eyebrow{ font-size:12px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--honey-deep); margin-bottom:18px; }
+  .hero h1{ font-size:clamp(38px,5.4vw,64px); font-weight:800; letter-spacing:-.03em; line-height:1.05; }
+  .hero__quote{ font-family:var(--serif); font-style:italic; font-size:clamp(22px,2.6vw,30px); color:var(--ink-soft); margin:22px auto 0; max-width:640px; }
+  .hero__meta{ margin-top:26px; display:flex; justify-content:center; gap:10px; flex-wrap:wrap; }
+  .chip{ font-size:13px; font-weight:700; letter-spacing:.06em; color:var(--ink); border:1px solid var(--line); background:var(--surface); padding:8px 16px; border-radius:999px; }
+  .chip--honey{ background:var(--honey); border-color:transparent; }
+
+  /* screens */
+  .section{ padding:64px 0; border-top:1px solid var(--line); }
+  .section__head{ display:flex; align-items:baseline; justify-content:space-between; gap:24px; margin-bottom:40px; }
+  .section__kicker{ font-size:12px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--honey-deep); margin-bottom:10px; }
+  .section h2{ font-size:32px; font-weight:800; letter-spacing:-.02em; }
+  .section__note{ font-size:15px; color:var(--ink-soft); max-width:420px; text-align:right; }
+  .duo{ display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+  .screen-card{ display:flex; flex-direction:column; gap:18px; }
+  .screen-frame{ border-radius:30px; overflow:hidden; box-shadow:0 24px 60px rgba(35,29,24,.16), 0 0 0 1px rgba(35,29,24,.06); background:var(--surface); }
+  .screen-frame img{ width:100%; display:block; }
+  .screen-card__cap h3{ font-size:17px; font-weight:800; letter-spacing:.02em; }
+  .screen-card__cap p{ font-size:14px; color:var(--ink-soft); margin-top:4px; max-width:400px; }
+  .screen-card__list{ list-style:none; margin-top:10px; display:flex; flex-direction:column; gap:8px; }
+  .screen-card__list li{ font-size:13.5px; color:var(--ink); padding-left:22px; position:relative; }
+  .screen-card__list li::before{ content:""; position:absolute; left:2px; top:7px; width:8px; height:8px; border-radius:50%; background:var(--honey); }
+
+  /* character */
+  .char{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; }
+  .char-card{ background:var(--lilac); border-radius:28px; padding:28px 28px 0; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; min-height:420px; position:relative; overflow:hidden; }
+  .char-card::after{ content:""; position:absolute; inset:auto 0 0 0; height:120px; background:linear-gradient(transparent, rgba(35,29,24,.18)); pointer-events:none; }
+  .char-card img{ height:360px; object-fit:contain; filter:drop-shadow(0 18px 26px rgba(35,29,24,.28)); position:relative; z-index:1; }
+  .char-card figcaption{ position:absolute; left:24px; bottom:20px; font-size:14px; font-weight:700; color:var(--ink); background:rgba(251,247,240,.85); padding:7px 14px; border-radius:999px; z-index:2; }
+  .char-note{ margin-top:26px; font-size:14px; color:var(--ink-soft); max-width:760px; }
+
+  /* system */
+  .tokens{ display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin-bottom:44px; }
+  .token{ border-radius:20px; overflow:hidden; border:1px solid var(--line); background:var(--surface); }
+  .token__sw{ height:96px; }
+  .token__meta{ padding:12px 14px; }
+  .token__meta b{ display:block; font-size:13px; }
+  .token__meta span{ font-size:12px; color:var(--ink-soft); }
+  .type-row{ display:grid; grid-template-columns:180px 1fr; gap:20px; align-items:center; padding:20px 0; border-top:1px solid var(--line); }
+  .type-row:first-of-type{ border-top:none; }
+  .type-row__meta{ font-size:12px; color:var(--ink-soft); }
+  .type-row__meta b{ display:block; font-size:14px; color:var(--ink); }
+  .type-row__sample{ font-size:34px; font-weight:800; letter-spacing:-.02em; }
+  .type-row__sample--quote{ font-family:var(--serif); font-style:italic; font-weight:500; }
+  .type-row__sample--ui{ font-size:17px; font-weight:600; }
+  .type-row__sample--caption{ font-size:12px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--honey-deep); }
+
+  /* mechanics */
+  .mech{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .mech-card{ background:var(--surface); border:1px solid var(--line); border-radius:24px; padding:26px; }
+  .mech-card__icon{ width:46px; height:46px; border-radius:14px; background:var(--lilac); display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
+  .mech-card__icon svg{ width:24px; height:24px; }
+  .mech-card h3{ font-size:17px; font-weight:800; margin-bottom:8px; }
+  .mech-card p{ font-size:14px; color:var(--ink-soft); }
+  .mech-rule{ margin-top:22px; background:var(--card-cream); border-radius:18px; padding:18px 22px; font-size:15px; font-weight:600; display:flex; gap:12px; align-items:center; }
+  .mech-rule::before{ content:"!"; flex:0 0 auto; width:26px; height:26px; border-radius:50%; background:var(--espresso); color:var(--honey); display:flex; align-items:center; justify-content:center; font-weight:800; }
+
+  /* footer */
+  .footer{ background:var(--espresso); color:var(--cream); padding:72px 0 88px; margin-top:72px; }
+  .footer h2{ font-size:26px; font-weight:800; letter-spacing:-.02em; }
+  .footer .brand{ color:var(--cream); }
+  .footer-grid{ display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-top:36px; }
+  .footer h3{ font-size:13px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--honey); margin-bottom:14px; }
+  .footer p, .footer li{ font-size:14px; color:rgba(246,237,223,.82); }
+  .footer ul{ list-style:none; display:flex; flex-direction:column; gap:10px; }
+  .footer code{ font-family:ui-monospace,Consolas,monospace; font-size:13px; background:rgba(246,237,223,.1); padding:2px 7px; border-radius:6px; }
+  .footer .honest{ background:rgba(246,237,223,.06); border:1px solid rgba(246,237,223,.14); border-radius:18px; padding:18px 22px; font-size:14px; line-height:1.7; }
+
+  @media (max-width:900px){
+    .duo,.char,.tokens,.mech,.footer-grid{ grid-template-columns:1fr; }
+    .section__head{ flex-direction:column; gap:10px; }
+    .section__note{ text-align:left; }
+    .nav a:not(.cta){ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead__in">
+    <div class="brand">utka<span class="brand__dot"></span></div>
+    <nav class="nav">
+      <a href="#screens">Экраны</a>
+      <a href="#character">Персонаж</a>
+      <a href="#system">Система</a>
+      <a href="#mechanics">Механики</a>
+      <a class="cta" href="index.html">Открыть прототип</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero wrap">
+  <div class="hero__eyebrow">Тестовое задание · дизайн мобильного приложения</div>
+  <h1>Кофейная лояльность<br>с характером</h1>
+  <p class="hero__quote">«Жду. Столик у окна уже присмотрела.»</p>
+  <div class="hero__meta">
+    <span class="chip">Native iOS · 390×844</span>
+    <span class="chip">Два состояния — один компонентный слой</span>
+    <span class="chip chip--honey">3D-персонаж · прозрачный PNG</span>
+  </div>
+</section>
+
+<section class="section" id="screens">
+  <div class="wrap">
+    <div class="section__head">
+      <div>
+        <div class="section__kicker">Главный экран</div>
+        <h2>До и после первых визитов</h2>
+      </div>
+      <p class="section__note">Один экран, два состояния. Меняются только данные: содержимое экранов живёт в <code>data.js</code>, стиль — в CSS-токенах.</p>
+    </div>
+    <div class="duo">
+      <div class="screen-card">
+        <div class="screen-frame"><img src="exports/screens-2x/utka-guest.png" alt="Экран UTKA до первого визита"></div>
+        <div class="screen-card__cap">
+          <h3>До первого визита</h3>
+          <p>Утка ждёт гостя, банка зёрен пуста, купон «на знакомство» дремлет до первого визита.</p>
+          <ul class="screen-card__list">
+            <li>«Пока без уровня» — четыре неактивные лапки</li>
+            <li>Купон «ЖДЁТ ПЕРВОГО ВИЗИТА»: второй кофе за 99 ₽</li>
+            <li>Кофейня рядом: 6 минут пешком</li>
+          </ul>
+        </div>
+      </div>
+      <div class="screen-card">
+        <div class="screen-frame"><img src="exports/screens-2x/utka-regular.png" alt="Экран UTKA после трёх визитов"></div>
+        <div class="screen-card__cap">
+          <h3>После трёх визитов</h3>
+          <p>Утка в фартуке — «подмастерье». Уровень «Знакомый гость», Бокс «3+1» в работе.</p>
+          <ul class="screen-card__list">
+            <li>3 зерна в банке, 3 из 4 лапок активны</li>
+            <li>Бокс «3+1»: отметка 1 из 3, до 7 августа</li>
+            <li>Сэкономлено 251 ₽ — «почти чашка капучино»</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="character">
+  <div class="wrap">
+    <div class="section__head">
+      <div>
+        <div class="section__kicker">Персонаж</div>
+        <h2>Одна утка, два состояния</h2>
+      </div>
+      <p class="section__note">3D-рендеры: один ракурс, один свет, один масштаб. Фартук — не плоская наклейка, а объёмная деталь модели.</p>
+    </div>
+    <div class="char">
+      <figure class="char-card">
+        <img src="assets/utka-duck-base.png" alt="Утка без фартука — 3D-рендер с прозрачным фоном">
+        <figcaption>Без фартука · до первого визита</figcaption>
+      </figure>
+      <figure class="char-card">
+        <img src="assets/utka-duck-apron.png" alt="Утка в фартуке — 3D-рендер с прозрачным фоном">
+        <figcaption>В фартуке · после трёх визитов</figcaption>
+      </figure>
+      <figure class="char-card">
+        <img src="assets/utka-avatar.png" alt="Аватар утки для чата">
+        <figcaption>Аватар для чата</figcaption>
+      </figure>
+    </div>
+    <p class="char-note">В изображениях персонажа нет текста — вся типографика живёт в интерфейсе. Оба кадра выровнены по одной маске, поэтому при переключении состояния утка не «прыгает»: меняется только фартук.</p>
+  </div>
+</section>
+
+<section class="section" id="system">
+  <div class="wrap">
+    <div class="section__head">
+      <div>
+        <div class="section__kicker">Дизайн-система</div>
+        <h2>Тёплая кофейная палитра</h2>
+      </div>
+      <p class="section__note">Без лишнего бежа, без бессмысленных градиентов и стекла. Молочный, крем, графит, мёд и приглушённый серо-сиреневый.</p>
+    </div>
+    <div class="tokens">
+      <div class="token"><div class="token__sw" style="background:#F5EFE5"></div><div class="token__meta"><b>Молочный</b><span>--bg · #F5EFE5</span></div></div>
+      <div class="token"><div class="token__sw" style="background:#FBF7F0"></div><div class="token__meta"><b>Сливки</b><span>--surface · #FBF7F0</span></div></div>
+      <div class="token"><div class="token__sw" style="background:#D8CFD5"></div><div class="token__meta"><b>Серо-сиреневый</b><span>--lilac · #D8CFD5</span></div></div>
+      <div class="token"><div class="token__sw" style="background:#E3A843"></div><div class="token__meta"><b>Мёд</b><span>--honey · #E3A843</span></div></div>
+      <div class="token"><div class="token__sw" style="background:#221C17"></div><div class="token__meta"><b>Эспрессо</b><span>--espresso · #221C17</span></div></div>
+    </div>
+    <div class="type-row">
+      <div class="type-row__meta"><b>Cormorant Garamond · Italic 500</b>реплики утки</div>
+      <div class="type-row__sample type-row__sample--quote">«Фартук! Теперь я подмастерье.»</div>
+    </div>
+    <div class="type-row">
+      <div class="type-row__meta"><b>Manrope · 800</b>заголовки</div>
+      <div class="type-row__sample">Знакомый гость</div>
+    </div>
+    <div class="type-row">
+      <div class="type-row__meta"><b>Manrope · 600</b>интерфейс</div>
+      <div class="type-row__sample type-row__sample--ui">Показать QR · на кассе — визит засчитается сам</div>
+    </div>
+    <div class="type-row">
+      <div class="type-row__meta"><b>Manrope · 700 Caps</b>бейджи и ярлыки</div>
+      <div class="type-row__sample type-row__sample--caption">БОКС «3+1»</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="mechanics">
+  <div class="wrap">
+    <div class="section__head">
+      <div>
+        <div class="section__kicker">Логика программы</div>
+        <h2>Три механики — три разных счётчика</h2>
+      </div>
+      <p class="section__note">В интерфейсе они намеренно разведены: лапки считают визиты, зёрна копятся, отметки Бокса идут к бесплатному кофе.</p>
+    </div>
+    <div class="mech">
+      <div class="mech-card">
+        <div class="mech-card__icon">
+          <svg viewBox="0 0 24 24" fill="#9D6314"><ellipse cx="6" cy="7" rx="1.6" ry="2.2"/><ellipse cx="9.5" cy="5.6" rx="1.6" ry="2.4"/><ellipse cx="13" cy="5.6" rx="1.6" ry="2.4"/><path d="M7.5 13.5c1.8-2.6 7.2-2.6 9 0 1.2 1.7-.8 4-4.5 4s-5.7-2.3-4.5-4z"/></svg>
+        </div>
+        <h3>Лапки</h3>
+        <p>Визиты за последние 30 дней. Четыре лапки определяют уровень: «Пока без уровня» → «Знакомый гость» → «Частый гость».</p>
+      </div>
+      <div class="mech-card">
+        <div class="mech-card__icon">
+          <svg viewBox="0 0 24 24" fill="#9D6314"><path d="M7 3h10v6c0 4-2 6-5 6s-5-2-5-6V3z"/><path d="M8 3v6c0 3 1.5 4.5 4 4.5S16 12 16 9" fill="none" stroke="#9D6314" stroke-width="1.4"/><ellipse cx="5.6" cy="5.2" rx="1.4" ry="1.1" fill="#E3A843"/><ellipse cx="9.4" cy="4.2" rx="1.4" ry="1.1" fill="#E3A843"/><ellipse cx="13.2" cy="4.2" rx="1.4" ry="1.1" fill="#E3A843"/></svg>
+        </div>
+        <h3>Зёрна</h3>
+        <p>Копятся за визиты и не сгорают. Счётчик всегда в шапке — банка показывает, сколько накоплено.</p>
+      </div>
+      <div class="mech-card">
+        <div class="mech-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#9D6314" stroke-width="1.6"><circle cx="8" cy="7" r="3.6"/><circle cx="16" cy="7" r="3.6"/><circle cx="12" cy="16.5" r="3.6"/></svg>
+        </div>
+        <h3>Отметки Бокса</h3>
+        <p>Отдельный прогресс к бесплатному кофе. Бокс «3+1»: две отметки — и четвёртый кофе бесплатно. Действует до 7 августа.</p>
+      </div>
+    </div>
+    <div class="mech-rule">Лапки, зёрна и отметки Бокса не складываются в один счётчик — на экране это три визуально разных элемента: следы, банка, кружки-отметки.</div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="brand">utka<span class="brand__dot"></span></div>
+    <div class="footer-grid">
+      <div>
+        <h3>Что в доставке</h3>
+        <ul>
+          <li><code>index.html</code> — приложение: чистый экран, два состояния (демо-панель — по <code>?demo=1</code>)</li>
+          <li><code>system.html</code> — живая дизайн-система: токены, типографика, компоненты</li>
+          <li><code>exports/screens-2x</code>, <code>screens-3x</code> — PNG-экспорты экранов</li>
+          <li><code>exports/utka-presentation.png</code> — доска с двумя экранами рядом</li>
+          <li><code>assets/</code> — утка в двух состояниях и аватар (прозрачные PNG)</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Как править</h3>
+        <ul>
+          <li>Тексты и данные — <code>data.js</code>: два объекта <code>guest</code> и <code>regular</code></li>
+          <li>Цвета, шрифты, отступы — CSS-токены в начале <code>styles/app.css</code></li>
+          <li>Всё остальное — компоненты на одном экране <code>index.html</code></li>
+        </ul>
+        <p class="honest" style="margin-top:18px">Честно: файла Figma в доставке нет — редактируемый деливерабл это HTML/CSS/JS (data.js + токены) и PNG-экспорты. Исходные изображения из ТЗ (test-g0, test-b31) в задании отсутствовали, поэтому макет собран по текстам брифа дословно, без выдуманной бизнес-логики.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

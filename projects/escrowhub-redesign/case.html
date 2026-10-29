@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EscrowHub — редизайн витрины цифровых товаров · кейс</title>
+  <meta name="description" content="Дизайн-кейс редизайна EscrowHub.online: UX-аудит, концепция в эстетике Shop, товарные карточки, каталог, страница товара, кабинеты и мобильная версия.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%235433EB'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-size='18' font-weight='600' fill='white'%3Ee%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="assets/css/shell.css">
+  <link rel="stylesheet" href="assets/css/case.css">
+</head>
+<body class="case-body">
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <symbol id="c-arrow" viewBox="0 0 24 24"><path d="M4 12h16"/><path d="m14 6 6 6-6 6"/></symbol>
+    <symbol id="c-arrow-up" viewBox="0 0 24 24"><path d="M6 18 18 6"/><path d="M8 6h10v10"/></symbol>
+    <symbol id="c-route" viewBox="0 0 24 24"><path d="M5 6h6.5a4 4 0 0 1 0 8H8a4 4 0 0 0 0 8h11"/><circle cx="5" cy="6" r="1.6"/><circle cx="19" cy="22" r="1.6"/></symbol>
+    <symbol id="c-check" viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19 7"/></symbol>
+  </svg>
+
+  <header class="case-top">
+    <div class="container case-top__in">
+      <a class="brand" href="index.html" aria-label="EscrowHub — прототип">
+        <span class="brand__mark">e</span>
+        <span class="brand__word">escrowhub</span>
+      </a>
+      <nav class="case-nav" aria-label="Разделы кейса">
+        <a href="#audit">Аудит</a>
+        <a href="#concept">Концепция</a>
+        <a href="#screens">Экраны</a>
+        <a href="#decisions">Решения</a>
+      </nav>
+      <div class="case-top__actions">
+        <a class="case-top__link" href="states.html">Дизайн-система</a>
+        <a class="btn btn--primary btn--sm" href="index.html">Открыть прототип <svg class="icon"><use href="#c-arrow"></use></svg></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="case-hero">
+      <div class="container">
+        <div class="case-hero__head">
+          <div class="case-hero__copy">
+            <span class="eyebrow"><span class="dot"></span>UX/UI-редизайн · EscrowHub.online · 2026</span>
+            <h1>Витрина,<br>которой доверяют.</h1>
+            <p>Маркетплейс цифровых товаров в эстетике светлого торгового интерфейса: крупные товарные образы, мягкие белые карточки и один точный фиолетовый акцент. Безопасная сделка встроена в путь покупки, а не в отдельный банковский лендинг.</p>
+            <div class="case-hero__actions">
+              <a class="btn btn--primary" href="index.html">Смотреть прототип <svg class="icon"><use href="#c-arrow"></use></svg></a>
+              <a class="btn btn--ghost" href="states.html">Дизайн-система</a>
+            </div>
+            <div class="case-hero__meta">
+              <span class="tag">Digital goods</span>
+              <span class="tag">Escrow</span>
+              <span class="tag">1440 / 390</span>
+              <span class="tag">6 экранов</span>
+            </div>
+          </div>
+          <div class="case-hero__side">
+            <p>Референс направления</p>
+            <a href="https://styles.refero.design/style/4fa67bd1-f01d-454a-b522-4a0359ff9815" target="_blank" rel="noopener">Shop · Refero Styles <svg class="icon icon--sm"><use href="#c-arrow-up"></use></svg></a>
+            <span class="case-hero__index">01 / 05</span>
+          </div>
+        </div>
+
+        <div class="case-stage">
+          <div class="case-browser case-browser--hero">
+            <div class="case-browser__bar"><span></span><span></span><span></span><p>escrowhub.online / redesign</p><span class="case-browser__tag">desktop · 1440</span></div>
+            <img src="deliverables/screenshots/home-desktop.png" alt="Новая главная страница EscrowHub: светлая витрина с товарными карточками" width="1440" height="1000">
+          </div>
+          <div class="case-phone case-phone--hero">
+            <img src="deliverables/screenshots/home-mobile.png" alt="Мобильная главная EscrowHub" width="780" height="1688">
+          </div>
+          <div class="case-float">
+            <span class="case-float__icon"><svg class="icon"><use href="#c-route"></use></svg></span>
+            <div><b>Оплата на удержании</b><span>Товар — после оплаты, деньги — после проверки</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-brief">
+      <div class="container case-brief__grid">
+        <article>
+          <span class="case-label">Задача</span>
+          <h2>Сделать цифровой товар понятным до покупки.</h2>
+          <p>Показать ассортимент, цену и продавца без визуального шума, а механику эскроу объяснить в момент, когда она важна.</p>
+        </article>
+        <article>
+          <span class="case-label">Подход</span>
+          <h2>Взять грамматику Shop, а не её макет.</h2>
+          <p>Светлый холст, крупные изображения, выразительные радиусы, pill-контролы и один фиолетовый акцент. Цвет — у товаров, не у интерфейса.</p>
+        </article>
+        <article>
+          <span class="case-label">Результат</span>
+          <h2>Рабочий прототип, а не картинка.</h2>
+          <p>Поиск, категории, витрина, каталог с фильтрами, карточка товара, оформление сделки, кабинет покупателя и продавца. Всё можно открыть и проверить.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="case-section" id="audit">
+      <div class="container">
+        <div class="case-section__head">
+          <div><span class="eyebrow">01 / Аудит</span><h2>Что мешало купить</h2></div>
+          <p class="case-section__sub">Публичная версия EscrowHub.online, проверенная в браузере 25 октября 2026. Ниже — только наблюдения по реальному интерфейсу.</p>
+        </div>
+
+        <div class="case-audit">
+          <div class="case-before">
+            <div class="case-browser">
+              <div class="case-browser__bar"><span></span><span></span><span></span><p>escrowhub.online / до</p><span class="case-browser__tag">1440</span></div>
+              <div class="case-before__image">
+                <img src="deliverables/screenshots/before-home.png" alt="Главная EscrowHub до редизайна: два поиска, блок пополнения, одинаковые карточки" width="1440" height="1500">
+                <span class="case-pin" style="left:50%;top:17%" aria-label="Пункт 1">1</span>
+                <span class="case-pin" style="left:52%;top:37%" aria-label="Пункт 2">2</span>
+                <span class="case-pin" style="left:29%;top:64%" aria-label="Пункт 3">3</span>
+                <span class="case-pin" style="left:76%;top:73%" aria-label="Пункт 4">4</span>
+              </div>
+            </div>
+            <span class="case-caption">До: первый экран занимают поиски и пополнение, товарная сетка начинается ниже.</span>
+          </div>
+
+          <div class="case-findings">
+            <article><span>01</span><div><h3>Два поиска и большой блок пополнения</h3><p>Пользователь видит сервисную форму раньше товаров. Главная не отвечает на вопрос «что здесь можно купить?».</p></div></article>
+            <article><span>02</span><div><h3>Карточки не помогают выбирать</h3><p>Одинаковые градиентные обложки с гигантской буквой, обрезанные названия и отсутствие явного перехода к товару.</p></div></article>
+            <article><span>03</span><div><h3>Данные маскируют продукт</h3><p>Дубликаты, сток «5555» и «9999», рейтинг 5.0 при 0 отзывов. Это проблемы контента, а не только визуала.</p></div></article>
+            <article><span>04</span><div><h3>Продавец почти не раскрыт</h3><p>У всех карточек один и тот же EWC с рейтингом 5.0. На странице продавца — 0 завершённых продаж. Доверия это не добавляет.</p></div></article>
+            <article><span>05</span><div><h3>Мобильный сценарий обрывается</h3><p>В каталоге не видно фильтров, вход и размещение спрятаны, а кнопка покупки на странице товара находится после длинного описания.</p></div></article>
+            <article><span>06</span><div><h3>Сервисные состояния не продуманы</h3><p>Пустой результат и 404 не помогают вернуться к покупке; поиск ведёт на стандартную англоязычную страницу Next.js.</p></div></article>
+            <div class="case-audit__note"><svg class="icon"><use href="#c-route"></use></svg><p><b>Что сохранили:</b> реальные категории, поиск, пополнение сервисов с прозрачным сбором, правила эскроу (0%, 72 часа на спор, 24 часа автозакрытия) и публичные цены.</p></div>
+          </div>
+        </div>
+
+        <div class="case-compare">
+          <article class="case-compare__card">
+            <span class="case-label">Дизайн-проблемы</span>
+            <ul>
+              <li>Слабый первый экран и конкурирующие поиски.</li>
+              <li>Отсутствие визуальной иерархии в карточках.</li>
+              <li>Скрытые действия и фильтры на мобильных.</li>
+              <li>Непоследовательные категории и навигация.</li>
+            </ul>
+          </article>
+          <article class="case-compare__card">
+            <span class="case-label">Данные и контент</span>
+            <ul>
+              <li>9 из 18 объявлений — дубликаты.</li>
+              <li>5555/9999 шт. и рейтинг 5.0 без отзывов.</li>
+              <li>Markdown, emoji и CAPS в названиях.</li>
+              <li>Спорная категория, смешанные языки, дефолтный 404.</li>
+            </ul>
+            <p>В прототипе дубликаты убраны, сток нормализован, фиктивный рейтинг не переносился. Продавец EWC показан честно — как новый, без отзывов.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section" id="concept">
+      <div class="container">
+        <div class="case-section__head">
+          <div><span class="eyebrow">02 / Концепция</span><h2>Референс стал грамматикой</h2></div>
+          <p class="case-section__sub">Не копия Shop и не финтех-шаблон. Свет, воздух и товар — с собственной системой обложек и правилами эскроу.</p>
+        </div>
+
+        <div class="case-concept">
+          <figure class="case-reference">
+            <img src="deliverables/screenshots/reference-shop.jpg" alt="Референс Shop из Refero Styles" width="1600" height="1000">
+            <figcaption><span>Референс</span><a href="https://styles.refero.design/style/4fa67bd1-f01d-454a-b522-4a0359ff9815" target="_blank" rel="noopener">Shop · Refero Styles</a></figcaption>
+          </figure>
+          <div class="case-concept__copy">
+            <span class="case-label">Перевод языка</span>
+            <h3>Светлый холст. Мягкая глубина. Один акцент.</h3>
+            <p>Из референса взяли не фотографии и не композицию, а систему: холодный светлый фон, белые поверхности без рамок, двухслойные тени, радиусы 28/20 и pill-формы. Фиолетовый #5433eb остаётся редким — логотип, кнопка поиска, фокус.</p>
+            <p>Цвет в интерфейсе дают товары: зелёный Spotify, синий Steam, песочный Battlefield и графитовый TikTok. Для цифровых позиций без фотографии собрали собственные брендовые обложки — не сток и не случайные 3D-объекты.</p>
+            <div class="case-tokens">
+              <div><span>Шрифт</span><b>Inter 400–600</b><small>GT Standard заменён легальной заменой; 16px body</small></div>
+              <div><span>Геометрия</span><b>28 / 20 / pill</b><small>Карточка, изображение, контролы</small></div>
+              <div><span>Сетка</span><b>1200 px</b><small>12 px внутри, 64 px между секциями</small></div>
+              <div><span>Акцент</span><b>#5433eb</b><small>Логотип и submit поиска; не все кнопки</small></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-principles">
+          <article><span>01</span><h3>Витрина, а не презентация</h3><p>Первый экран показывает товары и категории. Заголовок короткий, без гигантского SaaS-hero и статистики.</p></article>
+          <article><span>02</span><h3>Карточка — витрина</h3><p>Большое изображение, продавец, остаток, честный статус наличия. Всё, что нужно для сравнения, — до клика.</p></article>
+          <article><span>03</span><h3>Эскроу — часть пути</h3><p>Не тёмная секция и не «банковский» блок: 4 шага, 0% комиссии, 72 часа на спор и 24 часа автозакрытия.</p></article>
+          <article><span>04</span><h3>Доверие без вымысла</h3><p>Никаких фейковых отзывов, сертификатов и оборотов. Новый продавец так и подписан. Демо-данные отделены от реальных.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section" id="screens">
+      <div class="container">
+        <div class="case-section__head">
+          <div><span class="eyebrow">03 / Экраны</span><h2>Система в работе</h2></div>
+          <p class="case-section__sub">Один визуальный язык на витрине, в каталоге, карточке товара и кабинетах. Каждый экран — часть одного маршрута покупки.</p>
+        </div>
+
+        <article class="case-screen case-screen--wide">
+          <div class="case-screen__head"><div><span class="case-label">Desktop · 1440</span><h3>Витрина</h3></div><a class="case-screen__link" href="index.html">Открыть экран <svg class="icon"><use href="#c-arrow-up"></use></svg></a></div>
+          <div class="case-browser">
+            <div class="case-browser__bar"><span></span><span></span><span></span><p>escrowhub.online</p><span class="case-browser__tag">1440</span></div>
+            <img src="deliverables/screenshots/home-desktop.png" alt="Главная EscrowHub после редизайна" width="1440" height="1000">
+          </div>
+          <div class="case-annotations">
+            <span><b>01</b> Один поиск в шапке вместо двух конкурирующих.</span>
+            <span><b>02</b> Реальные категории — компактные pill-чипы.</span>
+            <span><b>03</b> Витрина: большая карточка + мини-сетка, без пустого hero.</span>
+            <span><b>04</b> 0% и 72 часа — прямо у витрины, без обещаний вне правил.</span>
+          </div>
+        </article>
+
+        <div class="case-screens-2">
+          <article class="case-screen">
+            <div class="case-screen__head"><div><span class="case-label">Desktop · 1440</span><h3>Каталог</h3></div><a class="case-screen__link" href="catalog.html">Открыть <svg class="icon"><use href="#c-arrow-up"></use></svg></a></div>
+            <div class="case-browser">
+              <div class="case-browser__bar"><span></span><span></span><span></span><p>escrowhub.online / catalog</p><span class="case-browser__tag">1440</span></div>
+              <img src="deliverables/screenshots/catalog-desktop.png" alt="Каталог EscrowHub после редизайна" width="1440" height="1000">
+            </div>
+            <p class="case-screen__note">Белая панель фильтров, активные chips, спокойная сортировка. Карточки одинаковы по метрикам, но разнообразны за счёт товарных обложек.</p>
+          </article>
+          <article class="case-screen">
+            <div class="case-screen__head"><div><span class="case-label">Desktop · 1440</span><h3>Товар</h3></div><a class="case-screen__link" href="product.html?id=spotify">Открыть <svg class="icon"><use href="#c-arrow-up"></use></svg></a></div>
+            <div class="case-browser">
+              <div class="case-browser__bar"><span></span><span></span><span></span><p>escrowhub.online / spotify</p><span class="case-browser__tag">1440</span></div>
+              <img src="deliverables/screenshots/product-desktop.png" alt="Страница товара EscrowHub после редизайна" width="1440" height="1000">
+            </div>
+            <p class="case-screen__note">Крупная обложка, честный статус продавца, условия и мини-маршрут эскроу. Светлая карточка покупки вместо CRM-панели.</p>
+          </article>
+        </div>
+
+        <div class="case-cabinets">
+          <article class="case-screen case-screen--small">
+            <div class="case-screen__head"><div><span class="case-label">Buyer</span><h3>Сделки</h3></div><a class="case-screen__link" href="orders.html">Открыть <svg class="icon"><use href="#c-arrow-up"></use></svg></a></div>
+            <div class="case-browser"><div class="case-browser__bar"><span></span><span></span><span></span><p>orders</p></div><img src="deliverables/screenshots/orders-desktop.png" alt="Кабинет покупателя EscrowHub" width="1440" height="1000"></div>
+          </article>
+          <article class="case-screen case-screen--small">
+            <div class="case-screen__head"><div><span class="case-label">Seller</span><h3>Кабинет</h3></div><a class="case-screen__link" href="seller.html">Открыть <svg class="icon"><use href="#c-arrow-up"></use></svg></a></div>
+            <div class="case-browser"><div class="case-browser__bar"><span></span><span></span><span></span><p>seller</p></div><img src="deliverables/screenshots/seller-desktop.png" alt="Кабинет продавца EscrowHub" width="1440" height="1000"></div>
+          </article>
+          <article class="case-screen case-screen--small">
+            <div class="case-screen__head"><div><span class="case-label">Seller</span><h3>Новое объявление</h3></div><a class="case-screen__link" href="create.html?edit=spotify">Открыть <svg class="icon"><use href="#c-arrow-up"></use></svg></a></div>
+            <div class="case-browser"><div class="case-browser__bar"><span></span><span></span><span></span><p>create</p></div><img src="deliverables/screenshots/create-desktop.png" alt="Форма размещения объявления EscrowHub" width="1440" height="1000"></div>
+          </article>
+        </div>
+
+        <div class="case-mobile-head">
+          <div><span class="case-label">Mobile · 390</span><h3>Отдельная композиция</h3></div>
+          <p>Не сжатый desktop: полноценный поиск на своей строке, категории-лента, две колонки карточек, bottom sheet фильтров и фиксированная покупка.</p>
+        </div>
+        <div class="case-phones">
+          <figure class="case-phone"><img src="deliverables/screenshots/home-mobile.png" alt="Мобильная витрина EscrowHub" width="780" height="1688"><figcaption>Витрина</figcaption></figure>
+          <figure class="case-phone"><img src="deliverables/screenshots/catalog-mobile.png" alt="Мобильный каталог EscrowHub" width="780" height="1688"><figcaption>Каталог</figcaption></figure>
+          <figure class="case-phone"><img src="deliverables/screenshots/product-mobile.png" alt="Мобильная карточка товара EscrowHub" width="780" height="1688"><figcaption>Товар</figcaption></figure>
+        </div>
+
+        <div class="case-states">
+          <figure><img src="deliverables/screenshots/state-topup.png" alt="Модальное окно пополнения сервисов" width="644" height="890"><figcaption>Пополнение сервисов · модальное окно</figcaption></figure>
+          <figure><img src="deliverables/screenshots/state-create.png" alt="Успешная публикация объявления" width="620" height="460"><figcaption>Публикация · успешное состояние</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section" id="decisions">
+      <div class="container">
+        <div class="case-section__head">
+          <div><span class="eyebrow">04 / UX-решения</span><h2>Что изменилось в опыте</h2></div>
+          <p class="case-section__sub">Не список косметических правок: изменения в приоритетах, маршруте и доверии.</p>
+        </div>
+        <div class="case-decisions">
+          <article><span>01</span><h3>Один поиск. Один вход.</h3><p>Убрали второй поисковый блок с главной. Широкое поле в шапке с фиолетовой кнопкой — единая точка входа на всех страницах.</p></article>
+          <article><span>02</span><h3>Товары с первого экрана.</h3><p>Вместо SaaS-героя — витрина: большая карточка, мини-сетка и категории. Пользователь сразу видит ассортимент.</p></article>
+          <article><span>03</span><h3>Карточка продаёт сравнением.</h3><p>Название, цена, остаток, продавец и наличие читаются за один взгляд. Обложка даёт товару характер, а не шум.</p></article>
+          <article><span>04</span><h3>Категории — настоящие.</h3><p>Аккаунты, игровая валюта, ключи, подписки, подарочные карты, услуги и софт. В каталоге доступны все фильтры и пустые состояния.</p></article>
+          <article><span>05</span><h3>Фильтры не мешают смотреть.</h3><p>Одна спокойная панель, активные chips и пересчёт результатов. На мобильном — bottom sheet с кнопкой «Показать N».</p></article>
+          <article><span>06</span><h3>Сделка видна до клика.</h3><p>0%, 72 часа и 24 часа — реальные правила сервиса. Они объяснены шагами, без тёмных секций и выдуманных гарантий.</p></article>
+          <article><span>07</span><h3>Мобильная покупка не ждёт.</h3><p>Фиксированная полоса с ценой и действием, отдельный checkout sheet и quantity stepper. Нижняя навигация уступает место покупке.</p></article>
+          <article><span>08</span><h3>Честность — часть доверия.</h3><p>Новый продавец, 0 сделок, нет отзывов — так и показано. Демо-заказы подписаны, оплата не имитируется как реальная.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section case-boundaries" id="boundaries">
+      <div class="container">
+        <div class="case-section__head">
+          <div><span class="eyebrow">05 / Границы</span><h2>Честно о прототипе</h2></div>
+          <p class="case-section__sub">Это дизайн-концепт с рабочими интерфейсными сценариями, а не подключённый маркетплейс.</p>
+        </div>
+        <div class="case-boundaries__grid">
+          <article>
+            <span class="case-label">Что готово</span>
+            <ul class="case-check-list">
+              <li>Адаптивный прототип всех ключевых экранов</li>
+              <li>Поиск, категории, фильтры, сортировка и пустые состояния</li>
+              <li>Оформление сделки, подтверждение получения и спор</li>
+              <li>Кабинет продавца, кошелёк и форма размещения</li>
+              <li>Дизайн-система и документация состояний</li>
+            </ul>
+          </article>
+          <article>
+            <span class="case-label">Что не подключено</span>
+            <ul class="case-check-list case-check-list--muted">
+              <li>Оплата, авторизация и реальные заказы</li>
+              <li>Бэкенд каталога и модерация объявлений</li>
+              <li>Загрузка фотографий продавцом и контент-пайплайн</li>
+              <li>Emails, уведомления и SLA поддержки</li>
+            </ul>
+            <p>Данные товаров и продавца взяты с публичных страниц сервиса на 25.10.2026. Сток, демо-заказы и часть подписей нормализованы для показа. Оценки и обещания не выдумывались.</p>
+          </article>
+        </div>
+        <div class="case-next">
+          <div><span class="case-label">Следующий шаг</span><h3>Собрать дизайн в рабочий продукт</h3><p>Следующий этап — API каталога и заказов, правила контента, загрузка изображений, аналитика и проверка доступности с клавиатуры и скринридером.</p></div>
+          <div class="case-next__actions">
+            <a class="btn btn--primary" href="index.html">Открыть прототип <svg class="icon"><use href="#c-arrow"></use></svg></a>
+            <a class="btn btn--ghost" href="states.html">Дизайн-система</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="case-footer">
+    <div class="container case-footer__in">
+      <div class="case-footer__brand">
+        <a class="brand" href="index.html"><span class="brand__mark">e</span><span class="brand__word">escrowhub</span></a>
+        <p>Дизайн-концепт · 2026. Не публичная оферта.</p>
+      </div>
+      <div class="case-footer__links">
+        <a href="index.html">Прототип</a>
+        <a href="states.html">Дизайн-система</a>
+        <a href="https://escrowhub.online/terms" target="_blank" rel="noopener">Правила сервиса</a>
+        <a href="mailto:support@escrowhub.online">Поддержка</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

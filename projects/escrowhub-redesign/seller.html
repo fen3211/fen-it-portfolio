@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Кабинет продавца — EscrowHub</title>
+  <meta name="description" content="Управление объявлениями, заказами, кошельком и выплатами продавца EscrowHub. Демонстрационный кабинет.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230B6E4F'/%3E%3Cpath d='M9.5 9.5v13M9.5 9.5H21M9.5 16h8M9.5 22.5H21' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='20.5' cy='16' r='2' fill='%23DDF56F'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="assets/css/shell.css">
+  <link rel="stylesheet" href="assets/css/cabinet.css">
+  <link rel="stylesheet" href="assets/css/seller.css">
+</head>
+<body data-page="seller">
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+  <div id="site-header"></div>
+
+  <main id="main" class="cabinet-page seller-page">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="index.html">Главная</a><span class="sep">/</span><span aria-current="page">Кабинет продавца</span>
+      </nav>
+      <div class="cabinet-head">
+        <div>
+          <span class="eyebrow">Кабинет продавца</span>
+          <h1>Магазин EWC</h1>
+          <p>Объявления, заказы и выплаты. Комиссия сервиса — 0% с каждой завершённой сделки.</p>
+        </div>
+        <div class="cabinet-head__actions">
+          <span class="tag tag--outline cabinet-demo"><i class="dot-live dot-live--amber"></i>Демо-кабинет</span>
+        </div>
+      </div>
+
+      <div class="cabinet-layout">
+        <aside class="cabinet-side">
+          <div class="profile-card">
+            <div class="profile-card__top">
+              <span class="avatar avatar--lg">E</span>
+              <div>
+                <b>EWC</b>
+                <span>@iewc</span>
+              </div>
+              <span class="tag tag--outline" style="margin-left:auto">Новый</span>
+            </div>
+            <div class="profile-card__meta"><i class="dot-live dot-live--amber"></i>На EscrowHub с октября 2026</div>
+            <a class="profile-card__public" href="catalog.html?q=EWC">Как видят покупатели <svg class="icon"><use href="#i-arrow-up-right"></use></svg></a>
+          </div>
+
+          <nav class="side-nav" aria-label="Разделы кабинета продавца">
+            <span class="side-nav__label">Кабинет</span>
+            <button class="side-nav__link is-active" type="button" data-seller-tab="overview"><svg class="icon"><use href="#i-grid"></use></svg>Обзор</button>
+            <button class="side-nav__link" type="button" data-seller-tab="listings"><svg class="icon"><use href="#i-package"></use></svg>Объявления<span class="side-nav__badge" data-listings-badge>9</span></button>
+            <button class="side-nav__link" type="button" data-seller-tab="orders"><svg class="icon"><use href="#i-route"></use></svg>Заказы<span class="side-nav__badge" data-orders-badge>0</span></button>
+            <button class="side-nav__link" type="button" data-seller-tab="wallet"><svg class="icon"><use href="#i-wallet"></use></svg>Кошелёк</button>
+          </nav>
+
+          <div class="side-note">
+            <svg class="icon"><use href="#i-info"></use></svg>
+            <p>Демо-кабинет. Объявления, суммы и выплаты не связаны с реальной системой EscrowHub.</p>
+          </div>
+        </aside>
+
+        <section class="cabinet-main">
+          <div class="seller-mobile-tabs" role="tablist" aria-label="Разделы кабинета">
+            <button class="is-active" type="button" role="tab" aria-selected="true" data-seller-tab="overview">Обзор</button>
+            <button type="button" role="tab" aria-selected="false" data-seller-tab="listings">Объявления</button>
+            <button type="button" role="tab" aria-selected="false" data-seller-tab="orders">Заказы</button>
+            <button type="button" role="tab" aria-selected="false" data-seller-tab="wallet">Кошелёк</button>
+          </div>
+
+          <div data-seller-panel="overview">
+            <div class="seller-overview-head">
+              <div>
+                <span class="eyebrow">Обзор магазина</span>
+                <h2>Здравствуйте, EWC</h2>
+                <p>Вы новый продавец на EscrowHub. Рейтинг и первая выплата появятся после завершённой сделки.</p>
+              </div>
+            </div>
+
+            <div class="seller-stats">
+              <div class="stat-card"><span class="stat-card__label">Активные</span><b data-seller-stat="active">8</b><span class="stat-card__hint">объявления в каталоге</span></div>
+              <div class="stat-card"><span class="stat-card__label">Черновики</span><b data-seller-stat="drafts">1</b><span class="stat-card__hint">не опубликованы</span></div>
+              <div class="stat-card"><span class="stat-card__label">Сделки</span><b data-seller-stat="deals">0</b><span class="stat-card__hint">завершено</span></div>
+              <div class="stat-card stat-card--green"><span class="stat-card__label">Баланс</span><b data-seller-stat="balance">0 ₽</b><span class="stat-card__hint">доступно к выводу</span></div>
+            </div>
+
+            <section class="seller-start" aria-labelledby="seller-start-title">
+              <div class="seller-start__copy">
+                <span class="eyebrow eyebrow--dark">Первая продажа</span>
+                <h2 id="seller-start-title">Опубликуйте товар. Остальное — по маршруту сделки.</h2>
+                <p>Покупатель оплачивает заказ, деньги резервируются в EscrowHub, а выплата приходит после подтверждения получения.</p>
+                <a class="btn btn--lime" href="create.html">Создать объявление <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
+              </div>
+              <div class="seller-start__steps">
+                <div><span>01</span><p><b>Объявление</b><small>Название, цена, наличие и условия выдачи.</small></p></div>
+                <div><span>02</span><p><b>Оплата покупателя</b><small>Средства удерживаются сервисом.</small></p></div>
+                <div><span>03</span><p><b>Выдача и выплата</b><small>После подтверждения. Комиссия — 0%.</small></p></div>
+                <div class="seller-start__zero">0% комиссии</div>
+              </div>
+            </section>
+
+            <section class="seller-block" aria-labelledby="preview-title">
+              <div class="seller-block__head">
+                <div><span class="eyebrow">Объявления</span><h2 id="preview-title">В продаже</h2></div>
+                <button class="link-arrow" type="button" data-goto-tab="listings">Все объявления <svg class="icon"><use href="#i-arrow-right"></use></svg></button>
+              </div>
+              <div class="preview-list" data-preview-list></div>
+            </section>
+
+            <section class="seller-block" aria-labelledby="seller-orders-title">
+              <div class="seller-block__head">
+                <div><span class="eyebrow">Заказы</span><h2 id="seller-orders-title">Сделки</h2></div>
+                <button class="link-arrow" type="button" data-goto-tab="orders">Все заказы <svg class="icon"><use href="#i-arrow-right"></use></svg></button>
+              </div>
+              <div class="seller-empty-inline">
+                <span class="seller-empty-inline__icon"><svg class="icon"><use href="#i-route"></use></svg></span>
+                <div><b>Заказов пока нет</b><p>Когда покупатель оплатит товар, сделка появится здесь. До подтверждения деньги хранятся в сервисе.</p></div>
+                <a class="btn btn--ghost btn--sm" href="index.html#how">Как это работает</a>
+              </div>
+            </section>
+          </div>
+
+          <div data-seller-panel="listings" hidden>
+            <div class="seller-panel-head">
+              <div><span class="eyebrow">Управление</span><h2>Объявления</h2><p>9 товаров · 8 активных · 1 черновик</p></div>
+              <a class="btn btn--primary btn--sm" href="create.html"><svg class="icon"><use href="#i-plus"></use></svg>Разместить</a>
+            </div>
+            <div class="table-card">
+              <table class="listing-table">
+                <thead><tr><th>Товар</th><th>Цена</th><th>Наличие</th><th>Статус</th><th><span class="sr-only">Действия</span></th></tr></thead>
+                <tbody data-listings-body></tbody>
+              </table>
+            </div>
+            <p class="table-note">Данные в таблице демонстрационные. Публикация и снятие меняют статус только в этом прототипе.</p>
+          </div>
+
+          <div data-seller-panel="orders" hidden>
+            <div class="seller-panel-head">
+              <div><span class="eyebrow">Заказы</span><h2>Заказы продавца</h2><p>Здесь появятся оплаченные сделки и их статусы.</p></div>
+            </div>
+            <div class="seller-big-empty">
+              <span class="seller-big-empty__icon"><svg class="icon"><use href="#i-package"></use></svg></span>
+              <h2>Заказов пока нет</h2>
+              <p>После оплаты товара покупатель увидит заказ в своём кабинете, а вы — здесь. Деньги будут удерживаться сервисом до подтверждения получения.</p>
+              <div class="seller-big-empty__actions">
+                <a class="btn btn--primary" href="create.html">Разместить товар</a>
+                <a class="btn btn--ghost" href="index.html#how">Как проходит сделка</a>
+              </div>
+              <div class="seller-empty-route">
+                <span>01 Оплата</span><i></i><span>02 Выдача</span><i></i><span>03 Подтверждение</span><i></i><span>04 Выплата</span>
+              </div>
+            </div>
+          </div>
+
+          <div data-seller-panel="wallet" id="wallet" hidden>
+            <div class="seller-panel-head">
+              <div><span class="eyebrow">Кошелёк</span><h2>Баланс и выплаты</h2><p>Выплата приходит после подтверждения получения покупателем.</p></div>
+              <button class="btn btn--ghost btn--sm" type="button" disabled title="Станет доступно после первой продажи">Вывести средства</button>
+            </div>
+            <div class="seller-stats seller-stats--wallet">
+              <div class="stat-card stat-card--green"><span class="stat-card__label">Доступно к выводу</span><b>0 ₽</b><span class="stat-card__hint">после первой сделки</span></div>
+              <div class="stat-card"><span class="stat-card__label">На удержании</span><b>0 ₽</b><span class="stat-card__hint">средства покупателей</span></div>
+              <div class="stat-card"><span class="stat-card__label">Комиссия сервиса</span><b>0%</b><span class="stat-card__hint">с завершённой сделки</span></div>
+            </div>
+            <div class="wallet-grid">
+              <section class="wallet-card">
+                <div class="wallet-card__head"><h3>История выплат</h3><span class="tag tag--outline">0 операций</span></div>
+                <div class="wallet-empty">
+                  <svg class="icon"><use href="#i-wallet"></use></svg>
+                  <p>Выплат пока нет. Первая появится после завершённой сделки.</p>
+                </div>
+              </section>
+              <section class="wallet-card wallet-card--paper">
+                <div class="wallet-card__head"><h3>Как приходят деньги</h3></div>
+                <ol class="wallet-steps">
+                  <li><span>01</span><p>Покупатель оплачивает заказ — сумма удерживается в сервисе.</p></li>
+                  <li><span>02</span><p>Вы передаёте товар в чате сделки.</p></li>
+                  <li><span>03</span><p>Покупатель подтверждает — сумма зачисляется на баланс.</p></li>
+                </ol>
+                <a class="link-arrow" href="index.html#how">Подробнее о сделке <svg class="icon"><use href="#i-arrow-up-right"></use></svg></a>
+              </section>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <noscript><div style="padding:24px;text-align:center;font-family:sans-serif">Для работы прототипа нужен JavaScript.</div></noscript>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/shell.js"></script>
+  <script src="assets/js/seller.js"></script>
+</body>
+</html>

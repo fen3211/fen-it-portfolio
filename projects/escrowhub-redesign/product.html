@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Товар — EscrowHub</title>
+  <meta name="description" content="Карточка цифрового товара с безопасной сделкой: описание, продавец, условия выдачи и оплата на удержании.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230B6E4F'/%3E%3Cpath d='M9.5 9.5v13M9.5 9.5H21M9.5 16h8M9.5 22.5H21' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='20.5' cy='16' r='2' fill='%23DDF56F'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="assets/css/shell.css">
+  <link rel="stylesheet" href="assets/css/product.css">
+</head>
+<body data-page="product">
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <div class="container product-page" data-product-page>
+      <nav class="breadcrumbs product-crumbs" aria-label="Хлебные крошки" data-product-crumbs></nav>
+
+      <div class="product-head">
+        <div class="product-head__main">
+          <div class="product-badges" data-product-badges></div>
+          <h1 data-product-title>Spotify Аккаунт (Регион: Турция)</h1>
+          <div class="product-meta" data-product-meta></div>
+        </div>
+        <div class="product-head__actions">
+          <button class="icon-btn" type="button" data-share aria-label="Скопировать ссылку на товар">
+            <svg class="icon"><use href="#i-copy"></use></svg>
+          </button>
+          <button class="icon-btn" type="button" data-fav="" aria-pressed="false" aria-label="Добавить в избранное">
+            <svg class="icon"><use href="#i-heart"></use></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="product-layout">
+        <div class="product-main">
+          <div class="product-media" data-product-cover></div>
+
+          <div class="product-facts" data-product-facts></div>
+
+          <nav class="product-anchors" aria-label="Разделы товара">
+            <a href="#about" class="is-active">О товаре</a>
+            <a href="#details">Что входит</a>
+            <a href="#escrow">Безопасная сделка</a>
+            <a href="#seller">Продавец</a>
+            <a href="#reviews">Отзывы</a>
+          </nav>
+
+          <section class="product-section" id="about">
+            <div class="product-section__head">
+              <span class="eyebrow">Описание продавца</span>
+              <h2>О товаре</h2>
+            </div>
+            <div class="product-description" data-product-description></div>
+            <div class="notice notice--paper product-disclaimer">
+              <svg class="icon"><use href="#i-info"></use></svg>
+              <span>Описание заполняет продавец. Проверяйте соответствие товара до подтверждения получения — оплата остаётся в сервисе до вашего решения.</span>
+            </div>
+          </section>
+
+          <section class="product-section" id="details">
+            <div class="product-section__head">
+              <span class="eyebrow">Состав и условия</span>
+              <h2>Что входит</h2>
+            </div>
+            <div class="details-grid">
+              <div class="detail-card">
+                <h3><svg class="icon"><use href="#i-package"></use></svg>В комплекте</h3>
+                <ul class="check-list" data-product-includes></ul>
+              </div>
+              <div class="detail-card detail-card--paper">
+                <h3><svg class="icon"><use href="#i-clock"></use></svg>Условия выдачи</h3>
+                <ul class="check-list check-list--plain" data-product-conditions></ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="product-section" id="escrow">
+            <div class="escrow-panel">
+              <div class="escrow-panel__head">
+                <div>
+                  <span class="eyebrow eyebrow--dark">Эскроу</span>
+                  <h2>Оплата ждёт вашего подтверждения</h2>
+                  <p>Деньги находятся в EscrowHub и не принадлежат продавцу, пока вы не проверите товар.</p>
+                </div>
+                <span class="escrow-panel__badge">0% комиссии</span>
+              </div>
+              <div class="route route--dark route--horiz escrow-panel__route">
+                <div class="route__step is-done">
+                  <span class="route__dot"><svg class="icon"><use href="#i-check"></use></svg></span>
+                  <div class="route__body"><div class="route__title">Оплата</div><p class="route__text">Средства поступают в сервис.</p></div>
+                </div>
+                <div class="route__step">
+                  <span class="route__dot">02</span>
+                  <div class="route__body"><div class="route__title">Выдача</div><p class="route__text">Продавец передаёт товар в чате сделки.</p></div>
+                </div>
+                <div class="route__step">
+                  <span class="route__dot">03</span>
+                  <div class="route__body"><div class="route__title">Проверка</div><p class="route__text">Вы проверяете товар и описание.</p></div>
+                </div>
+                <div class="route__step">
+                  <span class="route__dot">04</span>
+                  <div class="route__body"><div class="route__title">Выплата</div><p class="route__text">После подтверждения, комиссия — 0%.</p></div>
+                </div>
+              </div>
+              <div class="escrow-panel__foot">
+                <span><svg class="icon"><use href="#i-clock"></use></svg>72 часа на спор после выдачи</span>
+                <span><svg class="icon"><use href="#i-check-circle"></use></svg>24 часа до автозакрытия</span>
+                <a href="index.html#how">Как устроена сделка <svg class="icon"><use href="#i-arrow-up-right"></use></svg></a>
+              </div>
+            </div>
+          </section>
+
+          <section class="product-section" id="seller">
+            <div class="product-section__head">
+              <span class="eyebrow">Продавец</span>
+              <h2>Кто продаёт</h2>
+            </div>
+            <div class="seller-panel" data-product-seller></div>
+          </section>
+
+          <section class="product-section" id="reviews">
+            <div class="product-section__head">
+              <span class="eyebrow">Отзывы</span>
+              <h2>Отзывы <span class="product-section__count" data-reviews-count>0</span></h2>
+            </div>
+            <div class="reviews-empty">
+              <span class="reviews-empty__icon"><svg class="icon"><use href="#i-star"></use></svg></span>
+              <div>
+                <h3>Отзывов пока нет</h3>
+                <p>У продавца ещё не было завершённых сделок. Рейтинг появится после первой сделки, подтверждённой покупателем.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <aside class="product-side" aria-label="Покупка">
+          <div class="deal-card" data-deal-card>
+            <div class="deal-card__top">
+              <div class="deal-card__price"><b data-product-price>50 ₽</b><span data-product-stock>В наличии · 120 шт.</span></div>
+              <span class="tag tag--green"><svg class="icon"><use href="#i-route"></use></svg>эскроу</span>
+            </div>
+
+            <div class="deal-card__qty">
+              <span>Количество</span>
+              <div class="stepper" data-stepper>
+                <button type="button" data-qty-minus aria-label="Уменьшить количество" disabled><svg class="icon"><use href="#i-minus"></use></svg></button>
+                <label class="sr-only" for="qty">Количество</label>
+                <input id="qty" type="number" value="1" min="1" max="120" inputmode="numeric" data-qty>
+                <button type="button" data-qty-plus aria-label="Увеличить количество"><svg class="icon"><use href="#i-plus"></use></svg></button>
+              </div>
+            </div>
+
+            <div class="deal-card__sum">
+              <div><span>Стоимость</span><b data-product-subtotal>50 ₽</b></div>
+              <div><span>Комиссия сервиса</span><b>0 ₽</b></div>
+              <div class="deal-card__total"><span>К оплате</span><b data-product-total>50 ₽</b></div>
+            </div>
+
+            <button class="btn btn--green btn--lg btn--block" type="button" data-open-checkout>
+              Купить безопасно <svg class="icon"><use href="#i-arrow-right"></use></svg>
+            </button>
+            <button class="btn btn--ghost btn--block" type="button" data-fav="" aria-pressed="false">
+              <svg class="icon"><use href="#i-heart"></use></svg><span data-fav-label>В избранное</span>
+            </button>
+
+            <button class="deal-card__chat" type="button" data-open-chat>
+              <svg class="icon"><use href="#i-message"></use></svg>Написать продавцу
+              <span>до 15 минут</span>
+            </button>
+
+            <div class="deal-card__escrow">
+              <div class="deal-card__escrow-head"><svg class="icon"><use href="#i-route"></use></svg><b>Оплата на удержании</b><span>0%</span></div>
+              <p>Деньги резервируются в сервисе и уходят продавцу только после вашего подтверждения.</p>
+            </div>
+
+            <a class="deal-card__seller" href="#seller" data-product-seller-mini></a>
+            <button class="deal-card__report" type="button" data-report>Пожаловаться</button>
+          </div>
+        </aside>
+      </div>
+
+      <section class="similar" aria-labelledby="similar-title">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Смотрите также</span>
+            <h2 id="similar-title">Похожие предложения</h2>
+          </div>
+          <a class="link-arrow" href="catalog.html">Весь каталог <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
+        </div>
+        <div class="lot-grid similar-grid" data-similar></div>
+      </section>
+
+      <div class="not-found" data-not-found hidden>
+        <span class="empty__icon"><svg class="icon"><use href="#i-search"></use></svg></span>
+        <h1>Товар не найден</h1>
+        <p>Возможно, объявление снято с публикации. Посмотрите другие предложения в каталоге.</p>
+        <a class="btn btn--primary" href="catalog.html">Перейти в каталог</a>
+      </div>
+    </div>
+
+    <div class="mobile-buybar" data-mobile-buybar>
+      <div><span data-mobile-label>Spotify · 1 шт.</span><b data-mobile-price>50 ₽</b></div>
+      <button class="btn btn--green" type="button" data-open-checkout>Купить безопасно</button>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <!-- checkout -->
+  <div class="overlay" id="checkout-overlay" aria-hidden="true">
+    <div class="modal modal--wide checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+      <button class="modal__close" type="button" aria-label="Закрыть" data-close-overlay><svg class="icon"><use href="#i-x"></use></svg></button>
+      <div data-checkout-step="1">
+        <div class="modal__eyebrow eyebrow">Безопасная сделка</div>
+        <h2 id="checkout-title">Проверьте заказ</h2>
+        <p class="modal__sub">Оплата удерживается сервисом. Средства уйдут продавцу только после вашего подтверждения.</p>
+        <div class="modal__body">
+          <div class="checkout-item" data-checkout-item></div>
+          <div class="checkout-qty">
+            <span>Количество</span>
+            <div class="stepper" data-checkout-stepper>
+              <button type="button" data-checkout-minus aria-label="Уменьшить количество"><svg class="icon"><use href="#i-minus"></use></svg></button>
+              <input type="number" value="1" min="1" inputmode="numeric" aria-label="Количество" data-checkout-qty>
+              <button type="button" data-checkout-plus aria-label="Увеличить количество"><svg class="icon"><use href="#i-plus"></use></svg></button>
+            </div>
+          </div>
+          <div class="checkout-summary">
+            <div><span>Товар</span><b data-checkout-subtotal>50 ₽</b></div>
+            <div><span>Комиссия сервиса</span><b>0 ₽</b></div>
+            <div class="checkout-summary__total"><span>К оплате</span><b data-checkout-total>50 ₽</b></div>
+          </div>
+          <div class="notice notice--paper"><svg class="icon"><use href="#i-route"></use></svg><span>После оформления товар появится в разделе «Мои сделки». Оплата пройдёт только внутри демо-прототипа.</span></div>
+        </div>
+        <div class="modal__foot">
+          <button class="btn btn--green btn--lg btn--block" type="button" data-confirm-order>Оформить сделку · <span data-checkout-total>50 ₽</span></button>
+          <p class="modal__note">Нажимая кнопку, вы принимаете условия сделки. Это демо — реальная оплата не проводится.</p>
+        </div>
+      </div>
+      <div data-checkout-step="2" hidden>
+        <div class="success-panel">
+          <span class="success-panel__icon"><svg class="icon"><use href="#i-check"></use></svg></span>
+          <span class="eyebrow">Демо-заказ создан</span>
+          <h2>Оплата на удержании</h2>
+          <p>Заказ <b data-order-id>#EH-2841</b> создан. Продавец увидит его в кабинете, а деньги останутся в сервисе до вашего подтверждения.</p>
+          <div class="success-panel__amount"><span>Сумма сделки</span><b data-order-total>50 ₽</b></div>
+          <div class="route route--horiz success-panel__route">
+            <div class="route__step is-done"><span class="route__dot"><svg class="icon"><use href="#i-check"></use></svg></span><div class="route__body"><div class="route__title">Оплата</div><p class="route__text">удерживается</p></div></div>
+            <div class="route__step is-active"><span class="route__dot">02</span><div class="route__body"><div class="route__title">Выдача</div><p class="route__text">ожидает продавца</p></div></div>
+            <div class="route__step"><span class="route__dot">03</span><div class="route__body"><div class="route__title">Проверка</div><p class="route__text">ваш шаг</p></div></div>
+            <div class="route__step"><span class="route__dot">04</span><div class="route__body"><div class="route__title">Выплата</div><p class="route__text">после подтверждения</p></div></div>
+          </div>
+          <div class="success-panel__actions">
+            <a class="btn btn--primary" href="orders.html">Перейти в мои сделки <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
+            <button class="btn btn--ghost" type="button" data-close-overlay>Вернуться к товару</button>
+          </div>
+          <p class="modal__note">Демо-прототип: заказ не создан в реальной системе, оплата не проводилась.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- chat -->
+  <div class="overlay" id="chat-overlay" aria-hidden="true">
+    <div class="modal chat-modal" role="dialog" aria-modal="true" aria-labelledby="chat-title">
+      <button class="modal__close" type="button" aria-label="Закрыть" data-close-overlay><svg class="icon"><use href="#i-x"></use></svg></button>
+      <div class="modal__eyebrow eyebrow">Сообщения</div>
+      <h2 id="chat-title">Чат с <span data-chat-seller>EWC</span></h2>
+      <p class="modal__sub">Задайте вопрос о товаре или условиях выдачи. Переписка по сделке хранится в сервисе.</p>
+      <div class="chat-log" data-chat-log>
+        <div class="chat-empty" data-chat-empty>
+          <svg class="icon"><use href="#i-message"></use></svg>
+          <p>Начните диалог с продавцом. Это демо-чат: сообщения не отправляются.</p>
+        </div>
+      </div>
+      <form class="chat-form" data-chat-form>
+        <label class="sr-only" for="chat-message">Сообщение продавцу</label>
+        <input class="input" id="chat-message" type="text" placeholder="Напишите сообщение…" autocomplete="off">
+        <button class="btn btn--primary" type="submit" aria-label="Отправить сообщение"><svg class="icon"><use href="#i-arrow-right"></use></svg></button>
+      </form>
+      <p class="modal__note">Демо-прототип. Сообщения не покидают страницу.</p>
+    </div>
+  </div>
+
+  <noscript><div style="padding:24px;text-align:center;font-family:sans-serif">Для работы прототипа нужен JavaScript.</div></noscript>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/shell.js"></script>
+  <script src="assets/js/product.js"></script>
+</body>
+</html>
