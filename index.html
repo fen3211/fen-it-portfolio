@@ -20,11 +20,13 @@
   <meta property="og:image:alt" content="FEN — портфолио дизайнера и разработчика">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" href="assets/img/brand/fen-mark.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/unbounded-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/onest-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="assets/img/brand/fen-favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/russo-one-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/manrope-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/russo-one-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/blueprint.css">
   <noscript><style>@media (max-width: 900px){.header__nav{display:flex;flex-wrap:wrap;gap:8px 14px;margin-left:auto;font-size:9px}.header__cta{display:none}.menu-btn{display:none}}</style></noscript>
   <script>document.documentElement.classList.add("js");</script>
   <script type="application/ld+json">
@@ -51,10 +53,10 @@
 
   <header class="header">
     <div class="shell header__inner">
-      <a class="brand" href="index.html" aria-label="FEN — на главную">
-        <img class="brand__mark" src="assets/img/brand/fen-mark.svg" width="22" height="22" alt="">
+      <a class="brand" href="index.html">
         <span class="brand__word">FEN<sup>®</sup></span>
-        <span class="brand__sub">design &amp; code</span>
+        <span class="brand__sub">DESIGN &amp; CODE</span>
+        <span class="sr-only"> — на главную</span>
       </a>
       <nav class="header__nav" aria-label="Основная навигация">
         <a href="#works">Работы</a>
@@ -85,88 +87,103 @@
         <a href="https://t.me/TT_Fen" target="_blank" rel="noopener noreferrer">Telegram ↗</a><br>
         <a href="mailto:vlad2.0top@mail.ru">vlad2.0top@mail.ru</a>
       </div>
-      <p class="menu__note">FEN — дизайн и код<br>Алматы / удалённо<br><span class="js-time">—</span> по Алматы</p>
+      <p class="menu__note">FEN — дизайн и код<br>Белгород / удалённо<br><span class="js-time">—</span> по Белгороду</p>
     </div>
   </div>
 
   <main id="main">
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="shell hero__grid">
-        <div class="hero__copy">
-          <p class="hero__eyebrow"><span>Портфолио / 2024—2026</span><span>Независимый дизайнер и разработчик</span></p>
-          <h1 class="hero__title" id="hero-title">
-            <span>Собираю</span>
-            <span>цифровые</span>
-            <span class="serif">интерфейсы<i>.</i></span>
-          </h1>
-          <p class="hero__lede">Сайты, мобильные приложения и продуктовые интерфейсы. От первого наброска до <strong>работающего кода</strong> — с вниманием к типографике, движению и деталям.</p>
-          <div class="hero__actions">
-            <a class="btn btn--lime" href="#works" data-magnetic data-cursor="Смотреть">Смотреть работы <span aria-hidden="true">↓</span></a>
-            <a class="link-arrow" href="https://t.me/TT_Fen" target="_blank" rel="noopener noreferrer">Обсудить проект <span aria-hidden="true">↗</span></a>
+    <section class="hero blueprint" id="top" aria-labelledby="hero-title">
+      <div class="hero-spotlight" aria-hidden="true"></div>
+      <div class="shell hero-inner">
+        <div class="hero-eyebrow"><span>НЕЗАВИСИМЫЙ ДИЗАЙНЕР &amp; РАЗРАБОТЧИК</span><span>УДАЛЁННО / ПО ВСЕМУ МИРУ</span></div>
+        <div class="desk-scene">
+          <img class="desk-object ruler" src="assets/img/studio/ruler.svg" alt="" width="500" height="90" aria-hidden="true" data-depth="18">
+          <img class="desk-object pencil" src="assets/img/studio/pencil.svg" alt="" width="420" height="52" aria-hidden="true" data-depth="34">
+          <img class="desk-object paper paper-one" src="assets/img/studio/paper.svg" alt="" width="160" height="160" aria-hidden="true" data-depth="24">
+          <img class="desk-object eraser" src="assets/img/studio/eraser.svg" alt="" width="120" height="72" aria-hidden="true" data-depth="42">
+
+          <div class="hero-selection">
+            <span class="selection-caption mono" aria-hidden="true">FEN / SELECTED PORTFOLIO / 2026</span>
+            <h1 id="hero-title" class="hero-title" aria-label="FEN — портфолио: дизайн и код"><span class="hero-line">PORT</span><span class="hero-line">FOLIO<span class="hero-period">.</span></span></h1>
+            <i class="handle handle-tl" aria-hidden="true"></i><i class="handle handle-tr" aria-hidden="true"></i><i class="handle handle-bl" aria-hidden="true"></i><i class="handle handle-br" aria-hidden="true"></i>
+          </div>
+
+          <aside class="hero-aside" aria-label="Индекс проектов">
+            <div class="hero-aside-head"><span>INDEX / WORKS</span><span>05</span></div>
+            <ul class="hero-index">
+              <li data-preview="assets/img/previews/card/oyun-alemi.webp" data-label="Ойын әлемі / Web · 3D">
+                <a href="work/oyun-alemi.html" data-cursor="Смотреть">
+                  <span class="hero-index__num">01</span>
+                  <span class="hero-index__name">Ойын әлемі</span>
+                  <span class="hero-index__cat">Web · 3D</span>
+                  <img class="hero-index__thumb" src="assets/img/previews/thumbs/oyun-alemi.webp" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <span class="hero-index__arrow" aria-hidden="true">↗</span>
+                </a>
+              </li>
+              <li data-preview="assets/img/previews/card/eclipse-maison.webp" data-label="Eclipse Maison / Web · 3D">
+                <a href="work/eclipse-maison.html" data-cursor="Смотреть">
+                  <span class="hero-index__num">02</span>
+                  <span class="hero-index__name">Eclipse Maison</span>
+                  <span class="hero-index__cat">Web · 3D</span>
+                  <img class="hero-index__thumb" src="assets/img/previews/thumbs/eclipse-maison.webp" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <span class="hero-index__arrow" aria-hidden="true">↗</span>
+                </a>
+              </li>
+              <li data-preview="assets/img/previews/card/escrowhub.webp" data-label="EscrowHub / UI/UX">
+                <a href="work/escrowhub.html" data-cursor="Смотреть">
+                  <span class="hero-index__num">03</span>
+                  <span class="hero-index__name">EscrowHub</span>
+                  <span class="hero-index__cat">UI/UX</span>
+                  <img class="hero-index__thumb" src="assets/img/previews/thumbs/escrowhub.webp" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <span class="hero-index__arrow" aria-hidden="true">↗</span>
+                </a>
+              </li>
+              <li data-preview="assets/img/previews/card/nova-gear.webp" data-label="NOVA Gear / Web">
+                <a href="work/nova-gear.html" data-cursor="Смотреть">
+                  <span class="hero-index__num">04</span>
+                  <span class="hero-index__name">NOVA Gear</span>
+                  <span class="hero-index__cat">Web</span>
+                  <img class="hero-index__thumb" src="assets/img/previews/thumbs/nova-gear.webp" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <span class="hero-index__arrow" aria-hidden="true">↗</span>
+                </a>
+              </li>
+              <li data-preview="assets/img/previews/card/utka.webp" data-label="Utka / Mobile">
+                <a href="work/utka.html" data-cursor="Смотреть">
+                  <span class="hero-index__num">05</span>
+                  <span class="hero-index__name">Utka</span>
+                  <span class="hero-index__cat">Mobile</span>
+                  <img class="hero-index__thumb" src="assets/img/previews/thumbs/utka.webp" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <span class="hero-index__arrow" aria-hidden="true">↗</span>
+                </a>
+              </li>
+            </ul>
+            <div class="hero__preview" data-hero-preview data-default="1" data-cursor="Тяни" aria-hidden="true">
+              <div class="browser-chrome"><span aria-hidden="true">● ● ●</span><small>fen / selected work</small><span aria-hidden="true">↗</span></div>
+              <div class="hero__preview-media"></div>
+              <div class="hero__preview-label"><span>Eclipse Maison / Web · 3D</span><span>Drag</span></div>
+            </div>
+            <p class="hero__aside-note">Наведи на строку — покажу превью. Карточку можно потянуть в сторону.</p>
+          </aside>
+
+          <div class="name-label"><span aria-hidden="true">↖</span> FEN — дизайн и код</div>
+          <div class="studio-sticker" aria-hidden="true"><span>100% HANDCRAFTED</span><strong>САЙТЫ<br>С ХАРАКТЕРОМ.</strong><span>5 ПРОЕКТОВ / 3 КАТЕГОРИИ</span></div>
+          <div class="swatch-strip" role="group" aria-label="Цвет первого экрана">
+            <button class="swatch swatch--lime" type="button" data-hero-theme="lime" aria-label="Лаймовый фон" aria-pressed="false" data-cursor="Цвет"></button>
+            <button class="swatch swatch--orange" type="button" data-hero-theme="orange" aria-label="Оранжевый фон" aria-pressed="false" data-cursor="Цвет"></button>
+            <button class="swatch swatch--blue" type="button" data-hero-theme="blue" aria-label="Синий фон" aria-pressed="true" data-cursor="Цвет"></button>
+            <button class="swatch swatch--bone" type="button" data-hero-theme="bone" aria-label="Светлый фон" aria-pressed="false" data-cursor="Цвет"></button>
+            <button class="swatch swatch--sky" type="button" data-hero-theme="sky" aria-label="Голубой фон" aria-pressed="false" data-cursor="Цвет"></button>
+            <span>PALETTE_01</span>
           </div>
         </div>
 
-        <aside class="hero__aside" aria-label="Индекс проектов">
-          <div class="hero__index-head"><span>Индекс работ</span><span>05</span></div>
-          <ul class="hero-index">
-            <li data-preview="assets/img/previews/card/oyun-alemi.webp" data-label="Ойын әлемі / Web · 3D">
-              <a href="work/oyun-alemi.html" data-cursor="Смотреть">
-                <span class="hero-index__num">01</span>
-                <span class="hero-index__name">Ойын әлемі</span>
-                <span class="hero-index__cat">Web · 3D</span>
-                <img class="hero-index__thumb" src="assets/img/previews/thumbs/oyun-alemi.webp" width="40" height="40" alt="" loading="lazy" decoding="async">
-                <span class="hero-index__arrow" aria-hidden="true">↗</span>
-              </a>
-            </li>
-            <li data-preview="assets/img/previews/card/eclipse-maison.webp" data-label="Eclipse Maison / Web · 3D">
-              <a href="work/eclipse-maison.html" data-cursor="Смотреть">
-                <span class="hero-index__num">02</span>
-                <span class="hero-index__name">Eclipse Maison</span>
-                <span class="hero-index__cat">Web · 3D</span>
-                <img class="hero-index__thumb" src="assets/img/previews/thumbs/eclipse-maison.webp" width="40" height="40" alt="" loading="lazy" decoding="async">
-                <span class="hero-index__arrow" aria-hidden="true">↗</span>
-              </a>
-            </li>
-            <li data-preview="assets/img/previews/card/escrowhub.webp" data-label="EscrowHub / UI/UX">
-              <a href="work/escrowhub.html" data-cursor="Смотреть">
-                <span class="hero-index__num">03</span>
-                <span class="hero-index__name">EscrowHub</span>
-                <span class="hero-index__cat">UI/UX</span>
-                <img class="hero-index__thumb" src="assets/img/previews/thumbs/escrowhub.webp" width="40" height="40" alt="" loading="lazy" decoding="async">
-                <span class="hero-index__arrow" aria-hidden="true">↗</span>
-              </a>
-            </li>
-            <li data-preview="assets/img/previews/card/nova-gear.webp" data-label="NOVA Gear / Web">
-              <a href="work/nova-gear.html" data-cursor="Смотреть">
-                <span class="hero-index__num">04</span>
-                <span class="hero-index__name">NOVA Gear</span>
-                <span class="hero-index__cat">Web</span>
-                <img class="hero-index__thumb" src="assets/img/previews/thumbs/nova-gear.webp" width="40" height="40" alt="" loading="lazy" decoding="async">
-                <span class="hero-index__arrow" aria-hidden="true">↗</span>
-              </a>
-            </li>
-            <li data-preview="assets/img/previews/card/utka.webp" data-label="Utka / Mobile">
-              <a href="work/utka.html" data-cursor="Смотреть">
-                <span class="hero-index__num">05</span>
-                <span class="hero-index__name">Utka</span>
-                <span class="hero-index__cat">Mobile</span>
-                <img class="hero-index__thumb" src="assets/img/previews/thumbs/utka.webp" width="40" height="40" alt="" loading="lazy" decoding="async">
-                <span class="hero-index__arrow" aria-hidden="true">↗</span>
-              </a>
-            </li>
-          </ul>
-          <div class="hero__preview" data-hero-preview data-default="1" aria-hidden="true">
-            <div class="hero__preview-media"></div>
-            <div class="hero__preview-label"><span>Eclipse Maison / Web · 3D</span><span>Preview</span></div>
-          </div>
-          <p class="hero__aside-note">Наведи на строку — покажу превью. На телефоне открой карточку проекта.</p>
-        </aside>
+        <div class="hero-bottom">
+          <p>Придумываю выразительный дизайн.<br>Превращаю его в <strong>работающий сайт.</strong></p>
+          <div class="hero-actions"><a class="btn btn--lime" href="#works" data-magnetic data-cursor="Смотреть">Смотреть работы <span aria-hidden="true">↓</span></a><a class="text-link light-link" href="https://t.me/TT_Fen" target="_blank" rel="noopener noreferrer">Обсудить проект <span aria-hidden="true">↗</span></a></div>
+          <span class="hero-side-note mono">ВЫХОД ЗА РАМКИ —<br>В РАМКАХ ЗАДАЧИ.</span>
+        </div>
       </div>
-      <div class="shell hero__rail">
-        <span class="status"><i></i>Свободен для новых проектов</span>
-        <span class="hero__rail-center">Web / UI-UX / Mobile / Motion</span>
-        <a class="hero__scroll" href="#works">Скролл <span aria-hidden="true">↓</span></a>
-      </div>
+      <div class="hero-footer mono"><div class="shell"><span><i class="status-dot" aria-hidden="true"></i>ОТКРЫТ К ПРОЕКТАМ</span><span>WEB / UI-UX / MOBILE / MOTION</span><a href="#works">ЛИСТАЙ НИЖЕ ↓</a></div></div>
     </section>
 
     <div class="ticker" aria-hidden="true">
@@ -206,7 +223,7 @@
 <article class="work-card work-card--oyun" data-category="web" data-reveal>
             <div class="work-card__media">
               <span class="work-card__index">01 / WEB · 3D</span>
-              <img src="assets/img/previews/oyun-alemi.webp" alt="Тёмная сцена сайта «Ойын әлемі» со светящимся 3D-порталом" width="1600" height="1000" loading="lazy" decoding="async">
+              <div class="browser-preview"><div class="browser-chrome" aria-hidden="true"><span>● ● ●</span><small>oyun-alemi / website</small><span>↗</span></div><img src="assets/img/previews/oyun-alemi.webp" alt="Тёмная сцена сайта «Ойын әлемі» со светящимся 3D-порталом" width="1600" height="1000" loading="lazy" decoding="async"></div>
               <span class="work-card__open">Смотреть кейс <span aria-hidden="true">↗</span></span>
             </div>
             <div class="work-card__body">
@@ -221,7 +238,7 @@
 <article class="work-card work-card--escrow" data-category="ui" data-reveal>
             <div class="work-card__media">
               <span class="work-card__index">03 / UI/UX</span>
-              <img src="assets/img/previews/escrowhub.webp" alt="Витрина маркетплейса EscrowHub с карточками цифровых товаров" width="1600" height="1200" loading="lazy" decoding="async">
+              <div class="browser-preview"><div class="browser-chrome" aria-hidden="true"><span>● ● ●</span><small>escrowhub / ui-ux</small><span>↗</span></div><img src="assets/img/previews/escrowhub.webp" alt="Витрина маркетплейса EscrowHub с карточками цифровых товаров" width="1600" height="1200" loading="lazy" decoding="async"></div>
               <span class="work-card__open">Смотреть кейс <span aria-hidden="true">↗</span></span>
             </div>
             <div class="work-card__body">
@@ -237,7 +254,7 @@
 <article class="work-card work-card--eclipse" data-category="web" data-reveal data-reveal-delay="1">
             <div class="work-card__media">
               <span class="work-card__index">02 / WEB · 3D</span>
-              <img src="assets/img/previews/eclipse-maison.webp" alt="Eclipse Maison: янтарный флакон на тёмном фоне" width="1600" height="1000" loading="lazy" decoding="async">
+              <div class="browser-preview"><div class="browser-chrome" aria-hidden="true"><span>● ● ●</span><small>eclipse-maison / website</small><span>↗</span></div><img src="assets/img/previews/eclipse-maison.webp" alt="Eclipse Maison: янтарный флакон на тёмном фоне" width="1600" height="1000" loading="lazy" decoding="async"></div>
               <span class="work-card__open">Смотреть кейс <span aria-hidden="true">↗</span></span>
             </div>
             <div class="work-card__body">
@@ -252,7 +269,7 @@
 <article class="work-card work-card--nova" data-category="web" data-reveal data-reveal-delay="1">
             <div class="work-card__media">
               <span class="work-card__index">04 / WEB</span>
-              <img src="assets/img/previews/nova-gear.webp" alt="Сайт NOVA Gear с клавиатурой крупным планом" width="1600" height="900" loading="lazy" decoding="async">
+              <div class="browser-preview"><div class="browser-chrome" aria-hidden="true"><span>● ● ●</span><small>nova-gear / store</small><span>↗</span></div><img src="assets/img/previews/nova-gear.webp" alt="Сайт NOVA Gear с клавиатурой крупным планом" width="1600" height="900" loading="lazy" decoding="async"></div>
               <span class="work-card__open">Смотреть кейс <span aria-hidden="true">↗</span></span>
             </div>
             <div class="work-card__body">
@@ -295,7 +312,7 @@
       </div>
     </section>
 
-    <section class="section section--green" id="lab" aria-labelledby="lab-title">
+    <section class="section section--ink" id="lab" aria-labelledby="lab-title">
       <div class="shell">
         <header class="section-head">
           <div class="section-head__label"><b>02</b><span>Лаборатория / Framer</span></div>
@@ -360,18 +377,21 @@
 
         <div class="about-layout">
           <aside class="about-card" data-reveal>
-            <div class="about-card__top">
-              <div class="about-card__word">FEN<sup>®</sup><small>Independent<br>interface practice</small></div>
-              <img class="about-card__mark" src="assets/img/brand/fen-mark.svg" width="46" height="46" alt="" aria-hidden="true">
+            <span class="card-clip" aria-hidden="true"></span>
+            <div class="identity-top mono"><span>INDEPENDENT CREATOR</span><span>2026</span></div>
+            <div class="identity-avatar" aria-hidden="true">
+              <img src="assets/img/brand/fen-logo.svg" alt="">
+              <small>DESIGN / CODE / REPEAT</small>
             </div>
+            <div class="identity-bottom"><strong>ПРИЯТНО.<br>Я — FEN.</strong><span class="identity-stamp mono">УДАЛЁННО<br>↗ WORLDWIDE</span></div>
             <dl class="about-card__rows">
               <div class="about-card__row"><dt>Роль</dt><dd>Дизайнер и разработчик</dd></div>
-              <div class="about-card__row"><dt>База</dt><dd>Алматы / удалённо</dd></div>
+              <div class="about-card__row"><dt>База</dt><dd>Белгород / удалённо</dd></div>
               <div class="about-card__row"><dt>Фокус</dt><dd>Сайты, UI/UX, мобильные интерфейсы, motion</dd></div>
               <div class="about-card__row"><dt>Стек</dt><dd>HTML/CSS/JS, React, Three.js, GSAP, Figma</dd></div>
               <div class="about-card__row"><dt>Формат</dt><dd>Проект целиком или отдельная часть</dd></div>
             </dl>
-            <div class="about-card__stamp"><span>Портфолио / 2026</span><span class="status"><i></i>Открыт</span></div>
+            <div class="identity-barcode" aria-hidden="true"></div>
           </aside>
 
           <div class="about-copy">
@@ -406,13 +426,13 @@
       </div>
     </section>
 
-    <section class="section section--lime contact" id="contact" aria-labelledby="contact-title">
+    <section class="section section--ink contact" id="contact" aria-labelledby="contact-title">
       <span class="contact__star" aria-hidden="true"></span>
       <div class="shell contact__inner">
         <header class="section-head">
           <div class="section-head__label"><b>04</b><span>Контакт / Без форм</span></div>
           <div class="section-head__main">
-            <h2 id="contact-title" data-reveal="mask">Расскажи о <em>задаче</em><i>.</i></h2>
+            <h2 id="contact-title" class="contact-title" data-reveal="mask">ЕСТЬ ИДЕЯ<span class="contact-question">?</span><br>ДАВАЙ <span class="contact-outline">СОБЕРЁМ.</span></h2>
           </div>
         </header>
 
@@ -421,25 +441,28 @@
             <p>Напиши, что нужно сделать, для кого и когда. Если есть референсы или текущий сайт — приложи ссылку.</p>
             <p>Обычно отвечаю в течение дня. Сначала обсуждаем задачу, потом объём и сроки.</p>
             <div class="contact__actions">
-              <a class="btn btn--ink btn--large" href="https://t.me/TT_Fen" target="_blank" rel="noopener noreferrer" data-magnetic data-cursor="Написать">Написать в Telegram <span aria-hidden="true">↗</span></a>
+              <a class="btn btn--lime btn--large" href="https://t.me/TT_Fen" target="_blank" rel="noopener noreferrer" data-magnetic data-cursor="Написать">Написать в Telegram <span aria-hidden="true">↗</span></a>
               <a class="link-arrow" href="mailto:vlad2.0top@mail.ru">Или на почту <span aria-hidden="true">↗</span></a>
             </div>
             <p class="copy-status" role="status" aria-live="polite"></p>
+            <div class="reply-note mono"><span aria-hidden="true">↖</span>ОТВЕЧУ В ТЕЧЕНИЕ ДНЯ.<br>СНАЧАЛА ЗАДАЧА.<br>ПОТОМ ПЛАН.</div>
           </div>
 
           <div class="contact__links" data-reveal data-reveal-delay="1">
             <a class="contact-link" href="https://t.me/TT_Fen" target="_blank" rel="noopener noreferrer"><span>Telegram</span><span>@TT_Fen ↗</span></a>
-            <a class="contact-link" href="mailto:vlad2.0top@mail.ru"><span>Email</span><span>vlad2.0top@mail.ru ↗</span></a>
-            <button class="copy-email" type="button" aria-label="Скопировать email" hidden>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="1"/><path d="M16 8V4H4v12h4"/></svg>
-            </button>
+            <div class="contact-email-row">
+              <a class="contact-link" href="mailto:vlad2.0top@mail.ru"><span>Email</span><span>vlad2.0top@mail.ru ↗</span></a>
+              <button class="copy-email" type="button" aria-label="Скопировать email" hidden>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="1"/><path d="M16 8V4H4v12h4"/></svg>
+              </button>
+            </div>
             <a class="contact-link" href="https://github.com/fen3211" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span>fen3211 ↗</span></a>
           </div>
         </div>
 
         <div class="contact__footer">
           <span class="status"><i></i>Открыт к проектам</span>
-          <span>Алматы / <span class="js-time">—</span></span>
+          <span>Белгород / <span class="js-time">—</span></span>
           <span>© <span class="js-year">2026</span> FEN</span>
         </div>
       </div>
@@ -448,7 +471,7 @@
 
   <footer class="footer">
     <div class="shell footer__top">
-      <div class="footer__word">FEN<sup>®</sup></div>
+      <div class="footer__word"><img class="footer__logo" src="assets/img/brand/fen-logo.svg" alt="FEN — дизайн и код" width="260" height="234"></div>
       <div class="footer__aside">
         <p>Хорошие идеи заслуживают хорошего исполнения.</p>
         <nav class="footer__nav" aria-label="Навигация в подвале">
@@ -463,13 +486,13 @@
     </div>
     <div class="shell footer__bottom">
       <span>© <span class="js-year">2026</span> FEN — дизайн и код</span>
-      <span>Алматы / <span class="js-time">—</span></span>
+      <span>Белгород / <span class="js-time">—</span></span>
       <a href="https://github.com/fen3211/fen-it-portfolio" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
       <a href="#top">Наверх ↑</a>
     </div>
   </footer>
 
-  <div class="page-transition" id="page-transition" aria-hidden="true"><span class="page-transition__mark">FEN</span></div>
+  <div class="page-transition" id="page-transition" aria-hidden="true"><img class="page-transition__logo" src="assets/img/brand/fen-logo.svg" alt=""></div>
   <script>
     (() => {
       const el = document.getElementById("page-transition");

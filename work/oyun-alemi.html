@@ -19,12 +19,14 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" href="../assets/img/brand/fen-mark.svg" type="image/svg+xml">
-  <link rel="preload" href="../assets/fonts/unbounded-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="../assets/fonts/onest-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="../assets/img/brand/fen-favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/russo-one-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/manrope-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/russo-one-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../assets/css/tokens.css">
   <link rel="stylesheet" href="../assets/css/site.css">
   <link rel="stylesheet" href="../assets/css/case.css">
+  <link rel="stylesheet" href="../assets/css/blueprint.css">
   <noscript><style>@media (max-width: 900px){.header__nav{display:flex;flex-wrap:wrap;gap:8px 14px;margin-left:auto;font-size:9px}.menu-btn{display:none}}</style></noscript>
   <script>document.documentElement.classList.add("js");</script>
   <script type="application/ld+json">
@@ -51,10 +53,10 @@
 
   <header class="header">
     <div class="shell header__inner">
-      <a class="brand" href="../index.html" aria-label="FEN — на главную">
-        <img class="brand__mark" src="../assets/img/brand/fen-mark.svg" width="22" height="22" alt="">
+      <a class="brand" href="../index.html">
         <span class="brand__word">FEN<sup>®</sup></span>
-        <span class="brand__sub">design &amp; code</span>
+        <span class="brand__sub">DESIGN &amp; CODE</span>
+        <span class="sr-only"> — на главную</span>
       </a>
       <nav class="header__nav" aria-label="Основная навигация">
         <a href="../index.html#works">Работы</a>
@@ -85,7 +87,7 @@
         <a href="https://t.me/TT_Fen" target="_blank" rel="noopener noreferrer">Telegram ↗</a><br>
         <a href="mailto:vlad2.0top@mail.ru">vlad2.0top@mail.ru</a>
       </div>
-      <p class="menu__note">FEN — дизайн и код<br>Алматы / удалённо<br><span class="js-time">—</span> по Алматы</p>
+      <p class="menu__note">FEN — дизайн и код<br>Белгород / удалённо<br><span class="js-time">—</span> по Белгороду</p>
     </div>
   </div>
 
@@ -152,7 +154,7 @@
 
   <footer class="footer">
     <div class="shell footer__top">
-      <div class="footer__word">FEN<sup>®</sup></div>
+      <div class="footer__word"><img class="footer__logo" src="../assets/img/brand/fen-logo.svg" alt="FEN — дизайн и код" width="260" height="234"></div>
       <div class="footer__aside">
         <p>Хорошие идеи заслуживают хорошего исполнения.</p>
         <nav class="footer__nav" aria-label="Навигация в подвале">
@@ -167,13 +169,13 @@
     </div>
     <div class="shell footer__bottom">
       <span>© <span class="js-year">2026</span> FEN — дизайн и код</span>
-      <span>Алматы / <span class="js-time">—</span></span>
+      <span>Белгород / <span class="js-time">—</span></span>
       <a href="https://github.com/fen3211/fen-it-portfolio" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
       <a href="#top">Наверх ↑</a>
     </div>
   </footer>
 
-  <div class="page-transition" id="page-transition" aria-hidden="true"><span class="page-transition__mark">FEN</span></div>
+  <div class="page-transition" id="page-transition" aria-hidden="true"><img class="page-transition__logo" src="../assets/img/brand/fen-logo.svg" alt=""></div>
   <script>
     (() => {
       const el = document.getElementById("page-transition");

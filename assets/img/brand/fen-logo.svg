@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 618 555" width="618" height="555">
+  <!-- Прозрачный фон -->
+
+  <!-- Тонкая объединяющая линия на уровне середины букв -->
+  <line x1="40" y1="219" x2="578" y2="219" stroke="#F4EEDA" stroke-width="0.7" opacity="0.12"/>
+
+  <!-- БОЛЬШОЙ ОВАЛ — буквы из него "прорастают" сверху и снизу -->
+  <ellipse cx="309" cy="250" rx="262" ry="155" fill="none" stroke="#F4EEDA" stroke-width="2" opacity="0.8"/>
+  <!-- Второй, чуть меньший повёрнутый овал — для глубины -->
+  <ellipse cx="309" cy="250" rx="238" ry="134" fill="none" stroke="#F4EEDA" stroke-width="0.7" opacity="0.22" transform="rotate(2, 309, 250)"/>
+
+  <!-- ═══════════ F ═══════════ -->
+  <!-- Основной штрих (стебель) — очень толстый -->
+  <rect x="48" y="80" width="44" height="340" fill="#F4EEDA"/>
+
+  <!-- Горизонтальная верхняя линия — волосяная (3px) -->
+  <rect x="92" y="80" width="150" height="3" fill="#F4EEDA"/>
+  <!-- Острый шип-терминал конца верхней линии F -->
+  <polygon points="238,80 246,80 238,110" fill="#F4EEDA"/>
+
+  <!-- Горизонтальная средняя линия F — волосяная -->
+  <rect x="92" y="218" width="112" height="3" fill="#F4EEDA"/>
+  <!-- Острый шип-терминал средней линии F -->
+  <polygon points="200,218 208,218 200,246" fill="#F4EEDA"/>
+
+  <!-- Клиновые засечки F (острие влево) -->
+  <polygon points="18,89 48,80 92,80 92,89" fill="#F4EEDA"/>
+  <polygon points="18,411 48,420 92,420 92,411" fill="#F4EEDA"/>
+
+  <!-- ═══════════ E ═══════════ -->
+  <rect x="216" y="80" width="44" height="340" fill="#F4EEDA"/>
+
+  <!-- Верхняя линия E -->
+  <rect x="260" y="80" width="140" height="3" fill="#F4EEDA"/>
+  <polygon points="396,80 404,80 396,110" fill="#F4EEDA"/>
+
+  <!-- Средняя линия E -->
+  <rect x="260" y="218" width="108" height="3" fill="#F4EEDA"/>
+  <polygon points="364,218 372,218 364,246" fill="#F4EEDA"/>
+
+  <!-- Нижняя линия E -->
+  <rect x="260" y="417" width="140" height="3" fill="#F4EEDA"/>
+  <polygon points="396,417 404,417 396,447" fill="#F4EEDA"/>
+
+  <!-- Клиновые засечки E -->
+  <polygon points="188,89 216,80 260,80 260,89" fill="#F4EEDA"/>
+  <polygon points="188,411 216,420 260,420 260,411" fill="#F4EEDA"/>
+
+  <!-- ═══════════ N ═══════════ -->
+  <!-- Левый стебель -->
+  <rect x="406" y="80" width="36" height="340" fill="#F4EEDA"/>
+  <!-- Правый стебель -->
+  <rect x="537" y="80" width="36" height="340" fill="#F4EEDA"/>
+  <!-- Диагональный штрих — мощная наклонная -->
+  <polygon points="406,80 442,80 573,420 537,420" fill="#F4EEDA"/>
+
+  <!-- Засечки N слева (острие влево) -->
+  <polygon points="378,89 406,80 442,80 442,89" fill="#F4EEDA"/>
+  <polygon points="378,411 406,420 442,420 442,411" fill="#F4EEDA"/>
+
+  <!-- Засечки N справа (острие вправо) -->
+  <polygon points="537,80 573,80 601,89 537,89" fill="#F4EEDA"/>
+  <polygon points="537,411 537,420 573,420 601,411" fill="#F4EEDA"/>
+
+  <!-- ═══════════ МЕЛКИЕ ДЕТАЛИ ═══════════ -->
+  <!-- Маленький ромб сверху овала -->
+  <polygon points="309,90 314,95 309,100 304,95" fill="#F4EEDA" opacity="0.6"/>
+  <!-- Маленький ромб снизу овала -->
+  <polygon points="309,400 314,405 309,410 304,405" fill="#F4EEDA" opacity="0.6"/>
+  <!-- Маленький ромб слева овала -->
+  <polygon points="43,246 48,251 43,256 38,251" fill="#F4EEDA" opacity="0.6"/>
+  <!-- Маленький ромб справа овала -->
+  <polygon points="571,246 576,251 571,256 566,251" fill="#F4EEDA" opacity="0.6"/>
+
+  <!-- ═══════════ ПОДПИСЬ ═══════════ -->
+  <text x="309" y="470"
+    font-family="'Courier New', Courier, monospace"
+    font-size="13.5"
+    letter-spacing="11"
+    fill="#F4EEDA"
+    text-anchor="middle"
+    opacity="0.6">CREATIVE  STUDIO</text>
+  <line x1="195" y1="487" x2="423" y2="487" stroke="#F4EEDA" stroke-width="0.8" opacity="0.35"/>
+</svg>

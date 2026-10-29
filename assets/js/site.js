@@ -112,6 +112,9 @@
     let ringX = pointerX;
     let ringY = pointerY;
     let cursorVisible = false;
+    let lastTrailAt = 0;
+    let lastTrailX = 0;
+    let lastTrailY = 0;
 
     root.classList.add("has-cursor");
     window.addEventListener("pointermove", (event) => {
@@ -122,6 +125,21 @@
         cursor.classList.remove("is-hidden");
         dotX = ringX = pointerX;
         dotY = ringY = pointerY;
+      }
+      const now = performance.now();
+      const distance = Math.hypot(pointerX - lastTrailX, pointerY - lastTrailY);
+      if (now - lastTrailAt > 55 && distance > 14) {
+        lastTrailAt = now;
+        lastTrailX = pointerX;
+        lastTrailY = pointerY;
+        const trail = document.createElement("span");
+        trail.className = "cursor-trail";
+        trail.style.left = `${pointerX}px`;
+        trail.style.top = `${pointerY}px`;
+        document.body.appendChild(trail);
+        const trails = document.querySelectorAll(".cursor-trail");
+        if (trails.length > 12) trails[0].remove();
+        window.setTimeout(() => trail.remove(), 700);
       }
     }, { passive: true });
     document.addEventListener("pointerleave", () => {
@@ -210,6 +228,70 @@
     });
   }
 
+  /* Hero props parallax + spotlight -------------------------------------- */
+  if (finePointer.matches && !reduceMotion.matches) {
+    const heroStage = $(".hero");
+    if (heroStage) {
+      const props = $$(".desk-object", heroStage).map((el) => ({
+        el,
+        depth: Number(el.dataset.depth) || 20,
+        x: 0,
+        y: 0,
+        tx: 0,
+        ty: 0,
+      }));
+      let heroFrame = 0;
+      let heroActive = false;
+      const animateProps = () => {
+        let moving = false;
+        props.forEach((prop) => {
+          prop.x = lerp(prop.x, prop.tx, 0.09);
+          prop.y = lerp(prop.y, prop.ty, 0.09);
+          if (Math.abs(prop.x - prop.tx) > 0.04 || Math.abs(prop.y - prop.ty) > 0.04) moving = true;
+          prop.el.style.translate = `${prop.x.toFixed(2)}px ${prop.y.toFixed(2)}px`;
+        });
+        heroFrame = moving || heroActive ? requestAnimationFrame(animateProps) : 0;
+      };
+      heroStage.addEventListener("pointermove", (event) => {
+        const rect = heroStage.getBoundingClientRect();
+        const nx = (event.clientX - rect.left) / rect.width - 0.5;
+        const ny = (event.clientY - rect.top) / rect.height - 0.5;
+        heroStage.style.setProperty("--mx", `${((event.clientX - rect.left) / rect.width) * 100}%`);
+        heroStage.style.setProperty("--my", `${((event.clientY - rect.top) / rect.height) * 100}%`);
+        props.forEach((prop) => {
+          prop.tx = nx * prop.depth;
+          prop.ty = ny * prop.depth;
+        });
+        heroActive = true;
+        if (!heroFrame) heroFrame = requestAnimationFrame(animateProps);
+      }, { passive: true });
+      heroStage.addEventListener("pointerleave", () => {
+        heroActive = false;
+        props.forEach((prop) => { prop.tx = 0; prop.ty = 0; });
+        if (!heroFrame) heroFrame = requestAnimationFrame(animateProps);
+      });
+    }
+  }
+
+  /* Browser preview pan --------------------------------------------------- */
+  if (finePointer.matches && !reduceMotion.matches) {
+    $$(".browser-preview").forEach((frame) => {
+      const image = $("img", frame);
+      if (!image) return;
+      frame.addEventListener("pointermove", (event) => {
+        const rect = frame.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+        image.style.setProperty("--pan-x", `${(-x * 10).toFixed(1)}px`);
+        image.style.setProperty("--pan-y", `${(-y * 8).toFixed(1)}px`);
+      }, { passive: true });
+      frame.addEventListener("pointerleave", () => {
+        image.style.setProperty("--pan-x", "0px");
+        image.style.setProperty("--pan-y", "0px");
+      });
+    });
+  }
+
   /* Reveals -------------------------------------------------------------- */
   const revealItems = $$("[data-reveal]");
   if (revealItems.length) {
@@ -292,27 +374,37 @@
     if ("requestIdleCallback" in window) window.requestIdleCallback(warm, { timeout: 2500 });
     else window.setTimeout(warm, 1600);
 
-    if (finePointer.matches && !reduceMotion.matches) {
-      const hero = $(".hero");
-      let px = 0;
-      let py = 0;
-      let tx = 0;
-      let ty = 0;
-      let parallaxFrame = 0;
-      const applyParallax = () => {
-        px = lerp(px, tx, 0.08);
-        py = lerp(py, ty, 0.08);
-        preview.style.translate = `${px.toFixed(2)}px ${py.toFixed(2)}px`;
-        parallaxFrame = 0;
+    if (finePointer.matches) {
+      let dragStart = 0;
+      let dragOffset = 0;
+      let dragging = false;
+      const finishDrag = () => {
+        if (!dragging) return;
+        dragging = false;
+        preview.classList.remove("is-dragging");
+        preview.style.translate = "";
+        if (Math.abs(dragOffset) > 42) {
+          const direction = dragOffset < 0 ? 1 : -1;
+          show((active + direction + images.length) % images.length);
+        }
+        dragOffset = 0;
       };
-      if (hero) {
-        hero.addEventListener("pointermove", (event) => {
-          const rect = hero.getBoundingClientRect();
-          tx = ((event.clientX - rect.left) / rect.width - 0.5) * 16;
-          ty = ((event.clientY - rect.top) / rect.height - 0.5) * 12;
-          if (!parallaxFrame) parallaxFrame = requestAnimationFrame(applyParallax);
-        }, { passive: true });
-      }
+      preview.addEventListener("pointerdown", (event) => {
+        if (event.button !== 0) return;
+        dragging = true;
+        dragStart = event.clientX;
+        dragOffset = 0;
+        preview.classList.add("is-dragging");
+        if (preview.setPointerCapture) preview.setPointerCapture(event.pointerId);
+      });
+      preview.addEventListener("pointermove", (event) => {
+        if (!dragging) return;
+        dragOffset = event.clientX - dragStart;
+        preview.style.translate = `${dragOffset.toFixed(1)}px 0`;
+      });
+      preview.addEventListener("pointerup", finishDrag);
+      preview.addEventListener("pointercancel", finishDrag);
+      preview.addEventListener("lostpointercapture", finishDrag);
     }
   }
 
@@ -400,7 +492,7 @@
     let time = "";
     try {
       time = new Intl.DateTimeFormat("ru-RU", {
-        timeZone: "Asia/Almaty",
+        timeZone: "Europe/Moscow",
         hour: "2-digit",
         minute: "2-digit",
         hour12: false
@@ -424,6 +516,30 @@
     }
   });
 
+
+  /* Hero palette -------------------------------------------------------- */
+  const heroRoot = $(".hero");
+  const heroSwatches = $$(".swatch-strip .swatch");
+  if (heroRoot && heroSwatches.length) {
+    let committedTheme = "blue";
+    const setHeroTheme = (theme, commit = false) => {
+      heroRoot.dataset.heroTheme = theme;
+      heroSwatches.forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.heroTheme === theme));
+      });
+      if (commit) committedTheme = theme;
+    };
+    setHeroTheme(committedTheme, true);
+    heroSwatches.forEach((button) => {
+      button.addEventListener("click", () => setHeroTheme(button.dataset.heroTheme || "blue", true));
+      if (finePointer.matches) {
+        button.addEventListener("pointerenter", () => setHeroTheme(button.dataset.heroTheme || "blue"));
+        button.addEventListener("pointerleave", () => setHeroTheme(committedTheme));
+        button.addEventListener("focus", () => setHeroTheme(button.dataset.heroTheme || "blue"));
+        button.addEventListener("blur", () => setHeroTheme(committedTheme));
+      }
+    });
+  }
 
   /* Yandex Metrika: production host only; local previews stay out of stats. */
   if (location.hostname === "fen3211.github.io") {

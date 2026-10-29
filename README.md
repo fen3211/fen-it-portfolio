@@ -1,6 +1,6 @@
 # FEN — портфолио дизайнера и разработчика
 
-Редизайн персонального портфолио: редакционный индекс работ, живые превью проектов, отдельная лаборатория Framer-прототипов и пять полноценных кейсов.
+Редизайн персонального портфолио: возвращение blue-studio эстетики, старый логотип, живая палитра hero, индекс работ, лаборатория Framer-прототипов и пять кейсов.
 
 - **Ветка:** `redesign/portfolio-v2` (main не изменялся; merge — только после подтверждения).
 - **Локально:** [http://127.0.0.1:4173/](http://127.0.0.1:4173/)
@@ -8,18 +8,20 @@
 
 ## Что изменилось
 
-- Новый первый экран: крупная типографика, индекс из пяти работ и карточное превью, которое меняется при наведении.
+- Новый первый экран: кобальтовый blueprint, selection frame, стол с инструментами, индекс из пяти работ с drag-превью и живая палитра, которая меняет цвет hero (hover/click).
 - Убраны ЭКО-ЭКСПЕРТ, Atlaxis, блок «ТВОЯ ЗАДАЧА. МОЯ СБОРКА.» и все цены/тарифы.
 - Добавлены Oyun Alemi, Eclipse Maison, EscrowHub, NOVA Gear и Utka; у каждого — кейс и локальное демо.
 - Utka вынесена в отдельную категорию «Мобильные» и показана двумя экранами в рамке телефона.
 - Добавлен раздел «Лаборатория / Framer» с **реальными скриншотами** EMBER, Real Lot (Freelance Radar) и SMS PRO.
-- Собрана дизайн-система на токенах, motion-система, reduced motion, no-JS-навигация, page transitions и кастомный курсор.
+- Старый логотип вернулся в футер и identity-card; в шапке — старый текстовый FEN® / DESIGN & CODE.
+- Собрана дизайн-система на токенах, motion-система, reduced motion, no-JS-навигация, page transitions, кастомный курсор, cursor trail, desk parallax и tilt.
+- Старая палитра снова работает как интерактив: свотчи меняют hero-тему, а не просто лежат декором.
 - Обновлены SEO, OG, sitemap, 404 и документация.
 
 ## Стек
 
 - Статический HTML + CSS + JavaScript. Сборка для главной не нужна.
-- Шрифты: Unbounded, Onest, Cormorant Garamond, IBM Plex Mono — локально, woff2, OFL.
+- Шрифты: Russo One, Manrope, Cormorant Garamond (только акцент) и IBM Plex Mono — локально, woff2, OFL.
 - Проекты внутри репозитория:
   - Oyun Alemi — Vite + TypeScript + Three.js + GSAP + Lenis (собранный `dist`).
   - Eclipse Maison — React 19 + R3F/Three.js + GSAP + Lenis (собранный `dist`).
@@ -49,6 +51,7 @@ fen-it-portfolio/
 ├── assets/
 │   ├── css/tokens.css          # единственный источник токенов
 │   ├── css/site.css            # оболочка + главная
+│   ├── css/blueprint.css       # старый blue-studio слой и интерактив
 │   ├── css/case.css            # кейсы
 │   ├── js/site.js              # курсор, меню, фильтры, переходы
 │   ├── fonts/                  # локальные woff2
@@ -117,13 +120,13 @@ npm run build -- --base=./
 
 ## Анимации
 
-Кратко: hero card shuffle, кастомный курсор с lerp, магнитные CTA, параллакс превью, tilt пластин, mask/fade/scale reveal, FLIP-фильтры, page transition, reduced motion. Полная спецификация — [`DESIGN_SYSTEM.md`](DESIGN_SYSTEM.md), разбор Riffs и реализованных механик — [`ANIMATION_REFERENCES.md`](ANIMATION_REFERENCES.md).
+Кратко: интерактивная палитра hero (hover/click), desk parallax и spotlight, cursor trail, card shuffle и drag превью, браузерный image pan, магнитные CTA, tilt артбордов, mask/fade/scale reveal, FLIP-фильтры, page transition, reduced motion. Полная спецификация — [`DESIGN_SYSTEM.md`](DESIGN_SYSTEM.md), разбор Riffs и реализованных механик — [`ANIMATION_REFERENCES.md`](ANIMATION_REFERENCES.md).
 
 Тяжёлые 3D-сцены не грузятся на главной: они живут в отдельных проектах. Это сознательно — оболочка остаётся лёгкой.
 
 ## Проверки
 
-- Lighthouse mobile: **99 / 100 / 100 / 100**, desktop: **100 / 100 / 100 / 100**.
+- Lighthouse mobile: **99 / 100 / 100 / 100**, desktop: **99 / 100 / 100 / 100**.
 - axe-core: **0** нарушений WCAG A/AA на главной и кейсах (desktop + mobile).
 - Локальные ссылки/якоря: **0** битых (кроме runtime-спрайта иконок Escrow, который собирается JS).
 - Горизонтальный overflow: нет на 1920, 1440, 1366, 1024, 900, 768, 640, 390, 375, 360.
@@ -145,6 +148,7 @@ npm run build -- --base=./
 - Демо проектов — концепты и тестовые задания, без реального бэкенда/оплаты. Границы обозначены в каждом кейсе и в самих демо.
 - Точные Motion-кривые из Figma Riffs не извлечены: для этого нужна копия frame в Motion timeline. Наблюдения и приблизительные тайминги — в `ANIMATION_REFERENCES.md`.
 - Внешние ссылки внутри демо (например, правила EscrowHub.online) ведут на реальные публичные страницы сервиса.
+- В самом Framer-прототипе SMS PRO desktop-строка «Для любого сервиса.» стоит в `Switzer Italic`, который Framer не находит и подменяет системным serif; на мобильном — `Onest 600`. Это особенность прототипа, не шрифт портфолио; при необходимости выравниваем отдельно.
 
 ## Контакты
 

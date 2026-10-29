@@ -6,53 +6,46 @@
    ========================================================================== */
 
 @font-face {
-  font-family: "Unbounded";
-  src: url("../fonts/unbounded-cyrillic-ext-wght-normal.woff2") format("woff2");
-  font-weight: 200 900;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-@font-face {
-  font-family: "Onest";
-  src: url("../fonts/onest-cyrillic-ext-wght-normal.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-@font-face {
-  font-family: "Unbounded";
-  src: url("../fonts/unbounded-cyrillic-wght-normal.woff2") format("woff2");
-  font-weight: 200 900;
+  font-family: "Russo One";
+  src: url("../fonts/russo-one-cyrillic-400-normal.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 @font-face {
-  font-family: "Unbounded";
-  src: url("../fonts/unbounded-latin-wght-normal.woff2") format("woff2");
-  font-weight: 200 900;
+  font-family: "Russo One";
+  src: url("../fonts/russo-one-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: "Onest";
-  src: url("../fonts/onest-cyrillic-wght-normal.woff2") format("woff2");
-  font-weight: 100 900;
+  font-family: "Manrope";
+  src: url("../fonts/manrope-cyrillic-wght-normal.woff2") format("woff2");
+  font-weight: 200 800;
   font-style: normal;
   font-display: swap;
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 @font-face {
-  font-family: "Onest";
-  src: url("../fonts/onest-latin-wght-normal.woff2") format("woff2");
-  font-weight: 100 900;
+  font-family: "Manrope";
+  src: url("../fonts/manrope-cyrillic-ext-wght-normal.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("../fonts/manrope-latin-wght-normal.woff2") format("woff2");
+  font-weight: 200 800;
   font-style: normal;
   font-display: swap;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
 @font-face {
   font-family: "Cormorant Garamond";
   src: url("../fonts/cormorant-garamond-cyrillic-500-italic.woff2") format("woff2");
@@ -104,34 +97,39 @@
 
 :root {
   /* Ink & paper ---------------------------------------------------------- */
-  --c-ink: #0e0e0c;
-  --c-ink-soft: #171714;
-  --c-ink-raised: #1f1f1b;
-  --c-paper: #ece8de;
-  --c-paper-deep: #e2ddd0;
-  --c-bone: #f4f0e7;
-  --c-green: #15251f;
-  --c-green-soft: #1d312a;
+  --c-ink: #151515;
+  --c-ink-soft: #1d1d1b;
+  --c-ink-raised: #262624;
+  --c-paper: #f4f3ed;
+  --c-paper-deep: #e7e5d8;
+  --c-bone: #f4f3ed;
+  --c-green: #1645ea;
+  --c-green-soft: #1239c9;
   --c-white: #ffffff;
 
+  /* Blueprint ------------------------------------------------------------ */
+  --c-blue: #1645ea;
+  --c-blue-deep: #1239c9;
+  --c-blue-soft: #d8e2ff;
+
   /* Accents -------------------------------------------------------------- */
-  --c-lime: #d8ff3e;
-  --c-lime-soft: #e6ff8a;
-  --c-orange: #ff5a2c;
-  --c-orange-deep: #b8320d;
+  --c-lime: #c4f529;
+  --c-lime-soft: #e4ff8a;
+  --c-orange: #ff702f;
+  --c-orange-deep: #b83d0f;
 
   /* Text ----------------------------------------------------------------- */
   --c-text: var(--c-ink);
-  --c-text-soft: #6b675e;
+  --c-text-soft: #63635f;
   --c-text-on-dark: var(--c-bone);
-  --c-text-muted-dark: #a29c8e;
+  --c-text-muted-dark: #d8e2ff;
   --c-text-accent: var(--c-orange-deep);
 
   /* Lines ---------------------------------------------------------------- */
-  --c-line: rgb(14 14 12 / 16%);
-  --c-line-strong: rgb(14 14 12 / 36%);
-  --c-line-dark: rgb(244 240 231 / 16%);
-  --c-line-dark-strong: rgb(244 240 231 / 38%);
+  --c-line: #d5d5ce;
+  --c-line-strong: #b9b9b1;
+  --c-line-dark: rgb(255 255 255 / 20%);
+  --c-line-dark-strong: rgb(255 255 255 / 42%);
 
   /* States --------------------------------------------------------------- */
   --c-focus: var(--c-orange);
@@ -142,8 +140,8 @@
   --c-success: #2e7d4f;
 
   /* Typography ----------------------------------------------------------- */
-  --f-display: "Unbounded", "Arial Black", sans-serif;
-  --f-body: "Onest", "Helvetica Neue", Arial, sans-serif;
+  --f-display: "Russo One", "Manrope", "Arial Black", sans-serif;
+  --f-body: "Manrope", "Helvetica Neue", Arial, sans-serif;
   --f-serif: "Cormorant Garamond", Georgia, serif;
   --f-mono: "IBM Plex Mono", "Courier New", monospace;
 
@@ -182,18 +180,18 @@
   --s-12: 128px;
   --s-13: 160px;
 
-  --section-pad: clamp(4.5rem, 9vw, 9.5rem);
-  --container: 1440px;
-  --gutter: clamp(1.25rem, 4.2vw, 4rem);
-  --header-h: 64px;
+  --section-pad: clamp(4.5rem, 8vw, 7rem);
+  --container: 1280px;
+  --gutter: clamp(1.25rem, 5vw, 2.5rem);
+  --header-h: 80px;
 
   /* Grid ----------------------------------------------------------------- */
   --grid-cols: 12;
   --grid-gap: clamp(1rem, 1.7vw, 1.5rem);
 
   /* Shape ---------------------------------------------------------------- */
-  --r-xs: 2px;
-  --r-sm: 4px;
+  --r-xs: 4px;
+  --r-sm: 6px;
   --r-pill: 999px;
   --border: 1px solid var(--c-line);
   --border-dark: 1px solid var(--c-line-dark);
