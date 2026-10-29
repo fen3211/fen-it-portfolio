@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ойын әлемі — кейс FEN</title>
+  <meta name="description" content="Кейс «Ойын әлемі»: иммерсивный казахскоязычный сайт с непрерывной Three.js-сценой, порталом и скролл-хореографией.">
+  <meta name="theme-color" content="#0e0e0c">
+  <link rel="canonical" href="https://fen3211.github.io/fen-it-portfolio/work/oyun-alemi.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="FEN">
+  <meta property="og:title" content="Ойын әлемі — кейс FEN">
+  <meta property="og:description" content="Кейс «Ойын әлемі»: иммерсивный казахскоязычный сайт с непрерывной Three.js-сценой, порталом и скролл-хореографией.">
+  <meta property="og:url" content="https://fen3211.github.io/fen-it-portfolio/work/oyun-alemi.html">
+  <meta property="og:image" content="https://fen3211.github.io/fen-it-portfolio/assets/img/cases/og-oyun-alemi.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="../assets/img/brand/fen-mark.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/unbounded-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/onest-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="stylesheet" href="../assets/css/case.css">
+  <noscript><style>@media (max-width: 900px){.header__nav{display:flex;flex-wrap:wrap;gap:8px 14px;margin-left:auto;font-size:9px}.menu-btn{display:none}}</style></noscript>
+  <script>document.documentElement.classList.add("js");</script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Ойын әлемі",
+      "description": "Кейс «Ойын әлемі»: иммерсивный казахскоязычный сайт с непрерывной Three.js-сценой, порталом и скролл-хореографией.",
+      "url": "https://fen3211.github.io/fen-it-portfolio/work/oyun-alemi.html",
+      "image": "https://fen3211.github.io/fen-it-portfolio/assets/img/cases/og-oyun-alemi.jpg",
+      "genre": "Web development, 3D, interactive",
+      "creator": {"@type": "Person", "name": "FEN", "url": "https://fen3211.github.io/fen-it-portfolio/"}
+    }
+  </script>
+  <script src="../assets/js/site.js" defer></script>
+</head>
+<body class="case-page">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor is-hidden" aria-hidden="true">
+    <div class="cursor__ring"><span class="cursor__label"></span></div>
+    <div class="cursor__dot"></div>
+  </div>
+
+  <header class="header">
+    <div class="shell header__inner">
+      <a class="brand" href="../index.html" aria-label="FEN — на главную">
+        <img class="brand__mark" src="../assets/img/brand/fen-mark.svg" width="22" height="22" alt="">
+        <span class="brand__word">FEN<sup>®</sup></span>
+        <span class="brand__sub">design &amp; code</span>
+      </a>
+      <nav class="header__nav" aria-label="Основная навигация">
+        <a href="../index.html#works">Работы</a>
+        <a href="../index.html#lab">Прототипы</a>
+        <a href="../index.html#about">Обо мне</a>
+        <a href="../index.html#contact">Контакт</a>
+      </nav>
+      <div class="header__right">
+        <span class="header__status"><span class="status"><i></i>Открыт к проектам</span></span>
+        <a class="header__cta" href="https://t.me/TT_Fen" target="_blank" rel="noopener noreferrer">Обсудить проект <span aria-hidden="true">↗</span></a>
+        <button class="menu-btn" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="Открыть меню"><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+  </header>
+
+  <div class="menu" id="site-menu" aria-hidden="true">
+    <nav aria-label="Мобильная навигация">
+      <ul class="menu__list">
+        <li><a class="menu__link" href="../index.html#works">Работы <small>01</small></a></li>
+        <li><a class="menu__link" href="../index.html#lab">Прототипы <small>02</small></a></li>
+        <li><a class="menu__link" href="../index.html#about">Обо мне <small>03</small></a></li>
+        <li><a class="menu__link" href="../index.html#contact">Контакт <small>04</small></a></li>
+      </ul>
+    </nav>
+    <div class="menu__bottom">
+      <div>
+        <a href="https://t.me/TT_Fen" target="_blank" rel="noopener noreferrer">Telegram ↗</a><br>
+        <a href="mailto:vlad2.0top@mail.ru">vlad2.0top@mail.ru</a>
+      </div>
+      <p class="menu__note">FEN — дизайн и код<br>Алматы / удалённо<br><span class="js-time">—</span> по Алматы</p>
+    </div>
+  </div>
+
+  <main id="main">
+    <article id="top">
+      <header class="shell case-hero">
+        <div class="case-breadcrumb">
+          <span><a href="../index.html#works">Работы</a> / 01</span>
+          <span>Web · 3D</span>
+        </div>
+        <h1 class="case-title">Ойын әлемі</h1>
+        <p class="case-sub">Иммерсивный сайт на казахском, в котором одна 3D-сцена ведёт через шесть глав.</p>
+        <dl class="case-meta">
+          <div><dt>Роль</dt><dd>Дизайн, фронтенд, 3D-сцена</dd></div>
+          <div><dt>Год</dt><dd>2026</dd></div>
+          <div><dt>Стек</dt><dd>Vite, TypeScript, Three.js, GSAP, Lenis</dd></div>
+          <div><dt>Статус</dt><dd>Концепт / демо</dd></div>
+        </dl>
+        <figure class="case-cover"><img src="../assets/img/cases/oyun-1.webp" alt="Главный экран «Ойын әлемі» с 3D-порталом" width="1600" height="1000" fetchpriority="high" decoding="async"><figcaption>Главный экран / портал</figcaption></figure>
+        <div class="case-statusbar">
+          <span>Web · 3D</span>
+          <span>Одностраничный сайт / WebGL</span>
+          <span><b>Живое демо внутри портфолио</b></span>
+          <span>FEN / 2026</span>
+        </div>
+      </header>
+
+      <div class="shell case-layout">
+        <aside class="case-facts">
+          <dl>
+                        <div class="case-facts__row"><dt>Язык</dt><dd>Казахский</dd></div>
+            <div class="case-facts__row"><dt>Платформа</dt><dd>Web, desktop + mobile</dd></div>
+            <div class="case-facts__row"><dt>3D</dt><dd>Процедурная сцена, particles, bloom</dd></div>
+            <div class="case-facts__row"><dt>Движение</dt><dd>ScrollTrigger + Lenis</dd></div>
+            <div class="case-facts__row"><dt>Доступность</dt><dd>Reduced motion, WebGL fallback</dd></div>
+          </dl>
+          <a class="btn btn--ink" href="../projects/oyun-alemi/" target="_blank" rel="noopener noreferrer" data-cursor="Открыть">Открыть демо <span aria-hidden="true">↗</span></a>
+          <a class="case-facts__back" href="../index.html#works">← Все работы</a>
+        </aside>
+
+        <div class="case-content">
+          <h2>Задача</h2><p>Сделать одностраничный сайт на казахском, который ощущается как вход в другой мир, а не как набор секций. Figma не использовалась: сцена, типографика и движение собирались сразу в браузере.</p><p>Главный герой — портал: слои дымчатого стекла, переливающийся металл, энергетическое ядро и частицы. Вокруг него строится вся драматургия скролла.</p><h2>Одна сцена вместо шести блоков</h2><p>Вся графика живёт в одном WebGL-канвасе. ScrollTrigger переводит прогресс страницы в состояние камеры: она приближается, проходит сквозь портал, открывает новые главы и откатывается в финале.</p><p>HTML и CSS остаются носителями контента: заголовки, навигация и CTA читаются без WebGL. Это важно и для доступности, и для скорости первого экрана.</p><blockquote class="case-quote">«Сайт не рассказывает про игру. Он даёт почувствовать вход в неё.»</blockquote><figure class="case-figure"><img src="../assets/img/cases/oyun-2.webp" alt="Глава сайта «Ойын әлемі» с планетой и орбитами" loading="lazy" decoding="async"><figcaption>Глава 02 / новая планета</figcaption></figure><h2>Что внутри</h2><ul><li>Шесть глав с разными состояниями камеры и света.</li><li>Процедурный портал, частицы, орбиты и сдержанный bloom.</li><li>Lenis + GSAP ScrollTrigger: непрерывный прогресс без рывков.</li><li>Отдельные масштабы сцены и типографики для desktop, tablet и mobile.</li><li>Reduced motion отключает плавную прокрутку и непрерывное движение.</li><li>Статичный градиент и читаемый контент, если WebGL недоступен.</li></ul><figure class="case-figure"><img src="../assets/img/cases/oyun-3.webp" alt="Глава сайта «Ойын әлемі» с расходящимися орбитами" loading="lazy" decoding="async"><figcaption>Глава 03 / выбор маршрута</figcaption></figure><div class="case-mobile"><img src="../assets/img/cases/oyun-mobile.webp" alt="Мобильная версия сайта «Ойын әлемі»" loading="lazy" decoding="async"><p>Mobile / 390 × 844</p></div><h2>Доступность и границы</h2><p>Сцена декоративная, весь смысл остаётся в DOM. Навигация, кнопки и тексты доступны с клавиатуры, анимация уважает prefers-reduced-motion.</p><div class="case-note"><b>Границы демо</b>Это концепт на казахском языке. Реальные игровые механики не заявлены и не подключены: CTA ведут по разделам сайта, а не в игру.</div>
+        </div>
+      </div>
+
+      <div class="shell">
+        <a class="case-next" href="eclipse-maison.html">
+          <div>
+            <span class="case-next__label">Следующий кейс / 02</span>
+            <h2>Eclipse Maison</h2>
+            <p>Парфюмерный дом, в котором флакон разбирается на части при скролле.</p>
+            <span class="case-next__arrow">Смотреть кейс <span aria-hidden="true">↗</span></span>
+          </div>
+          <div class="case-next__media"><img src="../assets/img/previews/card/eclipse-maison.webp" alt="" width="800" height="500" loading="lazy" decoding="async"></div>
+        </a>
+        <div class="case-bottom">
+          <span>FEN — дизайн и код / 2026</span>
+          <a href="../index.html#contact">Обсудить похожий проект ↗</a>
+          <a href="#top">Наверх ↑</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer__top">
+      <div class="footer__word">FEN<sup>®</sup></div>
+      <div class="footer__aside">
+        <p>Хорошие идеи заслуживают хорошего исполнения.</p>
+        <nav class="footer__nav" aria-label="Навигация в подвале">
+          <a href="../index.html#works">Работы</a>
+          <a href="../index.html#lab">Прототипы</a>
+          <a href="../index.html#about">Обо мне</a>
+          <a href="../index.html#contact">Контакт</a>
+          <a href="https://fen3211.github.io/fen-portfolio/" target="_blank" rel="noopener noreferrer">Графика ↗</a>
+        </nav>
+        <a class="link-arrow" href="mailto:vlad2.0top@mail.ru">vlad2.0top@mail.ru <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="shell footer__bottom">
+      <span>© <span class="js-year">2026</span> FEN — дизайн и код</span>
+      <span>Алматы / <span class="js-time">—</span></span>
+      <a href="https://github.com/fen3211/fen-it-portfolio" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <a href="#top">Наверх ↑</a>
+    </div>
+  </footer>
+
+  <div class="page-transition" id="page-transition" aria-hidden="true"><span class="page-transition__mark">FEN</span></div>
+  <script>
+    (() => {
+      const el = document.getElementById("page-transition");
+      let nav = false;
+      try {
+        nav = sessionStorage.getItem("fen-nav") === "1";
+        if (nav) sessionStorage.removeItem("fen-nav");
+      } catch {}
+      if (!nav || !el) return;
+      el.classList.add("is-active");
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        el.classList.add("is-out");
+        setTimeout(() => el.classList.remove("is-active", "is-out"), 500);
+      }));
+    })();
+  </script>
+
+</body>
+</html>

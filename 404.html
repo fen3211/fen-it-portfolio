@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>404 — такой страницы нет · FEN</title>
-<meta name="robots" content="noindex">
-<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Manrope:wght@400;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 — такой страницы нет · FEN</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0e0e0c">
+  <link rel="icon" href="assets/img/brand/fen-mark.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/unbounded-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/onest-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body class="blueprint">
-<main class="shell page-404">
-<span class="eyebrow light">FEN / СТРАНИЦА НЕ НАЙДЕНА</span>
-<h1>404<span aria-hidden="true">.</span></h1>
-<p>Эта идея пока не стала страницей. Зато на главной есть работы, услуги и способ обсудить твой проект.</p>
-<a class="button button-lime" href="index.html">На главную <span aria-hidden="true">↗</span></a>
-</main>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="header">
+    <div class="shell header__inner">
+      <a class="brand" href="index.html" aria-label="FEN — на главную">
+        <img class="brand__mark" src="assets/img/brand/fen-mark.svg" width="22" height="22" alt="">
+        <span class="brand__word">FEN<sup>®</sup></span>
+      </a>
+      <a class="header__cta" href="index.html">На главную <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <main class="page-404 shell" id="main">
+    <span class="mono">FEN / страница не найдена</span>
+    <h1>404<span aria-hidden="true">.</span></h1>
+    <p>Такой страницы нет. Возможно, ссылка устарела или в адресе опечатка. На главной — работы, прототипы и способ обсудить задачу.</p>
+    <a class="btn btn--lime" href="index.html">Вернуться на главную <span aria-hidden="true">↗</span></a>
+  </main>
 </body>
 </html>

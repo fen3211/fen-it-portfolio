@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Utka — кейс FEN</title>
+  <meta name="description" content="Кейс Utka: мобильное приложение лояльности кофейни с 3D-персонажем, QR-визитом и двумя состояниями пользователя.">
+  <meta name="theme-color" content="#0e0e0c">
+  <link rel="canonical" href="https://fen3211.github.io/fen-it-portfolio/work/utka.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="FEN">
+  <meta property="og:title" content="Utka — кейс FEN">
+  <meta property="og:description" content="Кейс Utka: мобильное приложение лояльности кофейни с 3D-персонажем, QR-визитом и двумя состояниями пользователя.">
+  <meta property="og:url" content="https://fen3211.github.io/fen-it-portfolio/work/utka.html">
+  <meta property="og:image" content="https://fen3211.github.io/fen-it-portfolio/assets/img/cases/og-utka.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="../assets/img/brand/fen-mark.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/unbounded-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/onest-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="stylesheet" href="../assets/css/case.css">
+  <noscript><style>@media (max-width: 900px){.header__nav{display:flex;flex-wrap:wrap;gap:8px 14px;margin-left:auto;font-size:9px}.menu-btn{display:none}}</style></noscript>
+  <script>document.documentElement.classList.add("js");</script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Utka",
+      "description": "Кейс Utka: мобильное приложение лояльности кофейни с 3D-персонажем, QR-визитом и двумя состояниями пользователя.",
+      "url": "https://fen3211.github.io/fen-it-portfolio/work/utka.html",
+      "image": "https://fen3211.github.io/fen-it-portfolio/assets/img/cases/og-utka.jpg",
+      "genre": "Mobile UI, product design, loyalty",
+      "creator": {"@type": "Person", "name": "FEN", "url": "https://fen3211.github.io/fen-it-portfolio/"}
+    }
+  </script>
+  <script src="../assets/js/site.js" defer></script>
+</head>
+<body class="case-page">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor is-hidden" aria-hidden="true">
+    <div class="cursor__ring"><span class="cursor__label"></span></div>
+    <div class="cursor__dot"></div>
+  </div>
+
+  <header class="header">
+    <div class="shell header__inner">
+      <a class="brand" href="../index.html" aria-label="FEN — на главную">
+        <img class="brand__mark" src="../assets/img/brand/fen-mark.svg" width="22" height="22" alt="">
+        <span class="brand__word">FEN<sup>®</sup></span>
+        <span class="brand__sub">design &amp; code</span>
+      </a>
+      <nav class="header__nav" aria-label="Основная навигация">
+        <a href="../index.html#works">Работы</a>
+        <a href="../index.html#lab">Прототипы</a>
+        <a href="../index.html#about">Обо мне</a>
+        <a href="../index.html#contact">Контакт</a>
+      </nav>
+      <div class="header__right">
+        <span class="header__status"><span class="status"><i></i>Открыт к проектам</span></span>
+        <a class="header__cta" href="https://t.me/TT_Fen" target="_blank" rel="noopener noreferrer">Обсудить проект <span aria-hidden="true">↗</span></a>
+        <button class="menu-btn" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="Открыть меню"><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+  </header>
+
+  <div class="menu" id="site-menu" aria-hidden="true">
+    <nav aria-label="Мобильная навигация">
+      <ul class="menu__list">
+        <li><a class="menu__link" href="../index.html#works">Работы <small>01</small></a></li>
+        <li><a class="menu__link" href="../index.html#lab">Прототипы <small>02</small></a></li>
+        <li><a class="menu__link" href="../index.html#about">Обо мне <small>03</small></a></li>
+        <li><a class="menu__link" href="../index.html#contact">Контакт <small>04</small></a></li>
+      </ul>
+    </nav>
+    <div class="menu__bottom">
+      <div>
+        <a href="https://t.me/TT_Fen" target="_blank" rel="noopener noreferrer">Telegram ↗</a><br>
+        <a href="mailto:vlad2.0top@mail.ru">vlad2.0top@mail.ru</a>
+      </div>
+      <p class="menu__note">FEN — дизайн и код<br>Алматы / удалённо<br><span class="js-time">—</span> по Алматы</p>
+    </div>
+  </div>
+
+  <main id="main">
+    <article id="top">
+      <header class="shell case-hero">
+        <div class="case-breadcrumb">
+          <span><a href="../index.html#works">Работы</a> / 05</span>
+          <span>Mobile · UI</span>
+        </div>
+        <h1 class="case-title">Utka</h1>
+        <p class="case-sub">Мобильное приложение лояльности кофейни с 3D-уткой и двумя состояниями программы.</p>
+        <dl class="case-meta">
+          <div><dt>Роль</dt><dd>Mobile UI, фронтенд</dd></div>
+          <div><dt>Год</dt><dd>2026</dd></div>
+          <div><dt>Стек</dt><dd>HTML, CSS, JavaScript, 3D-рендер</dd></div>
+          <div><dt>Статус</dt><dd>Тестовое задание</dd></div>
+        </dl>
+        <figure class="case-cover case-cover--utka"><span class="case-phone"><img src="../assets/img/cases/utka-1.webp" alt="Экран Utka до первого визита" width="780" height="1688" fetchpriority="high" decoding="async"></span><span class="case-phone"><img src="../assets/img/cases/utka-2.webp" alt="Экран Utka после трёх визитов" width="780" height="1688" fetchpriority="high" decoding="async"></span><figcaption>Guest / Regular · 390 × 844</figcaption></figure>
+        <div class="case-statusbar">
+          <span>Mobile · UI</span>
+          <span>Мобильный прототип 390 × 844</span>
+          <span><b>2 состояния / живая система</b></span>
+          <span>FEN / 2026</span>
+        </div>
+      </header>
+
+      <div class="shell case-layout">
+        <aside class="case-facts">
+          <dl>
+                        <div class="case-facts__row"><dt>Платформа</dt><dd>Native iOS 390 × 844</dd></div>
+            <div class="case-facts__row"><dt>Состояния</dt><dd>Гость и постоянный гость</dd></div>
+            <div class="case-facts__row"><dt>Персонаж</dt><dd>Один 3D-рендер, две версии</dd></div>
+            <div class="case-facts__row"><dt>Механики</dt><dd>QR, купоны, банка зёрен, чат</dd></div>
+            <div class="case-facts__row"><dt>Система</dt><dd>Живая страница токенов</dd></div>
+          </dl>
+          <a class="btn btn--ink" href="../projects/utka/index.html" target="_blank" rel="noopener noreferrer" data-cursor="Открыть">Открыть демо <span aria-hidden="true">↗</span></a>
+          <a class="case-facts__back" href="../index.html#works">← Все работы</a>
+        </aside>
+
+        <div class="case-content">
+          <h2>Задача</h2><p>Собрать премиальный мобильный экран лояльности кофейни в двух состояниях: до первого визита и после трёх. Один компонентный слой, два набора данных, без Figma — сразу в HTML/CSS/JS.</p><h2>Один экран — два состояния</h2><p>Гость видит пустую банку зёрен, четыре неактивные лапки и купон на знакомство. Постоянный гость — три зёрнышка, уровень «Знакомый гость», прогресс к «Частому гостю» и Бокс «3+1».</p><p>Тексты и данные живут в data.js, визуальные правила — в CSS-токенах, переключение состояния доступно по клавишам 1/2 и через параметр URL.</p><h2>3D-персонаж</h2><p>Один рендер утки в двух версиях: фартук добавлен к той же модели, сохранены ракурс, свет и масштаб. Персонаж не спорит с интерфейсом и остаётся его частью, а не наклейкой.</p><div class="case-gallery"><figure class="case-figure"><img src="../assets/img/cases/utka-1.webp" alt="Utka до первого визита" loading="lazy" decoding="async"><figcaption>Guest / первый визит</figcaption></figure><figure class="case-figure"><img src="../assets/img/cases/utka-2.webp" alt="Utka после трёх визитов" loading="lazy" decoding="async"><figcaption>Regular / визит 3</figcaption></figure></div><h2>Механики</h2><ul><li>QR-визит: отметка на кассе, без ручного ввода.</li><li>Купоны и Бокс «3+1» с честным прогрессом.</li><li>Банка зёрен, чат и помощь — шторки с клавиатурной доступностью.</li><li>Два состояния через data.js, без дублирования компонентов.</li><li>Живая дизайн-система на system.html и презентация на about.html.</li></ul><div class="case-gallery"><figure class="case-figure"><img src="../assets/img/cases/utka-3.webp" alt="Презентация проекта Utka" loading="lazy" decoding="async"><figcaption>Презентация / сценарии</figcaption></figure><figure class="case-figure"><img src="../assets/img/cases/utka-4.webp" alt="Дизайн-система Utka" loading="lazy" decoding="async"><figcaption>System / токены и компоненты</figcaption></figure></div><h2>Границы</h2><div class="case-note"><b>Границы демо</b>Это тестовое задание без Figma и бэкенда. Персонаж — один 3D-рендер; реальные визиты, оплата и сообщения не подключены.</div>
+        </div>
+      </div>
+
+      <div class="shell">
+        <a class="case-next" href="oyun-alemi.html">
+          <div>
+            <span class="case-next__label">Следующий кейс / 01</span>
+            <h2>Ойын әлемі</h2>
+            <p>Иммерсивный казахскоязычный сайт с непрерывной 3D-сценой.</p>
+            <span class="case-next__arrow">Смотреть кейс <span aria-hidden="true">↗</span></span>
+          </div>
+          <div class="case-next__media"><img src="../assets/img/previews/card/oyun-alemi.webp" alt="" width="800" height="500" loading="lazy" decoding="async"></div>
+        </a>
+        <div class="case-bottom">
+          <span>FEN — дизайн и код / 2026</span>
+          <a href="../index.html#contact">Обсудить похожий проект ↗</a>
+          <a href="#top">Наверх ↑</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer__top">
+      <div class="footer__word">FEN<sup>®</sup></div>
+      <div class="footer__aside">
+        <p>Хорошие идеи заслуживают хорошего исполнения.</p>
+        <nav class="footer__nav" aria-label="Навигация в подвале">
+          <a href="../index.html#works">Работы</a>
+          <a href="../index.html#lab">Прототипы</a>
+          <a href="../index.html#about">Обо мне</a>
+          <a href="../index.html#contact">Контакт</a>
+          <a href="https://fen3211.github.io/fen-portfolio/" target="_blank" rel="noopener noreferrer">Графика ↗</a>
+        </nav>
+        <a class="link-arrow" href="mailto:vlad2.0top@mail.ru">vlad2.0top@mail.ru <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="shell footer__bottom">
+      <span>© <span class="js-year">2026</span> FEN — дизайн и код</span>
+      <span>Алматы / <span class="js-time">—</span></span>
+      <a href="https://github.com/fen3211/fen-it-portfolio" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <a href="#top">Наверх ↑</a>
+    </div>
+  </footer>
+
+  <div class="page-transition" id="page-transition" aria-hidden="true"><span class="page-transition__mark">FEN</span></div>
+  <script>
+    (() => {
+      const el = document.getElementById("page-transition");
+      let nav = false;
+      try {
+        nav = sessionStorage.getItem("fen-nav") === "1";
+        if (nav) sessionStorage.removeItem("fen-nav");
+      } catch {}
+      if (!nav || !el) return;
+      el.classList.add("is-active");
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        el.classList.add("is-out");
+        setTimeout(() => el.classList.remove("is-active", "is-out"), 500);
+      }));
+    })();
+  </script>
+
+</body>
+</html>
