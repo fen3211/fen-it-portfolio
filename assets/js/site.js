@@ -517,6 +517,51 @@
   });
 
 
+  /* Droppable desk props ------------------------------------------------ */
+  const fallProps = $$(".desk-object[data-fall]");
+  if (fallProps.length) {
+    const dropProp = (el) => {
+      if (el.dataset.falling === "true") return;
+      el.dataset.falling = "true";
+      el.style.pointerEvents = "none";
+      if (reduceMotion.matches) {
+        const fade = el.animate([{ opacity: 1 }, { opacity: 0 }, { opacity: 1 }], { duration: 380, easing: "ease-in-out" });
+        fade.finished.then(() => { el.dataset.falling = "false"; el.style.pointerEvents = ""; }).catch(() => {});
+        return;
+      }
+      const direction = el.dataset.fall === "left" ? -1 : 1;
+      const fall = el.animate([
+        { translate: "0 0", rotate: "0deg", opacity: 1 },
+        { translate: `${direction * 70}px 48vh`, rotate: `${direction * 110}deg`, opacity: 1, offset: 0.58 },
+        { translate: `${direction * 150}px 125vh`, rotate: `${direction * 260}deg`, opacity: 0 }
+      ], { duration: 1050, easing: "cubic-bezier(0.55, 0.06, 0.68, 0.19)", fill: "both" });
+      fall.finished.then(() => {
+        window.setTimeout(() => {
+          el.getAnimations().forEach((animation) => animation.cancel());
+          el.style.translate = "";
+          const enter = el.animate([
+            { translate: `${direction * 40}px -75vh`, rotate: `${-direction * 60}deg`, opacity: 0 },
+            { translate: "0 0", rotate: "0deg", opacity: 1 }
+          ], { duration: 680, easing: "cubic-bezier(0.34, 1.56, 0.64, 1)", fill: "both" });
+          enter.finished.then(() => {
+            el.getAnimations().forEach((animation) => animation.cancel());
+            el.dataset.falling = "false";
+            el.style.pointerEvents = "";
+          }).catch(() => {});
+        }, 750);
+      }).catch(() => {});
+    };
+    fallProps.forEach((el) => {
+      el.addEventListener("click", () => dropProp(el));
+      el.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          dropProp(el);
+        }
+      });
+    });
+  }
+
   /* Hero palette -------------------------------------------------------- */
   const heroRoot = $(".hero");
   const heroSwatches = $$(".swatch-strip .swatch");

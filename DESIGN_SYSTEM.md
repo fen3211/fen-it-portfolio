@@ -181,6 +181,7 @@
 - Заголовок с 3D text-shadow (белые/серые слои + синяя тень).
 - На hover handles увеличиваются.
 - Вокруг — desk-объекты (ruler, pencil, paper, eraser) с parallax по `data-depth`; spotlight следует за курсором.
+- Карандаш и ластик — кнопки: click/Enter роняет их вниз с вращением, через ~1.8 s они возвращаются сверху с пружиной. Reduced motion — короткий fade.
 
 ### 5.3. Hero index panel
 
@@ -279,6 +280,7 @@
 | Preview drag | threshold 42 px; return snap + shuffle |
 | Browser pan | 350 ms; ±10/8px |
 | Palette | 450 ms фон, 300 ms текст |
+| Падение props | 1050 ms падение + 680 ms возврат-пружина |
 | Reveal | 720 ms; mask 900 ms; stagger 80–240 ms |
 | Page transition | 420 ms |
 | Menu | 550 ms |
@@ -301,6 +303,7 @@
 - Magnetic CTA (10×8px, lerp 0.18).
 - Lab tilt ±5°.
 - Palette hover/click.
+- Падение карандаша/ластика по click/Enter (WAAPI: translate/rotate, gravity ease-in, spring return).
 - Handles/sticker hover.
 
 ### 6.5. Scroll
@@ -359,6 +362,7 @@
 - WCAG 2.1 AA; axe-core 0 нарушений на главной/кейсе (desktop/mobile).
 - Skip link, landmarks, H1/H2/H3, focus-visible, aria у меню/фильтров/палитры, alt у изображений.
 - Палитра — кнопки с `aria-label`/`aria-pressed`; hover не единственный способ (click/tap).
+- Карандаш/ластик — `role="button"`, `tabindex="0"`, aria-label, Enter/Space; падение отключается reduced motion.
 - No-JS: навигация через `<noscript>`, hero preview/palette скрыты; контент читается.
 - Reduced motion.
 - Контраст: оранжевый текст — `#B83D0F`; подписи на светлых темах — ink/тёмные muted.

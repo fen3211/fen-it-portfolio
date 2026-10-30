@@ -24,7 +24,7 @@
 
 ### Что с этим сделано
 
-- **Реализовано:** карточный шафл и drag hero-превью (Riff 1/8), цикл-маркер процесса (Riff 6), тактильное нажатие кнопок (Riff 7), полноценный cursor trail + design-tool курсор (Riff 4), desk parallax/spotlight, browser image pan и интерактивная палитра hero (запрос владельца).
+- **Реализовано:** карточный шафл и drag hero-превью (Riff 1/8), цикл-маркер процесса (Riff 6), тактильное нажатие кнопок (Riff 7), полноценный cursor trail + design-tool курсор (Riff 4), desk parallax/spotlight, browser image pan, интерактивная палитра hero и падающие карандаш/ластик (запросы владельца).
 - **Сознательно не внедрено:** металл/хром (Riff 5), dismiss-карточки (Riff 9), тяжёлый WebGL (Riff 10), dither-шейдер (Riff 11) — они не совпадают с плоской редакционной системой или стоят слишком дорого для оболочки.
 - **Точные тайминги и easing:** в Riffs не раскрыты. Чтобы получить их, нужно скопировать frame в Figma и открыть Motion timeline; я не копировал, чтобы не создавать копии в твоих драфтах без разрешения. Если нужно — скажи, и я вытащу точные значения из Motion timeline.
 
@@ -63,6 +63,7 @@
 | Desk parallax | pointermove | Инструменты уходят в глубину | lerp 0.09, depth 18–42px | Hero | rAF + `translate` |
 | Cursor trail | pointermove | Лаймовые ромбы | spawn 55 мс, fade 700 мс, max 12 | Все страницы | DOM + CSS animation |
 | Preview drag | pointer drag | Карточка тянется, проект меняется | threshold 42px, shuffle 650 мс | Hero | Pointer capture + JS |
+| Droppable props | click/Enter | Карандаш/ластик падают с вращением и возвращаются сверху | 1050 мс fall + 680 мс spring | Hero | WAAPI `translate/rotate` |
 | Browser pan | pointermove | Скриншот панорамируется в рамке | ±10/8px, 350 мс | Works | CSS vars + JS |
 
 ### 3.2. Вход и scroll

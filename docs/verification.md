@@ -96,6 +96,7 @@ FCP **0.4 s**, LCP **0.9 s**, TBT **20 ms**, CLS **0.001**, Speed Index **0.6 s*
 | Desk parallax | ruler/pencil/paper/eraser смещаются с разной глубиной; spotlight следует за курсором |
 | Cursor trail | лаймовые ромбы, 55 мс, 700 мс, max 12; отключается reduced/touch |
 | Browser pan | изображение в рамке панорамируется по курсору, hover scale |
+| Falling props | карандаш/ластик падают по click/Enter и возвращаются; keyboard; reduced — fade |
 | Utka band | два телефона, отдельная категория, ссылка на кейс |
 | Фильтры | «Все 5», «Веб 3», «UI/UX 1», «Мобильные 1»; FLIP; live-region |
 | Мобильное меню | открытие/закрытие, Escape, focus trap, возврат фокуса, блокировка скролла |
