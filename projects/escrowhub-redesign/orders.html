@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Мои сделки — EscrowHub</title>
+  <meta name="description" content="Заказы покупателя EscrowHub: статусы, безопасная сделка, подтверждение получения и споры.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230B6E4F'/%3E%3Cpath d='M9.5 9.5v13M9.5 9.5H21M9.5 16h8M9.5 22.5H21' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='20.5' cy='16' r='2' fill='%23DDF56F'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="assets/css/shell.css">
+  <link rel="stylesheet" href="assets/css/cabinet.css">
+</head>
+<body data-page="orders">
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+  <div id="site-header"></div>
+
+  <main id="main" class="cabinet-page">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="index.html">Главная</a><span class="sep">/</span><span aria-current="page">Мои сделки</span>
+      </nav>
+      <div class="cabinet-head">
+        <div>
+          <span class="eyebrow">Личный кабинет</span>
+          <h1>Мои сделки</h1>
+          <p>Заказы, подтверждение получения и споры. Деньги остаются в сервисе до вашего решения.</p>
+        </div>
+        <span class="tag tag--outline cabinet-demo"><i class="dot-live dot-live--amber"></i>Демо-аккаунт покупателя</span>
+      </div>
+
+      <div class="cabinet-layout">
+        <aside class="cabinet-side">
+          <div class="profile-card">
+            <div class="profile-card__top">
+              <span class="avatar avatar--lg avatar--paper">А</span>
+              <div>
+                <b>Алина С.</b>
+                <span>Покупатель</span>
+              </div>
+            </div>
+            <p class="profile-card__mail">alina@example.com</p>
+            <div class="profile-card__meta"><i class="dot-live"></i>Демо-режим · данные не реальные</div>
+          </div>
+
+          <div class="side-nav">
+            <span class="side-nav__label">Покупатель</span>
+            <a class="side-nav__link is-active" href="orders.html"><svg class="icon"><use href="#i-route"></use></svg>Мои сделки</a>
+            <a class="side-nav__link" href="index.html#how"><svg class="icon"><use href="#i-route"></use></svg>Как проходит сделка</a>
+            <a class="side-nav__link" href="mailto:support@escrowhub.online"><svg class="icon"><use href="#i-mail"></use></svg>Поддержка</a>
+          </div>
+          <div class="side-nav">
+            <span class="side-nav__label">Продавцам</span>
+            <a class="side-nav__link" href="seller.html"><svg class="icon"><use href="#i-wallet"></use></svg>Кабинет продавца</a>
+            <a class="side-nav__link" href="create.html"><svg class="icon"><use href="#i-plus"></use></svg>Разместить товар</a>
+          </div>
+
+          <div class="side-note">
+            <svg class="icon"><use href="#i-info"></use></svg>
+            <p>Все заказы, суммы и статусы в этом кабинете — демонстрационные. Прототип не подключён к платежам.</p>
+          </div>
+        </aside>
+
+        <section class="cabinet-main" aria-labelledby="orders-title">
+          <h2 class="sr-only" id="orders-title">Список сделок</h2>
+          <div class="cabinet-stats">
+            <div class="stat-card">
+              <span class="stat-card__label">Активные</span>
+              <b data-stat="active">1</b>
+              <span class="stat-card__hint">ждут выдачи или проверки</span>
+            </div>
+            <div class="stat-card stat-card--green">
+              <span class="stat-card__label">Завершённые</span>
+              <b data-stat="completed">1</b>
+              <span class="stat-card__hint">подтверждены покупателем</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__label">Споры</span>
+              <b data-stat="disputes">0</b>
+              <span class="stat-card__hint">деньги на удержании</span>
+            </div>
+          </div>
+
+          <div class="cabinet-toolbar">
+            <div class="cabinet-tabs" role="tablist" aria-label="Фильтр сделок">
+              <button class="cabinet-tab is-active" type="button" role="tab" aria-selected="true" data-orders-tab="all">Все <span data-tab-count="all">2</span></button>
+              <button class="cabinet-tab" type="button" role="tab" aria-selected="false" data-orders-tab="active">Активные <span data-tab-count="active">1</span></button>
+              <button class="cabinet-tab" type="button" role="tab" aria-selected="false" data-orders-tab="completed">Завершённые <span data-tab-count="completed">1</span></button>
+              <button class="cabinet-tab" type="button" role="tab" aria-selected="false" data-orders-tab="disputes">Споры <span data-tab-count="disputes">0</span></button>
+            </div>
+            <a class="link-arrow cabinet-toolbar__link" href="index.html#how">Как устроена сделка <svg class="icon"><use href="#i-arrow-up-right"></use></svg></a>
+          </div>
+
+          <div class="orders-list" data-orders aria-live="polite"></div>
+
+          <div class="empty orders-empty" data-orders-empty hidden>
+            <span class="empty__icon"><svg class="icon"><use href="#i-package"></use></svg></span>
+            <h3 data-orders-empty-title>Здесь пока пусто</h3>
+            <p data-orders-empty-text>Когда появятся сделки, они окажутся в этом разделе.</p>
+            <a class="btn btn--primary" href="catalog.html">Перейти в каталог</a>
+          </div>
+
+          <div class="escrow-footnote">
+            <svg class="icon"><use href="#i-route"></use></svg>
+            <p><b>Как защищена сделка.</b> Оплата хранится в EscrowHub и уходит продавцу только после вашего подтверждения. Если товар не соответствует описанию — откройте спор до подтверждения: деньги останутся на удержании.</p>
+            <a href="index.html#how">Подробнее</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <div class="overlay" id="confirm-overlay" aria-hidden="true">
+    <div class="modal confirm-modal" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
+      <button class="modal__close" type="button" aria-label="Закрыть" data-close-overlay><svg class="icon"><use href="#i-x"></use></svg></button>
+      <span class="modal__eyebrow eyebrow">Подтверждение</span>
+      <h2 id="confirm-title">Подтвердить получение?</h2>
+      <p class="modal__sub" data-confirm-text>После подтверждения деньги уйдут продавцу. Отменить это действие будет нельзя.</p>
+      <div class="confirm-summary">
+        <div><span>Заказ</span><b data-confirm-order>#EH-2841</b></div>
+        <div><span>Сумма к выплате продавцу</span><b data-confirm-amount>50 ₽</b></div>
+        <div><span>Комиссия сервиса</span><b>0 ₽</b></div>
+      </div>
+      <div class="notice notice--amber" style="margin-top:14px">
+        <svg class="icon"><use href="#i-alert"></use></svg>
+        <span>Если товар не соответствует описанию, сначала откройте спор. До подтверждения оплата остаётся в сервисе.</span>
+      </div>
+      <div class="modal__foot modal-actions">
+        <button class="btn btn--green" type="button" data-confirm-submit>Да, подтвердить</button>
+        <button class="btn btn--ghost" type="button" data-close-overlay>Вернуться</button>
+      </div>
+      <p class="modal__note">Демо-прототип: статус изменится только на этой странице.</p>
+    </div>
+  </div>
+
+  <div class="overlay" id="dispute-overlay" aria-hidden="true">
+    <div class="modal dispute-modal" role="dialog" aria-modal="true" aria-labelledby="dispute-title">
+      <button class="modal__close" type="button" aria-label="Закрыть" data-close-overlay><svg class="icon"><use href="#i-x"></use></svg></button>
+      <span class="modal__eyebrow eyebrow">Спор</span>
+      <h2 id="dispute-title">Открыть спор</h2>
+      <p class="modal__sub">Спор доступен в течение 72 часов после выдачи товара. Пока он открыт, деньги остаются на удержании.</p>
+      <form data-dispute-form>
+        <div class="field" style="margin-top:18px">
+          <label class="field__label" for="dispute-reason">Что не так с заказом?</label>
+          <select class="select" id="dispute-reason" required>
+            <option value="">Выберите причину</option>
+            <option>Товар не выдан</option>
+            <option>Не соответствует описанию</option>
+            <option>Проблема с доступом или активацией</option>
+            <option>Другое</option>
+          </select>
+        </div>
+        <div class="field" style="margin-top:12px">
+          <label class="field__label" for="dispute-comment">Комментарий <span class="muted" style="font-weight:400">— необязательно</span></label>
+          <textarea class="textarea" id="dispute-comment" placeholder="Опишите проблему и приложите доказательства в чате сделки"></textarea>
+        </div>
+        <div class="notice notice--amber" style="margin-top:14px">
+          <svg class="icon"><use href="#i-alert"></use></svg>
+          <span>В споре учитываются переписка и материалы внутри сервиса. Решение принимает арбитраж EscrowHub.</span>
+        </div>
+        <div class="modal__foot modal-actions">
+          <button class="btn btn--danger" type="submit">Открыть спор</button>
+          <button class="btn btn--ghost" type="button" data-close-overlay>Отмена</button>
+        </div>
+      </form>
+      <p class="modal__note">Демо-прототип: спор не отправляется в реальную поддержку.</p>
+    </div>
+  </div>
+
+  <noscript><div style="padding:24px;text-align:center;font-family:sans-serif">Для работы прототипа нужен JavaScript.</div></noscript>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/shell.js"></script>
+  <script src="assets/js/orders.js"></script>
+</body>
+</html>

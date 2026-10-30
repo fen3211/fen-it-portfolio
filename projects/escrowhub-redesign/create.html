@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Новое объявление — EscrowHub</title>
+  <meta name="description" content="Размещение цифрового товара на EscrowHub с живым предпросмотром карточки, безопасной сделкой и комиссией 0%.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230B6E4F'/%3E%3Cpath d='M9.5 9.5v13M9.5 9.5H21M9.5 16h8M9.5 22.5H21' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='20.5' cy='16' r='2' fill='%23DDF56F'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="assets/css/shell.css">
+  <link rel="stylesheet" href="assets/css/cabinet.css">
+  <link rel="stylesheet" href="assets/css/create.css">
+</head>
+<body data-page="create">
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+  <div id="site-header"></div>
+
+  <main id="main" class="create-page">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="index.html">Главная</a><span class="sep">/</span>
+        <a href="seller.html">Кабинет продавца</a><span class="sep">/</span>
+        <span aria-current="page" data-create-crumb>Новое объявление</span>
+      </nav>
+
+      <div class="create-head">
+        <div>
+          <span class="eyebrow">Размещение</span>
+          <h1 data-create-title>Новое объявление</h1>
+          <p>Заполните данные — покупатель увидит карточку и сможет оплатить через безопасную сделку.</p>
+        </div>
+        <div class="create-head__side">
+          <span class="tag tag--outline"><i class="dot-live dot-live--amber"></i>Демо-режим</span>
+          <a class="link-arrow" href="seller.html"><svg class="icon icon--sm"><use href="#i-arrow-left"></use></svg>В кабинет</a>
+        </div>
+      </div>
+
+      <div class="create-layout">
+        <form class="create-form" data-create-form novalidate>
+          <section class="form-card">
+            <div class="form-card__head"><span class="form-step">01</span><div><h2>Основное</h2><p>Название и категория, по которым покупатель найдёт товар.</p></div></div>
+            <div class="form-card__body">
+              <div class="field" data-field="title">
+                <label class="field__label" for="create-name">Название <span class="field__counter" data-counter="title">0 / 100</span></label>
+                <input class="input input--title" id="create-name" type="text" maxlength="100" placeholder="Например: Spotify Premium — аккаунт, Турция" autocomplete="off" data-create-name>
+                <span class="field__error">Добавьте название — от 3 до 100 символов</span>
+                <span class="field__hint">Пишите конкретно: платформа, регион и формат товара.</span>
+              </div>
+              <div class="field" data-field="category">
+                <label class="field__label" for="create-category">Категория</label>
+                <select class="select" id="create-category" data-create-category>
+                  <option value="">Выберите категорию</option>
+                </select>
+                <span class="field__error">Выберите категорию</span>
+              </div>
+              <div class="form-row form-row--3">
+                <div class="field">
+                  <label class="field__label" for="create-format">Формат</label>
+                  <select class="select" id="create-format" data-create-format>
+                    <option>Аккаунт</option>
+                    <option>Ключ</option>
+                    <option>Подписка</option>
+                    <option>Услуга</option>
+                    <option>Пополнение</option>
+                    <option>Подарок</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="create-region">Регион</label>
+                  <input class="input" id="create-region" type="text" placeholder="Например, Турция" data-create-region>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="create-delivery">Срок выдачи</label>
+                  <select class="select" id="create-delivery" data-create-delivery>
+                    <option>5–15 минут</option>
+                    <option>до 30 минут</option>
+                    <option>1–24 часа</option>
+                    <option>по договорённости</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="form-card">
+            <div class="form-card__head"><span class="form-step">02</span><div><h2>Цена и наличие</h2><p>Сколько товара есть и сколько он стоит.</p></div></div>
+            <div class="form-card__body">
+              <div class="form-row">
+                <div class="field" data-field="price">
+                  <label class="field__label" for="create-price">Цена за штуку, ₽</label>
+                  <div class="input-affix"><input class="input" id="create-price" type="number" min="1" inputmode="numeric" placeholder="1500" data-create-price><span>₽</span></div>
+                  <span class="field__error">Укажите цену больше 0 ₽</span>
+                </div>
+                <div class="field" data-field="stock">
+                  <label class="field__label" for="create-stock">Количество, шт.</label>
+                  <div class="input-affix"><input class="input" id="create-stock" type="number" min="1" max="9999" inputmode="numeric" placeholder="1" data-create-stock><span>шт.</span></div>
+                  <span class="field__error">Укажите количество от 1 до 9 999</span>
+                </div>
+              </div>
+              <div class="fee-hint"><svg class="icon"><use href="#i-check-circle"></use></svg><span><b>Комиссия сервиса — 0%.</b> Продавец получает полную сумму после подтверждения покупателем.</span></div>
+            </div>
+          </section>
+
+          <section class="form-card">
+            <div class="form-card__head"><span class="form-step">03</span><div><h2>Описание</h2><p>Что входит, как проходит выдача и что важно знать покупателю.</p></div></div>
+            <div class="form-card__body">
+              <div class="field" data-field="description">
+                <label class="field__label" for="create-description">Описание <span class="field__counter" data-counter="description">0 / 2000</span></label>
+                <textarea class="textarea textarea--lg" id="create-description" maxlength="2000" placeholder="Опишите товар: что входит, условия активации, как вы передадите данные. Уберите лишние эмодзи — покупателю нужен понятный текст." data-create-description></textarea>
+                <span class="field__error">Добавьте описание — минимум 20 символов</span>
+              </div>
+              <div class="field">
+                <label class="field__label" for="create-buyer-data">Данные для покупателя <span class="muted" style="font-weight:400">— необязательно</span></label>
+                <textarea class="textarea" id="create-buyer-data" placeholder="Логин, пароль, ключ или другие данные выдачи" data-create-buyer-data></textarea>
+                <span class="field__hint"><svg class="icon icon--sm" style="display:inline-block;vertical-align:-3px;margin-right:3px"><use href="#i-shield"></use></svg>Покупатель увидит эти данные только после оплаты.</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="form-card form-card--rules">
+            <div class="form-card__body">
+              <div class="field" data-field="terms">
+                <label class="check check--rules">
+                  <input type="checkbox" data-create-terms>
+                  <span>Подтверждаю, что товар не запрещён правилами, описание достоверно, а данные выдачи передаются только внутри сервиса. Я принимаю <a href="https://escrowhub.online/terms" target="_blank" rel="noopener">пользовательское соглашение</a>.</span>
+                </label>
+                <span class="field__error" data-terms-error>Подтвердите правила размещения</span>
+              </div>
+            </div>
+          </section>
+
+          <div class="create-actions">
+            <div class="create-actions__note"><svg class="icon"><use href="#i-route"></use></svg>Оплата покупателя удерживается сервисом до подтверждения</div>
+            <div class="create-actions__buttons">
+              <button class="btn btn--ghost" type="button" data-save-draft>Сохранить черновик</button>
+              <button class="btn btn--primary" type="submit" data-publish><span data-publish-label>Опубликовать</span> <svg class="icon"><use href="#i-arrow-right"></use></svg></button>
+            </div>
+          </div>
+        </form>
+
+        <aside class="create-aside">
+          <div class="create-preview">
+            <div class="create-preview__head">
+              <span class="eyebrow">Предпросмотр</span>
+              <span class="tag tag--lime-soft">Так увидят покупатели</span>
+            </div>
+            <div class="preview-lot" data-preview-card></div>
+            <p class="create-preview__note"><svg class="icon"><use href="#i-info"></use></svg>Обложка формируется автоматически по категории. Карточка обновляется по мере заполнения.</p>
+          </div>
+
+          <div class="create-checklist">
+            <div class="create-checklist__head"><span class="eyebrow">Перед публикацией</span><span class="create-checklist__dot"></span></div>
+            <ul>
+              <li><span class="check-mini"></span>Понятное название без CAPS и лишних эмодзи</li>
+              <li><span class="check-mini"></span>Реальные цена, наличие и срок выдачи</li>
+              <li><span class="check-mini"></span>Описание без обещаний, которых вы не выполните</li>
+              <li><span class="check-mini"></span>Переписка и выдача — внутри сервиса</li>
+            </ul>
+          </div>
+
+          <div class="create-side-note">
+            <svg class="icon"><use href="#i-route"></use></svg>
+            <p>После публикации объявление появится в каталоге. Покупатель оплатит заказ, а вы получите сумму после подтверждения.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <div class="overlay" id="publish-overlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="publish-title">
+      <button class="modal__close" type="button" aria-label="Закрыть" data-close-overlay><svg class="icon"><use href="#i-x"></use></svg></button>
+      <div class="success-panel">
+        <span class="success-panel__icon"><svg class="icon"><use href="#i-check"></use></svg></span>
+        <span class="eyebrow">Демо-прототип</span>
+        <h2 id="publish-title" data-publish-title>Объявление опубликовано</h2>
+        <p>Карточка обновлена в демо-кабинете. В реальном сервисе изменения появились бы в каталоге.</p>
+        <div class="success-panel__actions">
+          <a class="btn btn--primary" href="seller.html">В кабинет продавца <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
+          <button class="btn btn--ghost" type="button" data-publish-again>Создать ещё</button>
+        </div>
+        <p class="modal__note">Демо-прототип: объявление не сохранено в реальной системе.</p>
+      </div>
+    </div>
+  </div>
+
+  <noscript><div style="padding:24px;text-align:center;font-family:sans-serif">Для работы прототипа нужен JavaScript.</div></noscript>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/shell.js"></script>
+  <script src="assets/js/create.js"></script>
+</body>
+</html>

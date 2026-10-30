@@ -1,0 +1,228 @@
+/* ==========================================================================
+   FEN — design tokens
+   Single source of truth for colour, type, spacing, motion and layering.
+   Documented in DESIGN_SYSTEM.md. Values here are the ones used in site.css
+   and case.css; change a token, not a component.
+   ========================================================================== */
+
+@font-face {
+  font-family: "Russo One";
+  src: url("../fonts/russo-one-cyrillic-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Russo One";
+  src: url("../fonts/russo-one-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("../fonts/manrope-cyrillic-wght-normal.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("../fonts/manrope-cyrillic-ext-wght-normal.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("../fonts/manrope-latin-wght-normal.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("../fonts/cormorant-garamond-cyrillic-500-italic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("../fonts/cormorant-garamond-latin-500-italic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("../fonts/ibm-plex-mono-cyrillic-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("../fonts/ibm-plex-mono-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("../fonts/ibm-plex-mono-cyrillic-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("../fonts/ibm-plex-mono-latin-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  /* Ink & paper ---------------------------------------------------------- */
+  --c-ink: #151515;
+  --c-ink-soft: #1d1d1b;
+  --c-ink-raised: #262624;
+  --c-paper: #f4f3ed;
+  --c-paper-deep: #e7e5d8;
+  --c-bone: #f4f3ed;
+  --c-green: #1645ea;
+  --c-green-soft: #1239c9;
+  --c-white: #ffffff;
+
+  /* Blueprint ------------------------------------------------------------ */
+  --c-blue: #1645ea;
+  --c-blue-deep: #1239c9;
+  --c-blue-soft: #d8e2ff;
+
+  /* Accents -------------------------------------------------------------- */
+  --c-lime: #c4f529;
+  --c-lime-soft: #e4ff8a;
+  --c-orange: #ff702f;
+  --c-orange-deep: #b83d0f;
+
+  /* Text ----------------------------------------------------------------- */
+  --c-text: var(--c-ink);
+  --c-text-soft: #63635f;
+  --c-text-on-dark: var(--c-bone);
+  --c-text-muted-dark: #d8e2ff;
+  --c-text-accent: var(--c-orange-deep);
+
+  /* Lines ---------------------------------------------------------------- */
+  --c-line: #d5d5ce;
+  --c-line-strong: #b9b9b1;
+  --c-line-dark: rgb(255 255 255 / 20%);
+  --c-line-dark-strong: rgb(255 255 255 / 42%);
+
+  /* States --------------------------------------------------------------- */
+  --c-focus: var(--c-orange);
+  --c-focus-dark: var(--c-lime);
+  --c-hover: var(--c-orange-deep);
+  --c-active: #b32f0a;
+  --c-disabled: #a9a49a;
+  --c-success: #2e7d4f;
+
+  /* Typography ----------------------------------------------------------- */
+  --f-display: "Russo One", "Manrope", "Arial Black", sans-serif;
+  --f-body: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  --f-serif: "Cormorant Garamond", Georgia, serif;
+  --f-mono: "IBM Plex Mono", "Courier New", monospace;
+
+  --fs-hero: clamp(2.72rem, 6.45vw, 6.2rem);
+  --fs-h2: clamp(2.15rem, 4.7vw, 4.35rem);
+  --fs-h3: clamp(1.45rem, 2.5vw, 2.35rem);
+  --fs-h4: clamp(1.15rem, 1.55vw, 1.45rem);
+  --fs-lead: clamp(1rem, 1.15vw, 1.18rem);
+  --fs-body: 1rem;
+  --fs-small: 0.8125rem;
+  --fs-label: 0.6875rem;
+  --fs-mono: 0.75rem;
+
+  --lh-tight: 0.94;
+  --lh-title: 1.02;
+  --lh-body: 1.62;
+  --lh-loose: 1.78;
+
+  --ls-display: -0.055em;
+  --ls-title: -0.035em;
+  --ls-label: 0.12em;
+  --ls-mono: 0.04em;
+
+  /* Spacing -------------------------------------------------------------- */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 40px;
+  --s-8: 48px;
+  --s-9: 64px;
+  --s-10: 80px;
+  --s-11: 96px;
+  --s-12: 128px;
+  --s-13: 160px;
+
+  --section-pad: clamp(4.5rem, 8vw, 7rem);
+  --container: 1280px;
+  --gutter: clamp(1.25rem, 5vw, 2.5rem);
+  --header-h: 80px;
+
+  /* Grid ----------------------------------------------------------------- */
+  --grid-cols: 12;
+  --grid-gap: clamp(1rem, 1.7vw, 1.5rem);
+
+  /* Shape ---------------------------------------------------------------- */
+  --r-xs: 4px;
+  --r-sm: 6px;
+  --r-pill: 999px;
+  --border: 1px solid var(--c-line);
+  --border-dark: 1px solid var(--c-line-dark);
+
+  /* Motion --------------------------------------------------------------- */
+  --e-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --e-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --e-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --d-fast: 160ms;
+  --d-base: 240ms;
+  --d-slow: 360ms;
+  --d-reveal: 720ms;
+  --d-page: 420ms;
+
+  /* Layers --------------------------------------------------------------- */
+  --z-base: 1;
+  --z-header: 40;
+  --z-menu: 60;
+  --z-grain: 80;
+  --z-cursor: 90;
+  --z-page: 100;
+}
+
+/* Compact type on small screens is handled by the clamps above; these two
+   values only adjust the type scale ratio where the clamp floors are too big. */
+@media (max-width: 480px) {
+  :root {
+    --fs-hero: clamp(2.35rem, 10.1vw, 3.1rem);
+    --fs-h2: clamp(1.9rem, 7.6vw, 2.6rem);
+    --fs-h3: clamp(1.28rem, 5.6vw, 1.7rem);
+    --header-h: 58px;
+    --grid-gap: 12px;
+  }
+}
