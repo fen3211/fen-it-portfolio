@@ -719,6 +719,8 @@
       wm.classList.remove("is-closing");
       void wmCard.offsetWidth;
       wmCard.classList.add("is-in");
+      const sbw = window.innerWidth - document.documentElement.clientWidth;
+      document.documentElement.style.setProperty("--wm-sbw", Math.max(0, sbw) + "px");
       wm.hidden = false;
       document.documentElement.classList.add("wm-open");
       requestAnimationFrame(() => {
@@ -761,7 +763,7 @@
         });
       }
       const start = performance.now();
-      const dur = 780;
+      const dur = 650;
       const drawBurst = (now) => {
         wmBurstFrame = 0;
         const t = Math.min(1, (now - start) / dur);
@@ -819,10 +821,13 @@
       const rect = closeBtn ? closeBtn.getBoundingClientRect() : wmCard.getBoundingClientRect();
       const origin = { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
       const finish = () => {
+        wmCard.getAnimations().forEach((animation) => animation.cancel());
+        wmCard.style.transformOrigin = "";
         wm.hidden = true;
         wm.classList.remove("is-open", "is-closing");
         wmCard.classList.remove("is-closing", "is-in");
         document.documentElement.classList.remove("wm-open");
+        document.documentElement.style.removeProperty("--wm-sbw");
         if (wmTrigger && document.contains(wmTrigger)) wmTrigger.focus();
         wmOpen = false;
         wmClosing = false;
@@ -836,9 +841,16 @@
       wm.classList.add("is-closing");
       wmCard.classList.remove("is-in");
       void wmCard.offsetWidth;
-      wmCard.classList.add("is-closing");
-      window.setTimeout(() => burst(origin), 140);
-      window.setTimeout(finish, 700);
+      const cardRect = wmCard.getBoundingClientRect();
+      wmCard.style.transformOrigin = (origin.x - cardRect.left) + "px " + (origin.y - cardRect.top) + "px";
+      wmCard.animate([
+        { transform: "rotate(-1.2deg) scale(1)", opacity: 1, filter: "blur(0px)" },
+        { transform: "rotate(-22deg) scale(.74)", opacity: 1, filter: "blur(0px)", offset: 0.35 },
+        { transform: "rotate(-70deg) scale(.3)", opacity: 0.92, filter: "blur(1px)", offset: 0.7 },
+        { transform: "rotate(-155deg) scale(.03)", opacity: 0, filter: "blur(2px)" }
+      ], { duration: 740, easing: "cubic-bezier(.5,.05,.85,.25)", fill: "both" });
+      window.setTimeout(() => burst(origin), 620);
+      window.setTimeout(finish, 1300);
     };
 
     $$(".work-card__link").forEach((link) => {
