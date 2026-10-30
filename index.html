@@ -97,15 +97,16 @@
       <div class="shell hero-inner">
         <div class="hero-eyebrow"><span>НЕЗАВИСИМЫЙ ДИЗАЙНЕР &amp; РАЗРАБОТЧИК</span><span>УДАЛЁННО / ПО ВСЕМУ МИРУ</span></div>
         <div class="desk-scene">
-          <img class="desk-object ruler" src="assets/img/studio/ruler.svg" alt="" width="500" height="90" aria-hidden="true" data-depth="18">
+          <img class="desk-object ruler" src="assets/img/studio/ruler.svg" alt="" width="500" height="90" data-depth="18" data-fall="right" data-cursor="Уронить" role="button" tabindex="0" aria-label="Уронить линейку" draggable="false">
           <img class="desk-object pencil" src="assets/img/studio/pencil.svg" alt="" width="420" height="52" data-depth="34" data-fall="right" data-cursor="Уронить" role="button" tabindex="0" aria-label="Уронить карандаш" draggable="false">
-          <img class="desk-object paper paper-one" src="assets/img/studio/paper.svg" alt="" width="160" height="160" aria-hidden="true" data-depth="24">
+          <img class="desk-object paper paper-one" src="assets/img/studio/paper.svg" alt="" width="160" height="160" data-depth="24" data-fall="left" data-cursor="Уронить" role="button" tabindex="0" aria-label="Уронить лист бумаги" draggable="false">
           <img class="desk-object eraser" src="assets/img/studio/eraser.svg" alt="" width="120" height="72" data-depth="42" data-fall="left" data-cursor="Уронить" role="button" tabindex="0" aria-label="Уронить ластик" draggable="false">
 
-          <div class="hero-selection">
+          <div class="hero-selection" tabindex="0" role="group" aria-label="Рамка выделения: перетаскивайте мышью, тяните за углы, двойной клик или 0 — сброс" data-cursor="Двигать">
             <span class="selection-caption mono" aria-hidden="true">FEN / SELECTED PORTFOLIO / 2026</span>
             <h1 id="hero-title" class="hero-title" aria-label="FEN — портфолио: дизайн и код"><span class="hero-line">PORT</span><span class="hero-line">FOLIO<span class="hero-period">.</span></span></h1>
-            <i class="handle handle-tl" aria-hidden="true"></i><i class="handle handle-tr" aria-hidden="true"></i><i class="handle handle-bl" aria-hidden="true"></i><i class="handle handle-br" aria-hidden="true"></i>
+            <i class="handle handle-tl" data-handle="tl" data-cursor="Размер" aria-hidden="true"></i><i class="handle handle-tr" data-handle="tr" data-cursor="Размер" aria-hidden="true"></i><i class="handle handle-bl" data-handle="bl" data-cursor="Размер" aria-hidden="true"></i><i class="handle handle-br" data-handle="br" data-cursor="Размер" aria-hidden="true"></i>
+            <span class="selection-hint mono" aria-hidden="true">Drag / Resize / 2× Reset</span>
           </div>
 
           <aside class="hero-aside" aria-label="Индекс проектов">
@@ -162,7 +163,7 @@
               <div class="hero__preview-media"></div>
               <div class="hero__preview-label"><span>Eclipse Maison / Web · 3D</span><span>Drag</span></div>
             </div>
-            <p class="hero__aside-note">Наведи на строку — покажу превью. Карточку можно потянуть в сторону.</p>
+            <p class="hero__aside-note">Наведи на строку — покажу превью. Карточку можно потянуть. Рамку — двигать и тянуть за углы. Предметы на столе падают.</p>
           </aside>
 
           <div class="name-label"><span aria-hidden="true">↖</span> FEN — дизайн и код</div>

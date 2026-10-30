@@ -562,6 +562,120 @@
     });
   }
 
+  /* Movable / resizable hero selection ---------------------------------- */
+  const selection = $(".hero-selection");
+  if (selection && finePointer.matches) {
+    let selX = 0;
+    let selY = 0;
+    let selScale = 1;
+    const applySelection = () => {
+      selection.style.setProperty("--sel-x", `${selX.toFixed(2)}px`);
+      selection.style.setProperty("--sel-y", `${selY.toFixed(2)}px`);
+      selection.style.setProperty("--sel-scale", selScale.toFixed(4));
+    };
+    const resetSelection = () => {
+      if (selX === 0 && selY === 0 && selScale === 1) return;
+      const from = getComputedStyle(selection).transform;
+      selX = 0;
+      selY = 0;
+      selScale = 1;
+      applySelection();
+      if (!reduceMotion.matches) {
+        selection.animate(
+          [{ transform: from }, { transform: "translate(0px, 0px) scale(1)" }],
+          { duration: 360, easing: "cubic-bezier(0.16, 1, 0.3, 1)" }
+        );
+      }
+    };
+    const startMove = (event) => {
+      if (event.button !== 0 || event.target.closest(".handle")) return;
+      event.preventDefault();
+      selection.focus({ preventScroll: true });
+      const startX = event.clientX;
+      const startY = event.clientY;
+      const originX = selX;
+      const originY = selY;
+      selection.setPointerCapture(event.pointerId);
+      selection.classList.add("is-manipulating");
+      const onMove = (moveEvent) => {
+        selX = clamp(originX + moveEvent.clientX - startX, -180, 180);
+        selY = clamp(originY + moveEvent.clientY - startY, -120, 100);
+        applySelection();
+      };
+      const onUp = () => {
+        selection.removeEventListener("pointermove", onMove);
+        selection.removeEventListener("pointerup", onUp);
+        selection.removeEventListener("pointercancel", onUp);
+        selection.classList.remove("is-manipulating");
+        if (selection.hasPointerCapture?.(event.pointerId)) selection.releasePointerCapture(event.pointerId);
+      };
+      selection.addEventListener("pointermove", onMove);
+      selection.addEventListener("pointerup", onUp);
+      selection.addEventListener("pointercancel", onUp);
+    };
+    const startResize = (event) => {
+      if (event.button !== 0) return;
+      event.preventDefault();
+      event.stopPropagation();
+      const handle = event.currentTarget;
+      const corner = handle.dataset.handle;
+      const rect = selection.getBoundingClientRect();
+      const anchors = {
+        tl: [rect.right, rect.bottom],
+        tr: [rect.left, rect.bottom],
+        bl: [rect.right, rect.top],
+        br: [rect.left, rect.top]
+      };
+      const vectors = {
+        tl: [-selection.offsetWidth / 2, -selection.offsetHeight / 2],
+        tr: [selection.offsetWidth / 2, -selection.offsetHeight / 2],
+        bl: [-selection.offsetWidth / 2, selection.offsetHeight / 2],
+        br: [selection.offsetWidth / 2, selection.offsetHeight / 2]
+      };
+      const anchor = anchors[corner];
+      const vector = vectors[corner];
+      const startDistance = Math.max(24, Math.hypot(event.clientX - anchor[0], event.clientY - anchor[1]));
+      const startScale = selScale;
+      const startX = selX;
+      const startY = selY;
+      handle.setPointerCapture(event.pointerId);
+      selection.classList.add("is-manipulating");
+      const onMove = (moveEvent) => {
+        const distance = Math.hypot(moveEvent.clientX - anchor[0], moveEvent.clientY - anchor[1]);
+        const nextScale = clamp(startScale * (distance / startDistance), 0.5, 1.65);
+        selScale = nextScale;
+        selX = clamp(startX + (startScale - nextScale) * vector[0], -260, 260);
+        selY = clamp(startY + (startScale - nextScale) * vector[1], -180, 180);
+        applySelection();
+      };
+      const onUp = () => {
+        handle.removeEventListener("pointermove", onMove);
+        handle.removeEventListener("pointerup", onUp);
+        handle.removeEventListener("pointercancel", onUp);
+        selection.classList.remove("is-manipulating");
+        if (handle.hasPointerCapture?.(event.pointerId)) handle.releasePointerCapture(event.pointerId);
+      };
+      handle.addEventListener("pointermove", onMove);
+      handle.addEventListener("pointerup", onUp);
+      handle.addEventListener("pointercancel", onUp);
+    };
+    selection.addEventListener("pointerdown", startMove);
+    $$(".handle", selection).forEach((handle) => {
+      handle.addEventListener("pointerdown", startResize);
+    });
+    selection.addEventListener("dblclick", resetSelection);
+    selection.addEventListener("keydown", (event) => {
+      const step = event.shiftKey ? 30 : 10;
+      if (event.key === "ArrowLeft") { selX = clamp(selX - step, -180, 180); applySelection(); event.preventDefault(); }
+      else if (event.key === "ArrowRight") { selX = clamp(selX + step, -180, 180); applySelection(); event.preventDefault(); }
+      else if (event.key === "ArrowUp") { selY = clamp(selY - step, -120, 100); applySelection(); event.preventDefault(); }
+      else if (event.key === "ArrowDown") { selY = clamp(selY + step, -120, 100); applySelection(); event.preventDefault(); }
+      else if (event.key === "+" || event.key === "=") { selScale = clamp(selScale + 0.08, 0.5, 1.65); applySelection(); event.preventDefault(); }
+      else if (event.key === "-" || event.key === "_") { selScale = clamp(selScale - 0.08, 0.5, 1.65); applySelection(); event.preventDefault(); }
+      else if (event.key === "0") { resetSelection(); event.preventDefault(); }
+    });
+  }
+
   /* Hero palette -------------------------------------------------------- */
   const heroRoot = $(".hero");
   const heroSwatches = $$(".swatch-strip .swatch");

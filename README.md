@@ -8,7 +8,7 @@
 
 ## Что изменилось
 
-- Новый первый экран: кобальтовый blueprint, selection frame, стол с инструментами, индекс из пяти работ с drag-превью, живая палитра, которая меняет цвет hero (hover/click), и падающие карандаш с ластиком.
+- Новый первый экран: кобальтовый blueprint, перетаскиваемая и масштабируемая selection-рамка, стол с инструментами, индекс из пяти работ с drag-превью, живая палитра, которая меняет цвет hero (hover/click), и падающие предметы — линейка, карандаш, бумага и ластик.
 - Убраны ЭКО-ЭКСПЕРТ, Atlaxis, блок «ТВОЯ ЗАДАЧА. МОЯ СБОРКА.» и все цены/тарифы.
 - Добавлены Oyun Alemi, Eclipse Maison, EscrowHub, NOVA Gear и Utka; у каждого — кейс и локальное демо.
 - Utka вынесена в отдельную категорию «Мобильные» и показана двумя экранами в рамке телефона.
@@ -120,7 +120,7 @@ npm run build -- --base=./
 
 ## Анимации
 
-Кратко: интерактивная палитра hero (hover/click), падающие карандаш/ластик (click/Enter), desk parallax и spotlight, cursor trail, card shuffle и drag превью, браузерный image pan, магнитные CTA, tilt артбордов, mask/fade/scale reveal, FLIP-фильтры, page transition, reduced motion. Полная спецификация — [`DESIGN_SYSTEM.md`](DESIGN_SYSTEM.md), разбор Riffs и реализованных механик — [`ANIMATION_REFERENCES.md`](ANIMATION_REFERENCES.md).
+Кратко: move/resize selection-рамки (drag, углы, 2×/0 — сброс, клавиатура), интерактивная палитра hero (hover/click), падающие линейка/карандаш/бумага/ластик (click/Enter), desk parallax и spotlight, cursor trail, card shuffle и drag превью, браузерный image pan, магнитные CTA, tilt артбордов, mask/fade/scale reveal, FLIP-фильтры, page transition, reduced motion. Полная спецификация — [`DESIGN_SYSTEM.md`](DESIGN_SYSTEM.md), разбор Riffs и реализованных механик — [`ANIMATION_REFERENCES.md`](ANIMATION_REFERENCES.md).
 
 Тяжёлые 3D-сцены не грузятся на главной: они живут в отдельных проектах. Это сознательно — оболочка остаётся лёгкой.
 

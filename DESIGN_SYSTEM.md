@@ -179,9 +179,10 @@
 
 - Dotted lime рамка 622px; caption mono; PORT / FOLIO. в Russo One; lime-квадрат-период; 4 handles.
 - Заголовок с 3D text-shadow (белые/серые слои + синяя тень).
-- На hover handles увеличиваются.
+- Рамку можно **двигать** (drag за тело), **масштабировать** за любой из четырёх углов (0.5–1.65×, якорь — противоположный угол) и **сбросить** двойным кликом или клавишей `0`; стрелки двигают, `+`/`−` масштабируют. Смещение ограничено ±180/±120 px. Transform через `--sel-x`, `--sel-y`, `--sel-scale`, без layout reflow.
+- На hover handles увеличиваются; на touch/узких экранах манипуляции отключены и рамка статична.
 - Вокруг — desk-объекты (ruler, pencil, paper, eraser) с parallax по `data-depth`; spotlight следует за курсором.
-- Карандаш и ластик — кнопки: click/Enter роняет их вниз с вращением, через ~1.8 s они возвращаются сверху с пружиной. Reduced motion — короткий fade.
+- Все четыре предмета — кнопки: click/Enter роняет их вниз с вращением, через ~1.8 s они возвращаются сверху с пружиной. Reduced motion — короткий fade.
 
 ### 5.3. Hero index panel
 
@@ -303,7 +304,8 @@
 - Magnetic CTA (10×8px, lerp 0.18).
 - Lab tilt ±5°.
 - Palette hover/click.
-- Падение карандаша/ластика по click/Enter (WAAPI: translate/rotate, gravity ease-in, spring return).
+- Падение всех четырёх предметов (линейка, карандаш, бумага, ластик) по click/Enter (WAAPI: translate/rotate, gravity ease-in, spring return).
+- Перетаскивание и масштабирование selection-рамки (transform через CSS-переменные, без reflow).
 - Handles/sticker hover.
 
 ### 6.5. Scroll
@@ -362,7 +364,8 @@
 - WCAG 2.1 AA; axe-core 0 нарушений на главной/кейсе (desktop/mobile).
 - Skip link, landmarks, H1/H2/H3, focus-visible, aria у меню/фильтров/палитры, alt у изображений.
 - Палитра — кнопки с `aria-label`/`aria-pressed`; hover не единственный способ (click/tap).
-- Карандаш/ластик — `role="button"`, `tabindex="0"`, aria-label, Enter/Space; падение отключается reduced motion.
+- Ruler/pencil/paper/eraser — `role="button"`, `tabindex="0"`, aria-label, Enter/Space; падение отключается reduced motion.
+- Selection-рамка — group с `tabindex="0"`: стрелки/`+`/`−`/`0`, сброс двойным кликом; на touch-устройствах манипуляции отключены.
 - No-JS: навигация через `<noscript>`, hero preview/palette скрыты; контент читается.
 - Reduced motion.
 - Контраст: оранжевый текст — `#B83D0F`; подписи на светлых темах — ink/тёмные muted.
