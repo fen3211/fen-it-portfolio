@@ -1,0 +1,916 @@
+{
+ "project": "SMS PRO",
+ "file": "sms",
+ "title": "SMS PRO",
+ "pages": [
+  {
+   "name": "Home",
+   "path": "/",
+   "slug": "home",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/home-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/home-d.webp",
+    "w": 1200,
+    "h": 6244
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/home-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/home-p.webp",
+    "w": 390,
+    "h": 8872
+   },
+   "hotspots": {
+    "desktop": [
+     [
+      310,
+      553,
+      433,
+      21,
+      "/numbers"
+     ],
+     [
+      756,
+      570,
+      147,
+      46,
+      "/numbers"
+     ],
+     [
+      490,
+      624,
+      220,
+      18,
+      "/telegram"
+     ],
+     [
+      16,
+      330,
+      196,
+      96,
+      "/numbers"
+     ],
+     [
+      10,
+      596,
+      214,
+      119,
+      "/account/number"
+     ],
+     [
+      978,
+      372,
+      206,
+      112,
+      "/country"
+     ],
+     [
+      960,
+      596,
+      224,
+      116,
+      "/balance"
+     ],
+     [
+      1051,
+      1037,
+      125,
+      20,
+      "/catalog/services"
+     ],
+     [
+      50,
+      1390,
+      115,
+      22,
+      "/numbers"
+     ],
+     [
+      540,
+      1083,
+      636,
+      51,
+      "/service"
+     ],
+     [
+      540,
+      1134,
+      636,
+      51,
+      "/service"
+     ],
+     [
+      540,
+      1185,
+      636,
+      51,
+      "/service"
+     ],
+     [
+      540,
+      1236,
+      636,
+      51,
+      "/service"
+     ],
+     [
+      540,
+      1287,
+      636,
+      51,
+      "/service"
+     ],
+     [
+      540,
+      1338,
+      636,
+      51,
+      "/service"
+     ],
+     [
+      540,
+      1389,
+      636,
+      51,
+      "/service"
+     ],
+     [
+      1094,
+      1686,
+      82,
+      20,
+      "/catalog/countries"
+     ],
+     [
+      50,
+      1977,
+      120,
+      24,
+      "/country"
+     ],
+     [
+      500,
+      1732,
+      318,
+      47,
+      "/country"
+     ],
+     [
+      858,
+      1732,
+      318,
+      47,
+      "/country"
+     ],
+     [
+      500,
+      1779,
+      318,
+      47,
+      "/country"
+     ],
+     [
+      858,
+      1779,
+      318,
+      47,
+      "/country"
+     ],
+     [
+      500,
+      1826,
+      318,
+      47,
+      "/country"
+     ],
+     [
+      858,
+      1826,
+      318,
+      47,
+      "/country"
+     ],
+     [
+      500,
+      1873,
+      318,
+      47,
+      "/country"
+     ],
+     [
+      858,
+      1873,
+      318,
+      47,
+      "/country"
+     ],
+     [
+      56,
+      2526,
+      113,
+      18,
+      "/numbers"
+     ],
+     [
+      498,
+      2579,
+      92,
+      21,
+      "/telegram"
+     ],
+     [
+      860,
+      2585,
+      87,
+      18,
+      "/esim"
+     ],
+     [
+      608,
+      2799,
+      97,
+      18,
+      "/stars"
+     ],
+     [
+      310,
+      2761,
+      65,
+      17,
+      "/services"
+     ],
+     [
+      68,
+      3799,
+      127,
+      20,
+      "/telegram"
+     ],
+     [
+      752,
+      3645,
+      380,
+      47,
+      "/telegram"
+     ],
+     [
+      752,
+      3692,
+      380,
+      47,
+      "/telegram"
+     ],
+     [
+      752,
+      3739,
+      380,
+      47,
+      "/telegram"
+     ],
+     [
+      1097,
+      4342,
+      79,
+      20,
+      "/articles"
+     ],
+     [
+      24,
+      4386,
+      766,
+      325,
+      "/article"
+     ],
+     [
+      822,
+      4386,
+      354,
+      93,
+      "/article"
+     ],
+     [
+      822,
+      4479,
+      354,
+      72,
+      "/article"
+     ],
+     [
+      822,
+      4551,
+      354,
+      72,
+      "/article"
+     ],
+     [
+      24,
+      4923,
+      115,
+      20,
+      "/help"
+     ],
+     [
+      443,
+      5720,
+      175,
+      55,
+      "/numbers"
+     ],
+     [
+      635,
+      5737,
+      124,
+      20,
+      "/telegram"
+     ]
+    ],
+    "phone": []
+   }
+  },
+  {
+   "name": "Виртуальные номера",
+   "path": "/numbers",
+   "slug": "numbers",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/numbers-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/numbers-d.webp",
+    "w": 1200,
+    "h": 2951
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/numbers-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/numbers-p.webp",
+    "w": 390,
+    "h": 4267
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Готовые Telegram",
+   "path": "/telegram",
+   "slug": "telegram",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/telegram-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/telegram-d.webp",
+    "w": 1200,
+    "h": 2230
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/telegram-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/telegram-p.webp",
+    "w": 390,
+    "h": 3595
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "eSIM",
+   "path": "/esim",
+   "slug": "esim",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/esim-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/esim-d.webp",
+    "w": 1200,
+    "h": 2585
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/esim-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/esim-p.webp",
+    "w": 390,
+    "h": 4863
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Telegram Stars",
+   "path": "/stars",
+   "slug": "stars",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/stars-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/stars-d.webp",
+    "w": 1200,
+    "h": 2081
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/stars-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/stars-p.webp",
+    "w": 390,
+    "h": 3333
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Цифровые сервисы",
+   "path": "/services",
+   "slug": "services",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/services-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/services-d.webp",
+    "w": 1200,
+    "h": 2146
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/services-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/services-p.webp",
+    "w": 390,
+    "h": 3395
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Пополнение баланса",
+   "path": "/balance",
+   "slug": "balance",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/balance-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/balance-d.webp",
+    "w": 1200,
+    "h": 2526
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/balance-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/balance-p.webp",
+    "w": 390,
+    "h": 3777
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Личный кабинет",
+   "path": "/account",
+   "slug": "account",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/account-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/account-d.webp",
+    "w": 1200,
+    "h": 1137
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/account-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/account-p.webp",
+    "w": 390,
+    "h": 2054
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Вход",
+   "path": "/login",
+   "slug": "login",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/login-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/login-d.webp",
+    "w": 1200,
+    "h": 850
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/login-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/login-p.webp",
+    "w": 390,
+    "h": 874
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Регистрация",
+   "path": "/signup",
+   "slug": "signup",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/signup-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/signup-d.webp",
+    "w": 1200,
+    "h": 850
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/signup-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/signup-p.webp",
+    "w": 390,
+    "h": 874
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Помощь и FAQ",
+   "path": "/help",
+   "slug": "help",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/help-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/help-d.webp",
+    "w": 1200,
+    "h": 1983
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/help-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/help-p.webp",
+    "w": 390,
+    "h": 3399
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Каталог сервисов",
+   "path": "/catalog/services",
+   "slug": "catalog-services",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/catalog-services-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/catalog-services-d.webp",
+    "w": 1200,
+    "h": 1947
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/catalog-services-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/catalog-services-p.webp",
+    "w": 390,
+    "h": 3630
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Каталог стран",
+   "path": "/catalog/countries",
+   "slug": "catalog-countries",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/catalog-countries-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/catalog-countries-d.webp",
+    "w": 1200,
+    "h": 1063
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/catalog-countries-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/catalog-countries-p.webp",
+    "w": 390,
+    "h": 2499
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Страна",
+   "path": "/country",
+   "slug": "country",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/country-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/country-d.webp",
+    "w": 1200,
+    "h": 1812
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/country-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/country-p.webp",
+    "w": 390,
+    "h": 3070
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Сервис",
+   "path": "/service",
+   "slug": "service",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/service-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/service-d.webp",
+    "w": 1200,
+    "h": 1499
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/service-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/service-p.webp",
+    "w": 390,
+    "h": 2847
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Детали номера",
+   "path": "/account/number",
+   "slug": "account-number",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/account-number-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/account-number-d.webp",
+    "w": 1200,
+    "h": 868
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/account-number-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/account-number-p.webp",
+    "w": 390,
+    "h": 1361
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Ваучеры",
+   "path": "/vouchers",
+   "slug": "vouchers",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/vouchers-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/vouchers-d.webp",
+    "w": 1200,
+    "h": 2058
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/vouchers-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/vouchers-p.webp",
+    "w": 390,
+    "h": 3243
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Программа лояльности",
+   "path": "/loyalty",
+   "slug": "loyalty",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/loyalty-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/loyalty-d.webp",
+    "w": 1200,
+    "h": 1280
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/loyalty-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/loyalty-p.webp",
+    "w": 390,
+    "h": 2206
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Реферальная программа",
+   "path": "/referral",
+   "slug": "referral",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/referral-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/referral-d.webp",
+    "w": 1200,
+    "h": 1343
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/referral-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/referral-p.webp",
+    "w": 390,
+    "h": 2303
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "О сервисе",
+   "path": "/about",
+   "slug": "about",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/about-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/about-d.webp",
+    "w": 1200,
+    "h": 1397
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/about-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/about-p.webp",
+    "w": 390,
+    "h": 2806
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Контакты",
+   "path": "/contacts",
+   "slug": "contacts",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/contacts-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/contacts-d.webp",
+    "w": 1200,
+    "h": 1859
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/contacts-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/contacts-p.webp",
+    "w": 390,
+    "h": 2872
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Отзывы",
+   "path": "/reviews",
+   "slug": "reviews",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/reviews-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/reviews-d.webp",
+    "w": 1200,
+    "h": 1286
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/reviews-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/reviews-p.webp",
+    "w": 390,
+    "h": 2445
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Статьи",
+   "path": "/articles",
+   "slug": "articles",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/articles-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/articles-d.webp",
+    "w": 1200,
+    "h": 1309
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/articles-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/articles-p.webp",
+    "w": 390,
+    "h": 2395
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Статья",
+   "path": "/article",
+   "slug": "article",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/article-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/article-d.webp",
+    "w": 1200,
+    "h": 1430
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/article-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/article-p.webp",
+    "w": 390,
+    "h": 2617
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Политика конфиденциальности",
+   "path": "/privacy",
+   "slug": "privacy",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/privacy-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/privacy-d.webp",
+    "w": 1200,
+    "h": 1256
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/privacy-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/privacy-p.webp",
+    "w": 390,
+    "h": 2162
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Условия использования",
+   "path": "/terms",
+   "slug": "terms",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/terms-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/terms-d.webp",
+    "w": 1200,
+    "h": 1208
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/terms-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/terms-p.webp",
+    "w": 390,
+    "h": 2082
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Оформление заказа",
+   "path": "/checkout",
+   "slug": "checkout",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/checkout-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/checkout-d.webp",
+    "w": 1200,
+    "h": 850
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/checkout-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/checkout-p.webp",
+    "w": 390,
+    "h": 1151
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Карта сайта",
+   "path": "/sitemap",
+   "slug": "sitemap",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/sitemap-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/sitemap-d.webp",
+    "w": 1200,
+    "h": 1084
+   },
+   "phone": {
+    "src": "assets/img/prototypes/sms/sitemap-p.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/sitemap-p.webp",
+    "w": 390,
+    "h": 2228
+   },
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  },
+  {
+   "name": "Дизайн-система",
+   "path": "/design-system",
+   "slug": "design-system",
+   "desktop": {
+    "src": "assets/img/prototypes/sms/design-system-d.webp",
+    "thumb": "assets/img/prototypes/sms/thumb/design-system-d.webp",
+    "w": 1200,
+    "h": 7091
+   },
+   "phone": null,
+   "hotspots": {
+    "desktop": [],
+    "phone": []
+   }
+  }
+ ],
+ "subtitle": "Redesign Concept",
+ "framerUrl": "https://framer.com/projects/SMS-PRO-Redesign-Concept--fFE7En1crCTqQYEP0LJg-6Hnvy?node=augiA20Il",
+ "note": "Демо-данные. Реальная оплата и выдача номера не подключены."
+}

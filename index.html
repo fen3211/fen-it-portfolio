@@ -27,6 +27,8 @@
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/site.css">
   <link rel="stylesheet" href="assets/css/blueprint.css">
+  <link rel="stylesheet" href="assets/css/viewer.css">
+  <link rel="stylesheet" href="assets/css/work-modal.css">
   <noscript><style>@media (max-width: 900px){.header__nav{display:flex;flex-wrap:wrap;gap:8px 14px;margin-left:auto;font-size:9px}.header__cta{display:none}.menu-btn{display:none}}</style></noscript>
   <script>document.documentElement.classList.add("js");</script>
   <script type="application/ld+json">
@@ -42,6 +44,7 @@
     }
   </script>
   <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/viewer.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержимому</a>
@@ -97,10 +100,10 @@
       <div class="shell hero-inner">
         <div class="hero-eyebrow"><span>НЕЗАВИСИМЫЙ ДИЗАЙНЕР &amp; РАЗРАБОТЧИК</span><span>УДАЛЁННО / ПО ВСЕМУ МИРУ</span></div>
         <div class="desk-scene">
-          <img class="desk-object ruler" src="assets/img/studio/ruler.svg" alt="" width="500" height="90" data-depth="18" data-fall="right" data-cursor="Уронить" role="button" tabindex="0" aria-label="Уронить линейку" draggable="false">
-          <img class="desk-object pencil" src="assets/img/studio/pencil.svg" alt="" width="420" height="52" data-depth="34" data-fall="right" data-cursor="Уронить" role="button" tabindex="0" aria-label="Уронить карандаш" draggable="false">
-          <img class="desk-object paper paper-one" src="assets/img/studio/paper.svg" alt="" width="160" height="160" data-depth="24" data-fall="left" data-cursor="Уронить" role="button" tabindex="0" aria-label="Уронить лист бумаги" draggable="false">
-          <img class="desk-object eraser" src="assets/img/studio/eraser.svg" alt="" width="120" height="72" data-depth="42" data-fall="left" data-cursor="Уронить" role="button" tabindex="0" aria-label="Уронить ластик" draggable="false">
+          <img class="desk-object ruler" src="assets/img/studio/ruler.svg" alt="Линейка" width="500" height="90" data-depth="18" data-fall="right" data-cursor="Уронить" role="button" tabindex="0" aria-label="Уронить линейку" draggable="false">
+          <img class="desk-object pencil" src="assets/img/studio/pencil.svg" alt="Карандаш" width="420" height="52" data-depth="34" data-fall="right" data-cursor="Уронить" role="button" tabindex="0" aria-label="Уронить карандаш" draggable="false">
+          <img class="desk-object paper paper-one" src="assets/img/studio/paper.svg" alt="Лист бумаги" width="160" height="160" data-depth="24" data-fall="left" data-cursor="Уронить" role="button" tabindex="0" aria-label="Уронить лист бумаги" draggable="false">
+          <img class="desk-object eraser" src="assets/img/studio/eraser.svg" alt="Ластик" width="120" height="72" data-depth="42" data-fall="left" data-cursor="Уронить" role="button" tabindex="0" aria-label="Уронить ластик" draggable="false">
 
           <div class="hero-selection" tabindex="0" role="group" aria-label="Рамка выделения: перетаскивайте мышью, тяните за углы, двойной клик или 0 — сброс" data-cursor="Двигать">
             <span class="selection-caption mono" aria-hidden="true">FEN / SELECTED PORTFOLIO / 2026</span>
@@ -199,6 +202,7 @@
     </div>
 
     <section class="section section--paper" id="works" aria-labelledby="works-title">
+      <canvas class="works-ripple" id="works-ripple" aria-hidden="true"></canvas>
       <div class="shell">
         <header class="section-head">
           <div class="section-head__label"><b>01</b><span>Работы / 2024—2026</span></div>
@@ -352,6 +356,10 @@
             <div class="plate__cover plate__cover--shot plate__cover--sms">
               <img class="plate__shot" src="assets/img/prototypes/sms-desktop.webp" alt="SMS PRO: светлая главная с виртуальными номерами и радужным акцентом" width="1200" height="800" loading="lazy" decoding="async">
               <div class="plate__phone"><img src="assets/img/prototypes/sms-mobile.webp" alt="Мобильная версия SMS PRO" width="390" height="613" loading="lazy" decoding="async"></div>
+              <button class="plate__open" type="button" data-open-prototype data-page="/" data-cursor="Открыть">
+                <span class="plate__open-pill">Смотреть макет <b aria-hidden="true">↗</b></span>
+                <span class="plate__open-note mono">Вьюер: все 29 страниц · desktop + phone</span>
+              </button>
             </div>
             <div class="plate__meta">
               <div><h3>SMS PRO</h3><p>03 / Телеком / редизайн-концепт</p></div>
@@ -362,7 +370,7 @@
 
         <div class="plate__note">
           <span>Реальные скриншоты прототипов из Framer — не коммерческие релизы.</span>
-          <span><b>Ссылки ведут в Framer ↗</b></span>
+          <span><b>SMS PRO открывается во встроенном вьюере; ссылки — в Framer ↗</b></span>
         </div>
       </div>
     </section>
@@ -492,6 +500,116 @@
       <a href="#top">Наверх ↑</a>
     </div>
   </footer>
+
+
+  <div class="pv" id="pv" hidden data-project="sms" data-manifest="assets/img/prototypes/sms/manifest.json">
+    <div class="pv__scrim" data-pv-scrim></div>
+    <div class="pv__shell" role="dialog" aria-modal="true" aria-labelledby="pv-title" tabindex="-1">
+      <header class="pv-bar">
+        <div class="pv-bar__id">
+          <span class="pv-bar__mark" aria-hidden="true">F</span>
+          <span class="pv-bar__name" id="pv-title" data-pv-title>SMS PRO</span>
+          <span class="pv-bar__sub" data-pv-sub>Framer concept</span>
+        </div>
+        <div class="pv-bar__center">
+          <div class="pv-seg" role="group" aria-label="Устройство">
+            <button type="button" data-pv-device="desktop" aria-pressed="true">Desktop</button>
+            <button type="button" data-pv-device="phone" aria-pressed="false">Phone</button>
+          </div>
+        </div>
+        <div class="pv-bar__right">
+          <button type="button" class="pv-btn pv-bar__pages" data-pv-pages-toggle><span class="pv-btn__label">Страницы</span></button>
+          <div class="pv-zoom" role="group" aria-label="Масштаб">
+            <button type="button" data-pv-zoom-out aria-label="Уменьшить">−</button>
+            <span class="pv-zoom__value" data-pv-zoom-value>100%</span>
+            <button type="button" data-pv-zoom-in aria-label="Увеличить">+</button>
+            <button type="button" class="pv-zoom__fit" data-pv-zoom-fit>Fit</button>
+          </div>
+          <button type="button" class="pv-btn pv-btn--accent" data-pv-proto-btn aria-pressed="false">
+            <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5v9l7-4.5z" fill="currentColor"/></svg>
+            <span class="pv-btn__label">Прототип</span>
+          </button>
+          <a class="pv-btn" data-pv-open-framer href="#" target="_blank" rel="noopener noreferrer">Framer ↗</a>
+          <button type="button" class="pv-btn pv-btn--quiet" data-pv-close aria-label="Закрыть вьюер">×</button>
+        </div>
+      </header>
+
+      <div class="pv-body">
+        <aside class="pv-side" data-pv-sidebar aria-label="Страницы макета">
+          <div class="pv-side__head">
+            <div class="pv-side__title"><span><b data-pv-side-title>SMS PRO</b> · страницы</span><span data-pv-count>29</span></div>
+            <label class="pv-search">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m10.5 10.5 3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              <input type="search" placeholder="Найти страницу" aria-label="Поиск по страницам" data-pv-search>
+              <button type="button" class="pv-search__clear" data-pv-search-clear hidden aria-label="Очистить поиск">×</button>
+            </label>
+          </div>
+          <div class="pv-pages" data-pv-pages></div>
+          <div class="pv-side__foot"><b>1200 / 390</b> · 29 страниц<br>Реальные скриншоты Framer. Клик по странице открывает артборд.</div>
+        </aside>
+
+        <div class="pv-canvas" data-pv-canvas>
+          <div class="pv-editor">
+            <div class="pv-stage" data-pv-stage>
+              <div class="pv-artlabel" data-pv-artlabel></div>
+              <div class="pv-art" data-pv-art>
+                <img data-pv-img alt="Макет страницы SMS PRO" width="1200" height="800">
+                <span class="pv-art__load">Загрузка макета</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pv-proto" data-pv-proto>
+            <div class="pv-hud">
+              <button type="button" class="pv-btn pv-btn--icon" data-pv-back aria-label="Назад" title="Назад">←</button>
+              <button type="button" class="pv-btn pv-btn--icon" data-pv-home aria-label="На главную" title="На главную"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1.1 1.1 5.5h1.4v5.4h2.7V7.3h1.6v3.6h2.7V5.5h1.4z" fill="currentColor"/></svg></button>
+              <span class="pv-hud__name"><b data-pv-hud-name></b><span class="pv-hud__path" data-pv-hud-path></span></span>
+              <button type="button" class="pv-btn" data-pv-pages-toggle>Страницы</button>
+              <button type="button" class="pv-btn pv-hud__toggle" data-pv-links-toggle aria-pressed="false" hidden>Ссылки</button>
+              <button type="button" class="pv-btn" data-pv-exit>Выйти</button>
+            </div>
+            <div class="pv-device" data-pv-device-frame>
+              <div class="pv-chrome"><i></i><i></i><i></i><span data-pv-chrome-url>sms-pro.app</span></div>
+              <div class="pv-scroll" data-pv-scroll tabindex="0" role="region" aria-label="Страница прототипа — прокрутка">
+                <div class="pv-page" data-pv-page>
+                  <img data-pv-proto-img alt="" width="1200" height="800">
+                  <div class="pv-hots" data-pv-hots></div>
+                </div>
+              </div>
+            </div>
+            <p class="pv-proto-note" data-pv-note></p>
+          </div>
+
+          <div class="pv-toast" data-pv-toast role="status"></div>
+          <p class="sr-only" aria-live="polite" data-pv-live></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="wm" id="work-modal" hidden>
+    <div class="wm__scrim" data-wm-scrim></div>
+    <div class="wm__stage">
+      <article class="wm__card" role="dialog" aria-modal="true" aria-labelledby="wm-title">
+        <button type="button" class="wm__close" data-wm-close aria-label="Закрыть карточку" data-cursor="Закрыть">×</button>
+        <div class="wm__media">
+          <div class="wm__chrome" aria-hidden="true"><i></i><i></i><i></i><small data-wm-url></small></div>
+          <img data-wm-img alt="" width="1600" height="1000">
+        </div>
+        <div class="wm__body">
+          <p class="wm__meta mono" data-wm-meta></p>
+          <h3 class="wm__title" id="wm-title" data-wm-title></h3>
+          <p class="wm__desc" data-wm-desc></p>
+          <div class="wm__actions">
+            <a class="wm__cta" data-wm-case href="#" data-cursor="Кейс">Смотреть кейс <span aria-hidden="true">↗</span></a>
+            <button type="button" class="wm__ghost" data-wm-close data-cursor="Закрыть">Закрыть</button>
+          </div>
+        </div>
+      </article>
+    </div>
+    <canvas class="wm__burst" data-wm-burst aria-hidden="true"></canvas>
+  </div>
 
   <div class="page-transition" id="page-transition" aria-hidden="true"><img class="page-transition__logo" src="assets/img/brand/fen-logo.svg" alt=""></div>
   <script>
