@@ -21,7 +21,7 @@
 
 | MCP | Инструменты | Что сделано |
 |---|---|---|
-| **Framer** | `list_projects`, `open_project`, `read_docs`, `exec` | Найдены проекты SMS-PRO, EMBER, Real Lot. Через `api.tree.serialize` прочитана структура страниц/брейкпоинтов, через `api.tree.screenshot` сняты реальные экраны. Проекты **не изменялись**: `tree.changedNodeCount = 0`. |
+| **Framer** | `list_projects`, `open_project`, `read_docs`, `exec` | Найдены проекты SMS-PRO, EMBER, Real Lot. Через `api.tree.serialize` прочитана структура страниц/брейкпоинтов, через `api.tree.screenshot` сняты **все 29 страниц SMS PRO × desktop/phone (57 экранов)**. Через `api.tree.walk` + `getRect` извлечены 43 реальные link-зоны главной. Изменён один текстовый слой (`Switzer Italic` → `Inter Italic 600`), проекты не публиковались. |
 | **Playwright** (CLI + браузер) | скриншоты, переходы, viewport | Сняты превью всех пяти демо, кейс-кадры, проверены адаптив, меню, фильтры, reduced motion, no-JS, битые ссылки, консоль. |
 | **GitHub** | `gh` CLI | Проверка авторизации, ветка, push и PR (в конце). |
 | **Filesystem / shell** | Read/Write/Glob/Grep/Bash | Структура, правки, проверки, сборка проектов. |
@@ -86,13 +86,13 @@
 
 | Проект | ID | Что снято |
 |---|---|---|
-| SMS-PRO · Redesign Concept | `fFE7En1crCTqQYEP0LJg` | desktop + mobile hero |
+| SMS-PRO · Redesign Concept | `fFE7En1crCTqQYEP0LJg` | 29 страниц: desktop + phone, hero, 43 хотспота |
 | EMBER · Telegram Mini App | `HrowSjuw9zJZqyTW0rY3` | обзор 1000×1250 |
 | Real Lot · Freelance Radar | `26DRbo6nv2Rl7spWGPWf` | day/night desktop + mobile |
 
 Скриншоты лежат в `assets/img/prototypes/`. Это реальные рендеры Framer, не сгенерированные мокапы.
 
-Дополнительно через `api.tree.serialize` прочитаны текстовые ноды SMS-PRO: desktop `IigT28pwH` — `Switzer`, italic, 76px; mobile `Z9W41GjvBIigT28pwH` — `Onest`, 600, 36px. Отсюда разные шрифты в прототипе; проекты не изменялись.
+Через `api.tree.serialize` найдена строка `IigT28pwH` — `Switzer Italic 600`, 76px, кириллица. У Switzer нет кириллицы, поэтому Framer подставлял serif. По решению владельца слой переведён на **Inter Italic 600** (Inter уже в проекте, есть кириллический италик); вьюер снят уже после правки.
 
 ### Ограничения доступа
 
@@ -110,8 +110,10 @@
 | Битые изображения | проверка `src`/CSS `url()` | 0 |
 | Консоль | Playwright на home/cases/5 демо | 0 ошибок на threaded-сервере |
 | Доступность | axe-core WCAG A/AA | 0 нарушений (desktop/mobile) |
-| Lighthouse mobile | `npx lighthouse` | 99 / 100 / 100 / 100 |
-| Lighthouse desktop | `--preset=desktop` | 100 / 100 / 100 / 100 |
+| Lighthouse mobile | `npx lighthouse` | 98 / 100 / 100 / 100 (LCP 2.0 s, TBT 0) |
+| Lighthouse desktop | `--preset=desktop` | 98 / 100 / 100 / 100 (LCP 1.1 s, TBT 0) |
+| Вьюер | Playwright: open/close, pan/zoom, pages, proto, hotspots, back, mobile, reduced | 29 страниц, 43 хотспота, 0 ошибок, overflow 0 на 360–1920 |
+| Мини-карточка | Playwright: open, данные, close burst, focus return, Esc/фон, mobile, reduced | burst рисуется, модалка закрывается, axe 0 |
 | Overflow | 1920…360 | 0 |
 | Frame timing | headed Chromium, 3 с скролла | avg ~7 мс, p95 ~7 мс, long tasks 0 |
 | No-JS | `javaScriptEnabled:false` | контент и навигация доступны |
@@ -122,6 +124,7 @@
 - Headless Chromium на этой машине рендерит ~30 FPS (software); headed — ~144 FPS. В отчёте указан headed-замер, но это не гарантия 60 FPS на любом устройстве.
 - Lighthouse — локальный лабораторный замер, не field data.
 - Тяжёлые демо (Nova 18 МБ, Utka 3.7 МБ) лежат отдельными страницами и не влияют на загрузку главной.
-- В SMS-PRO разные шрифты — это особенность самого Framer-проекта, не портфолио (см. `DESIGN_SYSTEM.md`, 8.6).
+- В SMS-PRO строка «Для любого сервиса.» использует Inter Italic 600: у Switzer нет кириллицы. Это единственная правка Framer-проекта (см. `DESIGN_SYSTEM.md`, 8.6).
+- Вьюер использует статичные скриншоты и реальные ссылки Home; навигация и часть CTA в Framer — кодовые компоненты, их ссылки недоступны через API, поэтому на остальных страницах переходы через панель «Страницы».
 - Browser Use connector не был подключён; если он нужен для будущих задач, включи расширение Qoder Browser Connector в Chrome.
-- Глобальные конфиги, MCP-настройки и Framer-проекты не изменялись.
+- Глобальные конфиги и MCP-настройки не изменялись. В Framer изменён один текстовый слой (шрифт), без публикации проекта.

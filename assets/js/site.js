@@ -676,6 +676,364 @@
     });
   }
 
+  /* Work mini-card + dismiss burst -------------------------------------- */
+  const wm = $("#work-modal");
+  if (wm) {
+    const wmCard = $(".wm__card", wm);
+    const wmClose = $$("[data-wm-close]", wm);
+    const wmScrim = $("[data-wm-scrim]", wm);
+    const wmImg = $("[data-wm-img]", wm);
+    const wmUrl = $("[data-wm-url]", wm);
+    const wmMeta = $("[data-wm-meta]", wm);
+    const wmTitle = $("[data-wm-title]", wm);
+    const wmDesc = $("[data-wm-desc]", wm);
+    const wmCase = $("[data-wm-case]", wm);
+    const wmBurst = $("[data-wm-burst]", wm);
+    const wmCtx = wmBurst.getContext("2d");
+    let wmTrigger = null;
+    let wmOpen = false;
+    let wmClosing = false;
+    let wmBurstFrame = 0;
+
+    const modalOpen = (trigger) => {
+      if (wmOpen) return;
+      const card = trigger.closest(".work-card");
+      if (!card) return;
+      const title = ($("h3", card) || {}).textContent || "";
+      const desc = ($(".work-card__body > p", card) || {}).textContent || "";
+      const meta = $$(".work-card__meta span", card).map((el) => el.textContent.trim()).join(" / ");
+      const img = $(".browser-preview img", card);
+      const href = trigger.getAttribute("href") || "#";
+      const chrome = $(".browser-chrome small", card);
+      wmImg.src = img ? img.currentSrc || img.src : "";
+      wmImg.alt = img ? img.alt : title;
+      wmUrl.textContent = chrome ? chrome.textContent.trim() : href.replace(/^work\//, "").replace(/\.html$/, "");
+      wmMeta.textContent = meta;
+      wmTitle.textContent = title;
+      wmDesc.textContent = desc;
+      wmCase.href = href;
+      wmTrigger = trigger;
+      wmOpen = true;
+      wmClosing = false;
+      wmCard.classList.remove("is-closing", "is-in");
+      wm.classList.remove("is-closing");
+      void wmCard.offsetWidth;
+      wmCard.classList.add("is-in");
+      wm.hidden = false;
+      document.documentElement.classList.add("wm-open");
+      requestAnimationFrame(() => {
+        wm.classList.add("is-open");
+        const closeBtn = $(".wm__close", wm);
+        if (closeBtn) closeBtn.focus();
+      });
+    };
+
+    const burst = (origin) => {
+      if (reduceMotion.matches) return;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const W = window.innerWidth;
+      const H = window.innerHeight;
+      wmBurst.width = Math.round(W * dpr);
+      wmBurst.height = Math.round(H * dpr);
+      wmCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const colors = ["196, 245, 41", "244, 243, 237", "22, 69, 234", "255, 112, 47"];
+      const rays = [];
+      const dots = [];
+      for (let i = 0; i < 38; i += 1) {
+        rays.push({
+          a: Math.random() * Math.PI * 2,
+          len: 90 + Math.random() * 380,
+          w: 0.8 + Math.random() * 2.4,
+          c: colors[i % colors.length],
+          start: Math.random() * 0.18
+        });
+      }
+      for (let i = 0; i < 44; i += 1) {
+        const a = Math.random() * Math.PI * 2;
+        const dist = 60 + Math.random() * 300;
+        dots.push({
+          a,
+          dist,
+          size: 1.5 + Math.random() * 3.2,
+          c: colors[i % colors.length],
+          grav: 30 + Math.random() * 120,
+          delay: Math.random() * 0.15
+        });
+      }
+      const start = performance.now();
+      const dur = 780;
+      const drawBurst = (now) => {
+        wmBurstFrame = 0;
+        const t = Math.min(1, (now - start) / dur);
+        const ease = 1 - Math.pow(1 - t, 3);
+        wmCtx.clearRect(0, 0, W, H);
+        wmCtx.globalCompositeOperation = "lighter";
+        const flashR = 60 + ease * 560;
+        const flash = wmCtx.createRadialGradient(origin.x, origin.y, 0, origin.x, origin.y, flashR);
+        flash.addColorStop(0, "rgba(255,255,255," + 0.85 * (1 - t) + ")");
+        flash.addColorStop(0.18, "rgba(196,245,41," + 0.55 * (1 - t) + ")");
+        flash.addColorStop(0.55, "rgba(196,245,41," + 0.16 * (1 - t) + ")");
+        flash.addColorStop(1, "rgba(196,245,41,0)");
+        wmCtx.fillStyle = flash;
+        wmCtx.beginPath();
+        wmCtx.arc(origin.x, origin.y, flashR, 0, Math.PI * 2);
+        wmCtx.fill();
+        wmCtx.lineCap = "round";
+        for (let i = 0; i < rays.length; i += 1) {
+          const ray = rays[i];
+          const grow = Math.min(1, Math.max(0, (ease - ray.start) / (1 - ray.start)));
+          const inner = 12 + grow * 40;
+          const outer = inner + grow * ray.len;
+          wmCtx.strokeStyle = "rgba(" + ray.c + "," + (1 - t) * 0.55 + ")";
+          wmCtx.lineWidth = ray.w * (1 - t * 0.5);
+          wmCtx.beginPath();
+          wmCtx.moveTo(origin.x + Math.cos(ray.a) * inner, origin.y + Math.sin(ray.a) * inner);
+          wmCtx.lineTo(origin.x + Math.cos(ray.a) * outer, origin.y + Math.sin(ray.a) * outer);
+          wmCtx.stroke();
+        }
+        for (let i = 0; i < dots.length; i += 1) {
+          const d = dots[i];
+          const local = Math.min(1, Math.max(0, (t - d.delay) / (1 - d.delay)));
+          const e = 1 - Math.pow(1 - local, 2);
+          const r = d.dist * e;
+          const x = origin.x + Math.cos(d.a) * r;
+          const y = origin.y + Math.sin(d.a) * r + d.grav * local * local;
+          wmCtx.fillStyle = "rgba(" + d.c + "," + (1 - local) * 0.9 + ")";
+          wmCtx.fillRect(x, y, d.size * (1 - local * 0.5), d.size * (1 - local * 0.5));
+        }
+        wmCtx.globalCompositeOperation = "source-over";
+        if (t < 1) wmBurstFrame = requestAnimationFrame(drawBurst);
+        else wmCtx.clearRect(0, 0, W, H);
+      };
+      wmBurstFrame = requestAnimationFrame(drawBurst);
+    };
+
+    const modalClose = () => {
+      if (!wmOpen || wmClosing) return;
+      wmClosing = true;
+      if (wmBurstFrame) {
+        cancelAnimationFrame(wmBurstFrame);
+        wmBurstFrame = 0;
+      }
+      const closeBtn = $(".wm__close", wm);
+      const rect = closeBtn ? closeBtn.getBoundingClientRect() : wmCard.getBoundingClientRect();
+      const origin = { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
+      const finish = () => {
+        wm.hidden = true;
+        wm.classList.remove("is-open", "is-closing");
+        wmCard.classList.remove("is-closing", "is-in");
+        document.documentElement.classList.remove("wm-open");
+        if (wmTrigger && document.contains(wmTrigger)) wmTrigger.focus();
+        wmOpen = false;
+        wmClosing = false;
+        wmTrigger = null;
+        wmCtx.clearRect(0, 0, wmBurst.width, wmBurst.height);
+      };
+      if (reduceMotion.matches) {
+        window.setTimeout(finish, 60);
+        return;
+      }
+      wm.classList.add("is-closing");
+      wmCard.classList.remove("is-in");
+      void wmCard.offsetWidth;
+      wmCard.classList.add("is-closing");
+      window.setTimeout(() => burst(origin), 140);
+      window.setTimeout(finish, 700);
+    };
+
+    $$(".work-card__link").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+        event.preventDefault();
+        modalOpen(link);
+      });
+    });
+
+    wmClose.forEach((btn) => btn.addEventListener("click", modalClose));
+    wmScrim.addEventListener("click", modalClose);
+    document.addEventListener("keydown", (event) => {
+      if (!wmOpen) return;
+      if (event.key === "Escape") {
+        event.preventDefault();
+        modalClose();
+        return;
+      }
+      if (event.key !== "Tab") return;
+      const list = $$('button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])', wmCard).filter((n) => n.offsetParent !== null);
+      if (!list.length) return;
+      const first = list[0];
+      const last = list[list.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
+  }
+
+  /* Works ripple — particle water pool -------------------------------- */
+  const rippleCanvas = $("#works-ripple");
+  if (rippleCanvas) {
+    const section = $("#works");
+    const ctx = rippleCanvas.getContext("2d", { alpha: true });
+    const palette = ["22, 69, 234", "21, 21, 21", "148, 186, 26"];
+    const state = {
+      w: 0, h: 0, dpr: 1, radius: 300, points: [],
+      cx: 0, cy: 0, tx: 0, ty: 0,
+      active: 0.35, targetActive: 0.35, visible: false, frame: 0
+    };
+    const base = { x: 0.66, y: 0.24 };
+
+    const build = () => {
+      const gap = state.w < 760 ? 7 : 9;
+      const rings = Math.floor(state.radius / gap);
+      const pts = [];
+      for (let i = 1; i <= rings; i += 1) {
+        const r = i * gap;
+        const count = Math.max(9, Math.round((Math.PI * 2 * r) / gap));
+        const offset = Math.random() * Math.PI * 2;
+        for (let j = 0; j < count; j += 1) {
+          const rnd = Math.random();
+          pts.push({
+            r,
+            a: offset + (j / count) * Math.PI * 2,
+            tone: rnd < 0.88 ? 0 : rnd < 0.97 ? 1 : 2,
+            size: 0.75 + Math.random() * 0.85
+          });
+        }
+      }
+      state.points = pts;
+    };
+
+    const resize = () => {
+      const rect = section.getBoundingClientRect();
+      state.w = Math.max(1, rect.width);
+      state.h = Math.max(1, rect.height);
+      state.dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      state.radius = clamp(Math.min(state.w, 760) * 0.5, 190, 360);
+      rippleCanvas.width = Math.round(state.w * state.dpr);
+      rippleCanvas.height = Math.round(state.h * state.dpr);
+      ctx.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
+      if (!state.cx) {
+        state.cx = state.w * base.x;
+        state.cy = state.h * base.y;
+        state.tx = state.cx;
+        state.ty = state.cy;
+      }
+      build();
+      if (reduceMotion.matches) draw(0);
+    };
+
+    const draw = (now) => {
+      if (!state.w || !state.h) return;
+      const t = now;
+      const time = t * 0.0011;
+      const amp = 0.3 + state.active * 0.7;
+      const R = state.radius;
+      const swirl = Math.sin(time * 0.35) * 0.035;
+      ctx.clearRect(0, 0, state.w, state.h);
+      ctx.globalAlpha = 1;
+      let activeTone = -1;
+      for (let i = 0; i < state.points.length; i += 1) {
+        const p = state.points[i];
+        const edge = Math.min(1, Math.max(0, (R - p.r) / 70));
+        if (edge <= 0) continue;
+        const wave = Math.sin(p.r * 0.052 - t * 0.0038 + p.a * 0.12) * Math.exp(-p.r / 520) * 23 * amp;
+        const dimple = Math.exp(-(p.r * p.r) / 16000) * 24 * amp;
+        const h = wave - dimple;
+        const crest = Math.max(0, Math.min(1, (h + 30) / 60));
+        const rad = p.r + h * 0.45;
+        const angle = p.a + swirl + Math.sin(p.r * 0.01 + time) * 0.02;
+        const x = state.cx + Math.cos(angle) * rad;
+        const y = state.cy + Math.sin(angle) * rad + h * 1.15;
+        if (x < -12 || y < -12 || x > state.w + 12 || y > state.h + 12) continue;
+        if (p.tone !== activeTone) {
+          activeTone = p.tone;
+          ctx.fillStyle = "rgba(" + palette[p.tone] + ", 1)";
+        }
+        ctx.globalAlpha = (0.06 + Math.pow(crest, 1.4) * 0.62) * edge;
+        const size = p.size * (0.7 + crest * 1.1);
+        ctx.fillRect(x, y, size, size);
+      }
+      ctx.globalAlpha = 1;
+    };
+
+    const tick = (now) => {
+      state.frame = 0;
+      if (!state.visible) return;
+      state.cx = lerp(state.cx, state.tx, 0.06);
+      state.cy = lerp(state.cy, state.ty, 0.06);
+      state.active = lerp(state.active, state.targetActive, 0.04);
+      draw(now);
+      if (!reduceMotion.matches) state.frame = requestAnimationFrame(tick);
+    };
+
+    const start = () => {
+      if (state.frame || reduceMotion.matches) return;
+      state.frame = requestAnimationFrame(tick);
+    };
+
+    const restCenter = () => {
+      state.tx = state.w * base.x;
+      state.ty = state.h * base.y;
+      state.targetActive = 0.35;
+    };
+
+    resize();
+    restCenter();
+    if (reduceMotion.matches) {
+      draw(0);
+    } else {
+      if (finePointer.matches) {
+        section.addEventListener("pointermove", (event) => {
+          const rect = section.getBoundingClientRect();
+          state.tx = clamp(event.clientX - rect.left, 0, state.w);
+          state.ty = clamp(event.clientY - rect.top, 0, state.h);
+          state.targetActive = 1;
+          start();
+        }, { passive: true });
+        section.addEventListener("pointerleave", restCenter);
+      }
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver(([entry]) => {
+          state.visible = entry.isIntersecting;
+          if (state.visible) start();
+        }, { rootMargin: "160px 0px" }).observe(section);
+      } else {
+        state.visible = true;
+        start();
+      }
+    }
+    let rippleTimer = 0;
+    window.addEventListener("resize", () => {
+      clearTimeout(rippleTimer);
+      rippleTimer = window.setTimeout(() => {
+        resize();
+        restCenter();
+        if (reduceMotion.matches) draw(0);
+      }, 180);
+    });
+    reduceMotion.addEventListener("change", () => {
+      if (reduceMotion.matches) {
+        if (state.frame) cancelAnimationFrame(state.frame);
+        state.frame = 0;
+        draw(0);
+      } else {
+        start();
+      }
+    });
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden && state.frame) {
+        cancelAnimationFrame(state.frame);
+        state.frame = 0;
+      } else if (!document.hidden && state.visible) {
+        start();
+      }
+    });
+  }
+
   /* Hero palette -------------------------------------------------------- */
   const heroRoot = $(".hero");
   const heroSwatches = $$(".swatch-strip .swatch");
